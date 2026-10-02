@@ -1,0 +1,100 @@
+{
+  "case_count": 256,
+  "cases_per_seed": 32,
+  "compact_certificates": 500,
+  "cpu_seconds": 3.309547228,
+  "errors": [],
+  "interpretation": "Sensitivity check against one fixed generator seed. Same code paths and finite n=1,2 oracle are reused; this is not independent validation or population-level evidence.",
+  "oracle_checks": 512,
+  "oracle_obligations": 5376,
+  "peak_rss_kib": 118436,
+  "per_seed": [
+    {
+      "case_count": 32,
+      "certificates": 61,
+      "oracle_checks": 64,
+      "oracle_obligations": 717,
+      "replays": 61,
+      "seed": 7
+    },
+    {
+      "case_count": 32,
+      "certificates": 64,
+      "oracle_checks": 64,
+      "oracle_obligations": 651,
+      "replays": 64,
+      "seed": 19
+    },
+    {
+      "case_count": 32,
+      "certificates": 67,
+      "oracle_checks": 64,
+      "oracle_obligations": 645,
+      "replays": 67,
+      "seed": 43
+    },
+    {
+      "case_count": 32,
+      "certificates": 57,
+      "oracle_checks": 64,
+      "oracle_obligations": 628,
+      "replays": 57,
+      "seed": 101
+    },
+    {
+      "case_count": 32,
+      "certificates": 61,
+      "oracle_checks": 64,
+      "oracle_obligations": 681,
+      "replays": 61,
+      "seed": 2026
+    },
+    {
+      "case_count": 32,
+      "certificates": 64,
+      "oracle_checks": 64,
+      "oracle_obligations": 684,
+      "replays": 64,
+      "seed": 4099
+    },
+    {
+      "case_count": 32,
+      "certificates": 66,
+      "oracle_checks": 64,
+      "oracle_obligations": 690,
+      "replays": 66,
+      "seed": 8191
+    },
+    {
+      "case_count": 32,
+      "certificates": 60,
+      "oracle_checks": 64,
+      "oracle_obligations": 680,
+      "replays": 60,
+      "seed": 16381
+    }
+  ],
+  "query_count": 2048,
+  "realized_grades": {
+    "S": 57,
+    "SM": 36,
+    "SZM": 33,
+    "SZV": 5,
+    "SZVM": 67,
+    "SZVO": 21,
+    "SZVOM": 37
+  },
+  "refutation_replays": 500,
+  "seeds": [
+    7,
+    19,
+    43,
+    101,
+    2026,
+    4099,
+    8191,
+    16381
+  ],
+  "study": "post-hoc multi-seed robustness audit; excluded from frozen paper counts",
+  "wall_seconds": 3.3114987059998384
+}

@@ -1,0 +1,26 @@
+{
+  "case_id": "storage-without-support",
+  "cells": [
+    {
+      "index": [
+        0
+      ],
+      "stored": true,
+      "tensor": "A",
+      "value": "1"
+    },
+    {
+      "index": [
+        0
+      ],
+      "stored": true,
+      "tensor": "B",
+      "value": "-1"
+    }
+  ],
+  "coordinates": {
+    "i0": 0,
+    "n0": 1
+  },
+  "observation": "zero-support"
+}

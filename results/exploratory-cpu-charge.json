@@ -1,0 +1,14 @@
+{
+  "record": "exploratory-period conservative CPU charge",
+  "start_utc": "2026-09-14T15:43:28Z",
+  "start_basis": "birth time of the first mounted project input, observed with stat; precedes local scientific execution",
+  "end_utc": "2026-09-14T16:33:52.445946+00:00",
+  "measured_cpu_ceiling_cores": 4,
+  "elapsed_wall_seconds": 3024.445946455002,
+  "charged_cpu_upper_bound_seconds": 12097.783785820007,
+  "actual_cpu_seconds": null,
+  "interpretation": "upper bound, not measured CPU or a performance result; deliberately charges all idle and research-reading wall time at four cores",
+  "subsequent_accounting": "add measured child user+system CPU from reproduce.py runs; no experiments outside bounded runners",
+  "experiment_cpu_limit_seconds": 21600,
+  "reserved_repair_and_reproduction_seconds": 5400
+}

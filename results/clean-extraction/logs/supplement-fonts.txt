@@ -1,0 +1,13 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CQLMMI+LinLibertineT                 Type 1            Custom           yes yes yes     56  0
+SXWWAM+LinBiolinumTB                 Type 1            Custom           yes yes yes     58  0
+SZPRVX+LinBiolinumT                  Type 1            Custom           yes yes yes     59  0
+XEYFVP+LibertineMathMI               Type 1            Builtin          yes yes yes     60  0
+UYONZI+txsys                         Type 1            Builtin          yes yes yes     61  0
+IPQOAF+LibertineMathMI7              Type 1            Builtin          yes yes yes     62  0
+YWVLLS+txexs                         Type 1            Builtin          yes yes yes     63  0
+PPKSGE+txmiaX                        Type 1            Builtin          yes yes yes     64  0
+CQLMMI+LinLibertineT                 Type 1            Custom           yes yes yes     65  0
+RYJDZT+LinLibertineTI                Type 1            Custom           yes yes yes     66  0
+JOGCYT+Inconsolatazi4-Regular        Type 1            Custom           yes yes yes    106  0

@@ -1,0 +1,56 @@
+{
+  "after": {
+    "shape": [
+      "n0"
+    ],
+    "storage": "union",
+    "terms": [
+      {
+        "coefficient": "62/38",
+        "guard": "True",
+        "index": [
+          "i0"
+        ],
+        "tensor": "A"
+      }
+    ]
+  },
+  "before": {
+    "shape": [
+      "n0"
+    ],
+    "storage": "union",
+    "terms": [
+      {
+        "coefficient": "31/19",
+        "guard": "True",
+        "index": [
+          "i0"
+        ],
+        "tensor": "A"
+      }
+    ]
+  },
+  "expected": {
+    "admission": "admitted",
+    "contracts": {
+      "shape": 1,
+      "stored-support": 1,
+      "term-order": 1,
+      "value": 1,
+      "zero-support": 1
+    }
+  },
+  "family": "semantic-control",
+  "id": "rational-normalization",
+  "inputs": {
+    "A": [
+      "n0"
+    ]
+  },
+  "parameters": [
+    "n0"
+  ],
+  "precondition": "n0 >= 1",
+  "provenance": "generated-original; no public-patch mapping"
+}

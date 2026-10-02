@@ -1,0 +1,381 @@
+{
+  "repository": "bobbyyyan/scorch",
+  "evidence_kind": "immutable public-source locators plus executable clean-room adapters",
+  "upstream_execution": false,
+  "admission_gates": {
+    "G1": "fixed parent and child commits and complete changed production-file list",
+    "G2": "runtime/non-runtime disposition for every changed production hunk",
+    "G3": "source-derived invariant rather than an adapter-only filter",
+    "G4": "before/after denotations and an observable covering all changed behavior in the claimed execution",
+    "G5": "universal equality argument over the stated invariant",
+    "G6": "independently coded bounded before/after paths with target-sensitive negative controls",
+    "G7": "unchanged-downstream congruence to the paper observations"
+  },
+  "records": {
+    "P01": {
+      "decision": "abstained",
+      "parent_commit": "b061b530c08141bf01f190ccb515906e4570f8cf",
+      "child_commit": "72c55d36de12f45a4dcdd222f760b0fb6c3b6276",
+      "changed_production_files": [
+        "src/scorch/ops.py"
+      ],
+      "immutable_files": {
+        "parent": {
+          "blob_sha": "a097d9372e56caa9f38e871ec6cad02e7671772a",
+          "url": "https://github.com/bobbyyyan/scorch/blob/b061b530c08141bf01f190ccb515906e4570f8cf/src/scorch/ops.py"
+        },
+        "child": {
+          "blob_sha": "9b41015f514460c0385074ee3524e51d789b9766",
+          "url": "https://github.com/bobbyyyan/scorch/blob/72c55d36de12f45a4dcdd222f760b0fb6c3b6276/src/scorch/ops.py"
+        }
+      },
+      "hunk_disposition": [
+        {
+          "region": "einsum CIN RHS/LHS and nested ForAll construction",
+          "parent": "generated Python source followed by exec/eval",
+          "child": "direct TensorVar indexing, multiplication, assignment, and ForAll construction",
+          "model": "build_cin_before_source/build_cin_after_source",
+          "observable": "complete CIN AST or exception class"
+        }
+      ],
+      "source_constraints": [
+        "The source has 26 temporary tensor names.",
+        "The source asserts only that index_var_dict is nonempty, excluding the all-scalar expression but not each scalar operand or a scalar result."
+      ],
+      "finite_model_boundaries": [
+        "The exhaustive successful-domain diagnostic uses one through four operands.",
+        "The finite index-pattern, result-pattern, and schedule grammar is a validation boundary, not an upstream input restriction.",
+        "The successful-domain diagnostic excludes empty operand/result accesses only to compare the intended AST construction path."
+      ],
+      "boundary_controls": {
+        "count": 4,
+        "different_parent_child_behavior": 3,
+        "examples": [
+          "scalar first operand plus indexed second operand",
+          "indexed first operand plus scalar second operand",
+          "indexed operand with scalar result",
+          "all-scalar expression rejected by the shared source assertion"
+        ]
+      },
+      "failed_gates": [
+        "G3",
+        "G4",
+        "G5"
+      ],
+      "reason": "Per-operand and result non-scalarity is not source-enforced. Source-reachable mixed scalar/indexed inputs enter the changed region and differ, so no complete equality invariant was established.",
+      "bounded_diagnostic": {
+        "successful_domain_cases": 29222,
+        "expected_mismatches": 0,
+        "counted_as_admitted_adapter_states": false
+      },
+      "parent_tree_sha": "c14df7e097884f46e36c42fbddf761b627ef2515",
+      "child_tree_sha": "ddca30e628378ad419ca4fb2462beac96291226c"
+    },
+    "P04": {
+      "decision": "admitted",
+      "parent_commit": "08a92fe381cbddcbcfa2a616644f65b149d50287",
+      "child_commit": "d7a9cdc82819750c1a1285cded8385165ea51371",
+      "changed_production_files": [
+        "src/scorch/compiler/codegen.py"
+      ],
+      "immutable_files": {
+        "parent": {
+          "blob_sha": "f4e717855c69158db2f204dd015ce373b42590de",
+          "url": "https://github.com/bobbyyyan/scorch/blob/08a92fe381cbddcbcfa2a616644f65b149d50287/src/scorch/compiler/codegen.py"
+        },
+        "child": {
+          "blob_sha": "94016d6a2805f6cecdc3c06a70b57791ddcb63ae",
+          "url": "https://github.com/bobbyyyan/scorch/blob/d7a9cdc82819750c1a1285cded8385165ea51371/src/scorch/compiler/codegen.py"
+        }
+      },
+      "hunk_disposition": [
+        {
+          "region": "literal/cast/sizeof/binop/unary/call/array/array-access branches",
+          "model": "independent parent branches versus child lower_expression",
+          "proof_case": "expression structural induction"
+        },
+        {
+          "region": "while/for/for-auto branches",
+          "model": "independent parent branches versus child lower_loop_construct",
+          "proof_case": "loop header/body structural induction"
+        },
+        {
+          "region": "simple and condition-list IfThenElse branches",
+          "model": "independent parent conditional implementation versus child lower_conditional",
+          "proof_case": "branch-list case analysis including make_last_case_else"
+        },
+        {
+          "region": "Function branch",
+          "model": "independent parent branch versus child lower_function_definition",
+          "proof_case": "argument order and body structural induction"
+        },
+        {
+          "region": "unchanged top-level Comment/Blank/CallStmt/Var/VarDecl/Increment/Return/list/fallback paths",
+          "model": "explicit retained dispatch cases",
+          "proof_case": "identity or elementwise list induction"
+        }
+      ],
+      "source_invariant": "Input is one of the LLIR node variants accepted by the fixed parent dispatcher, with well-formed child fields and branch-list lengths.",
+      "observable": "exact generated C++ string",
+      "g6_independence": "The parent model is a monolithic transcription. The child model has separate expression, loop, conditional, and function helpers; the parent does not call those helpers.",
+      "bounded_validation": {
+        "states": 30,
+        "coverage": [
+          "Comment visible and suppressed",
+          "BlankLine",
+          "ForLoop with init",
+          "ForLoop with init=None",
+          "simple IfThenElse",
+          "condition-list IfThenElse",
+          "make_last_case_else=True",
+          "Function",
+          "list dispatch",
+          "unknown fallback by proof disposition"
+        ],
+        "target_path_negative_controls": [
+          "condition operator change",
+          "drop else body",
+          "drop conditional closing brace"
+        ]
+      },
+      "proof": "proofs/core.md, dispatcher-extraction theorem",
+      "parent_tree_sha": "94f3271ae26446aa344098e1d84c03c5efb3198d",
+      "child_tree_sha": "90f89cde813156464b6fefbf016b3de4597568fc"
+    },
+    "P06": {
+      "decision": "admitted",
+      "parent_commit": "404e10762f866303758ec60ac6a9cf996be7da0c",
+      "child_commit": "2105686711292cd1d1eb2438035b555fa644bf2a",
+      "changed_production_files": [
+        "src/scorch/compiler/iter_lattice.py"
+      ],
+      "immutable_files": {
+        "parent": {
+          "blob_sha": "db2d3a932bf5c805936e37999315bf9199f4d6b7",
+          "url": "https://github.com/bobbyyyan/scorch/blob/404e10762f866303758ec60ac6a9cf996be7da0c/src/scorch/compiler/iter_lattice.py"
+        },
+        "child": {
+          "blob_sha": "1e88e058460a1e654fbc49ad5fc2bcca43a77b6a",
+          "url": "https://github.com/bobbyyyan/scorch/blob/2105686711292cd1d1eb2438035b555fa644bf2a/src/scorch/compiler/iter_lattice.py"
+        }
+      },
+      "hunk_disposition": [
+        {
+          "parent_block": "load iterator coordinates",
+          "child_helper": "_load_coordinates",
+          "compared_fields": [
+            "comment text",
+            "target variable name/type",
+            "coordinate array address",
+            "iterator index"
+          ]
+        },
+        {
+          "parent_block": "choose coordinate",
+          "child_helper": "_resolve_coordinates",
+          "compared_fields": [
+            "std::min call name",
+            "array element variables/types",
+            "destination variable",
+            "blank-line positions"
+          ]
+        },
+        {
+          "parent_block": "assemble compressed child",
+          "child_helper": "_assemble_compressed_level",
+          "compared_fields": [
+            "init=None",
+            "loop condition operands/operator",
+            "increment target",
+            "pos-array address",
+            "size call"
+          ]
+        },
+        {
+          "parent_block": "coordinate-level end search",
+          "child_helper": "_find_coordinate_level_iterator_ends",
+          "compared_fields": [
+            "end target",
+            "plus-one literal",
+            "while bound",
+            "coordinate array address/index",
+            "equality operand",
+            "increment target"
+          ]
+        },
+        {
+          "parent_block": "resolve dense coordinates",
+          "child_helper": "_resolve_dense_coordinates",
+          "compared_fields": [
+            "dependency-ready selection",
+            "target variable/type",
+            "complete value expression"
+          ]
+        },
+        {
+          "parent_block": "method body",
+          "child_helper": "CoordinateResolver.resolve call",
+          "compared_fields": [
+            "five helper results concatenated in original order"
+          ]
+        }
+      ],
+      "source_invariant": "The lattice point, iterators, result access, and lowerer state satisfy the assertions already required by the fixed parent method.",
+      "observable": "complete ordered tuple of typed LLIR node trees",
+      "bounded_validation": {
+        "states": 400,
+        "comparison": "dataclass structural equality over all node fields",
+        "label_only_comparison_used": false,
+        "same_label_different_semantics_control": "coord-end-off-by-one changes the literal in pX1_end = pX0 + 1 to +2 while preserving the top-level node-kind signature"
+      },
+      "proof": "proofs/core.md, ordered-helper-partition theorem",
+      "parent_tree_sha": "a304c3a16ed566c20f91c83cb2fc9ea0681993e3",
+      "child_tree_sha": "618ebda80bca1961391c7c352017db5abadd8e4d"
+    },
+    "P08": {
+      "decision": "admitted",
+      "parent_commit": "b606b3078082ba78a57ed818b848db7214026788",
+      "child_commit": "33532a3092035a93d4e78936e089c69fa6f3d3e9",
+      "child_tree_sha": "49d2a0fb1f710b4ea97bea54d9bb6bee5e5afc24",
+      "changed_production_files": [
+        "src/scorch/compiler/cin.py",
+        "src/scorch/compiler/cin_lowerer.py",
+        "src/scorch/compiler/iter_lattice.py"
+      ],
+      "immutable_files": {
+        "cin_parent": {
+          "blob_sha": "2070900ef9c41dba7e269f8e909365b5b45a5129",
+          "url": "https://github.com/bobbyyyan/scorch/blob/b606b3078082ba78a57ed818b848db7214026788/src/scorch/compiler/cin.py"
+        },
+        "cin_child": {
+          "blob_sha": "ec479c6896250344542ad813f34adf57088a93f7",
+          "url": "https://github.com/bobbyyyan/scorch/blob/33532a3092035a93d4e78936e089c69fa6f3d3e9/src/scorch/compiler/cin.py"
+        },
+        "cin_lowerer_parent": {
+          "blob_sha": "72cbfe14350ea436d001f668a0f104b54c70ab44",
+          "url": "https://github.com/bobbyyyan/scorch/blob/b606b3078082ba78a57ed818b848db7214026788/src/scorch/compiler/cin_lowerer.py"
+        },
+        "cin_lowerer_child": {
+          "blob_sha": "f27c6754aefff6f8ac631593661c5df91277a90a",
+          "url": "https://github.com/bobbyyyan/scorch/blob/33532a3092035a93d4e78936e089c69fa6f3d3e9/src/scorch/compiler/cin_lowerer.py"
+        },
+        "iter_lattice_parent": {
+          "blob_sha": "4124d03e8b464d64fdb50cbc82cda2b76b9eccf5",
+          "url": "https://github.com/bobbyyyan/scorch/blob/b606b3078082ba78a57ed818b848db7214026788/src/scorch/compiler/iter_lattice.py"
+        },
+        "iter_lattice_child": {
+          "blob_sha": "56e03b3ae52a94477a572763cac223c58233d914",
+          "url": "https://github.com/bobbyyyan/scorch/blob/33532a3092035a93d4e78936e089c69fa6f3d3e9/src/scorch/compiler/iter_lattice.py"
+        }
+      },
+      "hunk_disposition": [
+        {
+          "file": "src/scorch/compiler/cin.py",
+          "kind": "runtime",
+          "region": "TensorVar mode_order initialization cascade",
+          "model": "mode_before/mode_after"
+        },
+        {
+          "file": "src/scorch/compiler/cin.py",
+          "kind": "comment-only",
+          "region": "Workspace initialization explanatory comment"
+        },
+        {
+          "file": "src/scorch/compiler/cin_lowerer.py",
+          "kind": "comment-only",
+          "region": "COO/dense workspace/compressed parent comments"
+        },
+        {
+          "file": "src/scorch/compiler/iter_lattice.py",
+          "kind": "comment-only",
+          "region": "compressed pos-array assembly comment"
+        },
+        {
+          "file": "tests/test_scorch/test_kernels.py",
+          "kind": "test-only",
+          "region": "enable and update outer-product SpMM test",
+          "counted_as_production": false
+        }
+      ],
+      "fixed_production_callsite_invariant": {
+        "claim": "Within the fixed child production tree, each direct TensorVar construction supplies a format, or is Workspace.__init__, whose overridden format property is present before TensorVar.__init__ reads it.",
+        "tree_url": "https://api.github.com/repos/bobbyyyan/scorch/git/trees/49d2a0fb1f710b4ea97bea54d9bb6bee5e5afc24?recursive=1",
+        "callsite_groups": [
+          {
+            "file": "src/scorch/ops.py",
+            "blob_sha": "38da489678a47c5d74a25c4329b847dcab1edd38",
+            "basis": "spmv, matmul_wksp, and einsum TensorVar calls all pass fmt; einsum also passes source mode_order when available",
+            "direct_tensorvar_call_expressions": 8,
+            "contexts": [
+              "spmv: y, A, x",
+              "matmul_wksp: C, A, B",
+              "einsum: input TensorVar factory",
+              "einsum: result TensorVar"
+            ]
+          },
+          {
+            "file": "src/scorch/stensor.py",
+            "blob_sha": "7b8520e447fd6705a6f7bf047dba66500af7430a",
+            "basis": "all TensorVar calls in production methods pass fmt; some additionally pass shape and/or mode_order",
+            "direct_tensorvar_call_expressions": 11,
+            "contexts": [
+              "__add__: A, B, C",
+              "to_dense: two B alternatives and A",
+              "to_sparse: two B alternatives and A",
+              "change_mode_order: B and A"
+            ]
+          },
+          {
+            "file": "src/scorch/compiler/cin_lowerer.py",
+            "blob_sha": "f27c6754aefff6f8ac631593661c5df91277a90a",
+            "basis": "the intermediate TensorVar construction passes an explicit coordinate TensorFormat",
+            "direct_tensorvar_call_expressions": 1,
+            "contexts": [
+              "intermediate coordinate TensorVar T"
+            ]
+          },
+          {
+            "file": "src/scorch/compiler/cin.py",
+            "blob_sha": "ec479c6896250344542ad813f34adf57088a93f7",
+            "basis": "Workspace sets dim/dense before super().__init__ and exposes an overridden format property, so the format branch is present",
+            "direct_tensorvar_call_expressions": 0,
+            "contexts": [
+              "Workspace inheritance path calls TensorVar.__init__ through super"
+            ]
+          }
+        ],
+        "excluded": "Direct external TensorVar construction with absent format and no truthy explicit mode order or shape is not claimed equivalent.",
+        "evidence_method": "Immutable child tree plus exact child blob locators and manual call-site disposition; no adapter predicate is used to establish upstream reachability.",
+        "inventory_summary": {
+          "direct_tensorvar_call_expressions": 20,
+          "workspace_inheritance_paths": 1,
+          "all_direct_calls_supply_fmt": true,
+          "workspace_format_present_before_base_init": true
+        }
+      },
+      "observable": "initialized mode_order value or exception class",
+      "bounded_validation": {
+        "equivalence_domain_cases": 96,
+        "excluded_domain_controls": 4,
+        "excluded_parent_behavior": "AttributeError",
+        "excluded_child_behavior": "None",
+        "filtered_as_success": false,
+        "partition_role": "The 96/4 split reports the fixed finite grid; it is not used as evidence that a state is unreachable."
+      },
+      "proof": "proofs/core.md, truthiness-cascade theorem over the fixed production-call invariant",
+      "parent_tree_sha": "43fa6a5fd0547dd6bd4b6f9692ff2c7207a51622"
+    }
+  },
+  "aggregate_after_repair": {
+    "public_commits": 12,
+    "development_commits": 4,
+    "later_commits": 8,
+    "admitted_complete_adapters": 3,
+    "abstentions": 9,
+    "development_admitted": 1,
+    "later_admitted": 2,
+    "admitted_bounded_states": 526,
+    "p01_candidate_successful_domain_states": 29222,
+    "do_not_sum_as_adapter_coverage": true
+  }
+}

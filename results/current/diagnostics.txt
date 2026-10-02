@@ -1,0 +1,14 @@
+{
+  "study": "generated diagnostics and finite algebra checks; not a public patch evaluation",
+  "case_count": 64,
+  "query_count": 512,
+  "oracle_obligations": 1342,
+  "replay_count": 127,
+  "algebra_row_pairs": 729,
+  "algebra_vector_evaluations": 19683,
+  "cpu_seconds": 0.8833315860000001,
+  "wall_seconds": 0.8841055789998791,
+  "solver_cpu_seconds": 0.6530208719999997,
+  "peak_rss_kib": 119204,
+  "errors": []
+}

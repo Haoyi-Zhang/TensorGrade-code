@@ -1,0 +1,49 @@
+{
+  "after": {
+    "shape": [
+      "n0"
+    ],
+    "storage": "aliased",
+    "terms": [
+      {
+        "coefficient": "1",
+        "guard": "True",
+        "index": [
+          "i0"
+        ],
+        "tensor": "A"
+      }
+    ]
+  },
+  "before": {
+    "shape": [
+      "n0"
+    ],
+    "storage": "union",
+    "terms": [
+      {
+        "coefficient": "1",
+        "guard": "True",
+        "index": [
+          "i0"
+        ],
+        "tensor": "A"
+      }
+    ]
+  },
+  "expected": {
+    "admission": "unsupported"
+  },
+  "family": "semantic-control",
+  "id": "alias-outside-fragment",
+  "inputs": {
+    "A": [
+      "n0"
+    ]
+  },
+  "parameters": [
+    "n0"
+  ],
+  "precondition": "n0 >= 1",
+  "provenance": "generated-original; no public-patch mapping"
+}

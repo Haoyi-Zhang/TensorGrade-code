@@ -1,0 +1,84 @@
+{
+  "admission": "admitted",
+  "id": "global-nonuniform",
+  "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
+  "queries": [
+    {
+      "cpu_seconds": 0.005461511999999891,
+      "detail": "",
+      "encoding_bytes": 154,
+      "obligation": "precondition",
+      "status": "sat",
+      "values": {
+        "n0": "1"
+      },
+      "wall_seconds": 0.0033558579998498317
+    },
+    {
+      "cpu_seconds": 0.003243930000000006,
+      "detail": "",
+      "encoding_bytes": 185,
+      "obligation": "nonnegative-dimensions",
+      "status": "unsat",
+      "values": {},
+      "wall_seconds": 0.0026425159999234893
+    },
+    {
+      "cpu_seconds": 0.0006544400000001449,
+      "detail": "",
+      "encoding_bytes": 339,
+      "obligation": "scale-partition",
+      "status": "unsat",
+      "values": {},
+      "wall_seconds": 0.0005929559997639444
+    },
+    {
+      "cpu_seconds": 0.0003902929999999305,
+      "detail": "",
+      "encoding_bytes": 320,
+      "obligation": "weight-partition",
+      "status": "unsat",
+      "values": {},
+      "wall_seconds": 0.0003604779999477614
+    },
+    {
+      "cpu_seconds": 0.0003016229999999176,
+      "detail": "",
+      "encoding_bytes": 278,
+      "obligation": "compatibility-reflexive",
+      "status": "unsat",
+      "values": {},
+      "wall_seconds": 0.000277274999916699
+    },
+    {
+      "cpu_seconds": 0.00026374200000001125,
+      "detail": "",
+      "encoding_bytes": 318,
+      "obligation": "compatibility-symmetric",
+      "status": "unsat",
+      "values": {},
+      "wall_seconds": 0.0002461879998918448
+    },
+    {
+      "cpu_seconds": 0.0019808519999999774,
+      "detail": "",
+      "encoding_bytes": 470,
+      "obligation": "support-coherence",
+      "status": "sat",
+      "values": {
+        "i0": "0",
+        "n0": "2",
+        "u0": "0",
+        "v0": "1"
+      },
+      "wall_seconds": 0.002067096000246238
+    }
+  ],
+  "status": "refuted",
+  "witness": {
+    "i0": "0",
+    "n0": "2",
+    "u0": "0",
+    "v0": "1"
+  }
+}

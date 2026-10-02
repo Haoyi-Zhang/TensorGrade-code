@@ -1,0 +1,9 @@
+{
+  "current_only": [],
+  "equal": true,
+  "ignored_fields": [
+    "current_peak_rss_kib",
+    "current_whole_process_cpu_seconds"
+  ],
+  "reproduced_only": []
+}

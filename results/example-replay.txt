@@ -1,0 +1,9 @@
+{
+  "after_stored": true,
+  "after_value": "-1",
+  "before_stored": true,
+  "before_value": "0",
+  "mismatch": "zero-support",
+  "stored_cells": 2,
+  "valid": true
+}

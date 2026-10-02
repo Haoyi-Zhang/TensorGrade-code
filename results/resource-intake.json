@@ -1,0 +1,20 @@
+{
+  "intake_available": {
+    "cpu_quota_cores": 4,
+    "affinity_cpus": 5,
+    "memory_limit_bytes": 4294967296,
+    "memory_current_bytes_approx": 359000000,
+    "MemAvailable_kib": 5082228,
+    "swap_total_bytes": 0,
+    "writable_free_bytes_approx": 34359738368
+  },
+  "selected": {
+    "workers": 1,
+    "process_address_space_bytes": 2147483648,
+    "peak_rss_limit_bytes": 2684354560,
+    "wall_timeout_seconds": 115,
+    "cpu_soft_seconds": 105,
+    "cpu_hard_seconds": 110
+  },
+  "note": "Headroom was inspected once at intake; this is not a toolchain fingerprint or a stress test."
+}

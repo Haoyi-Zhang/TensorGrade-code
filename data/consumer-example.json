@@ -1,0 +1,27 @@
+{
+  "compatible": "True",
+  "expected": "refuted",
+  "id": "global-nonuniform",
+  "input_extent": "n0",
+  "output_extent": "1",
+  "parameters": [
+    "n0"
+  ],
+  "precondition": "n0 >= 1",
+  "scales": [
+    {
+      "coefficient": "1",
+      "guard": "u0==0"
+    },
+    {
+      "coefficient": "2",
+      "guard": "u0!=0"
+    }
+  ],
+  "weights": [
+    {
+      "coefficient": "1",
+      "guard": "True"
+    }
+  ]
+}

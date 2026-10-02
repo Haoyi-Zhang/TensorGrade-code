@@ -1,0 +1,43 @@
+test_admission_not_a_grade (test_contracts.Tests.test_admission_not_a_grade) ... ok
+test_affine_grammar (test_contracts.Tests.test_affine_grammar) ... ok
+test_all_nine_closed_grades (test_contracts.Tests.test_all_nine_closed_grades) ... ok
+test_boolean_sort (test_contracts.Tests.test_boolean_sort) ... ok
+test_congruence_negative_control (test_contracts.Tests.test_congruence_negative_control) ... ok
+test_consumer_input_errors (test_contracts.Tests.test_consumer_input_errors) ... ok
+test_consumer_oracles (test_contracts.Tests.test_consumer_oracles) ... ok
+test_correlated_image_counterexample (test_contracts.Tests.test_correlated_image_counterexample) ... ok
+test_empty_sum_real_sort_regression (test_contracts.Tests.test_empty_sum_real_sort_regression) ... ok
+test_explicit_stored_zero_is_needed (test_contracts.Tests.test_explicit_stored_zero_is_needed) ... ok
+test_late_shape_witness (test_contracts.Tests.test_late_shape_witness) ... ok
+test_rational_parser (test_contracts.Tests.test_rational_parser) ... ok
+test_retained_inputs_match_generator (test_contracts.Tests.test_retained_inputs_match_generator) ... ok
+test_solver_sat_unsat (test_contracts.Tests.test_solver_sat_unsat) ... ok
+test_sparse_certificates_and_tampering (test_contracts.Tests.test_sparse_certificates_and_tampering) ... ok
+test_unknown_never_becomes_complete (test_contracts.Tests.test_unknown_never_becomes_complete) ... ok
+test_all_admitted_adapters_match_on_retained_domain (test_public_adapters.PublicAdapterStudyTest.test_all_admitted_adapters_match_on_retained_domain) ... ok
+test_corpus_denominator_and_split_are_frozen (test_public_adapters.PublicAdapterStudyTest.test_corpus_denominator_and_split_are_frozen) ... ok
+test_hunk_disposition_and_source_invariant_evidence_is_complete (test_public_adapters.PublicAdapterStudyTest.test_hunk_disposition_and_source_invariant_evidence_is_complete) ... ok
+test_negative_controls_and_candidate_slot_accounting (test_public_adapters.PublicAdapterStudyTest.test_negative_controls_and_candidate_slot_accounting) ... ok
+test_p01_range_is_finite_boundary_not_source_invariant (test_public_adapters.PublicAdapterStudyTest.test_p01_range_is_finite_boundary_not_source_invariant) ... ok
+test_p04_independent_conditional_paths_and_branch_coverage (test_public_adapters.PublicAdapterStudyTest.test_p04_independent_conditional_paths_and_branch_coverage) ... ok
+test_p06_compares_complete_nodes_not_labels (test_public_adapters.PublicAdapterStudyTest.test_p06_compares_complete_nodes_not_labels) ... ok
+test_p08_keeps_96_equivalence_cases_and_four_excluded_controls (test_public_adapters.PublicAdapterStudyTest.test_p08_keeps_96_equivalence_cases_and_four_excluded_controls) ... ok
+test_source_pins_have_fixed_parent_and_child (test_public_adapters.PublicAdapterStudyTest.test_source_pins_have_fixed_parent_and_child) ... ok
+test_bad_inventory_status_is_rejected (test_references.ReferenceAuditTest.test_bad_inventory_status_is_rejected) ... ok
+test_complete_primary_record_audit_is_delivered (test_references.ReferenceAuditTest.test_complete_primary_record_audit_is_delivered) ... ok
+test_current_nearest_tensor_superoptimizers_are_cited (test_references.ReferenceAuditTest.test_current_nearest_tensor_superoptimizers_are_cited) ... ok
+test_every_record_has_a_stable_locator (test_references.ReferenceAuditTest.test_every_record_has_a_stable_locator) ... ok
+test_frozen_inventory_is_consistent (test_references.ReferenceAuditTest.test_frozen_inventory_is_consistent) ... ok
+test_unapproved_stable_host_is_rejected (test_references.ReferenceAuditTest.test_unapproved_stable_host_is_rejected) ... ok
+test_certificate_rejects_binary_float_values (test_replay_hardening.ReplayHardeningTest.test_certificate_rejects_binary_float_values) ... ok
+test_certificate_rejects_schema_and_case_tampering (test_replay_hardening.ReplayHardeningTest.test_certificate_rejects_schema_and_case_tampering) ... ok
+test_independent_parser_matches_symbolic_front_end_on_generated_affine_terms (test_replay_hardening.ReplayHardeningTest.test_independent_parser_matches_symbolic_front_end_on_generated_affine_terms) ... ok
+test_independent_parser_rejects_nonaffine_and_sort_errors (test_replay_hardening.ReplayHardeningTest.test_independent_parser_rejects_nonaffine_and_sort_errors) ... ok
+test_replay_rejects_inexact_or_wrongly_typed_witness_values (test_replay_hardening.ReplayHardeningTest.test_replay_rejects_inexact_or_wrongly_typed_witness_values) ... ok
+test_replay_rejects_malformed_case_before_interpretation (test_replay_hardening.ReplayHardeningTest.test_replay_rejects_malformed_case_before_interpretation) ... ok
+test_replay_validator_matches_front_end_admission_on_retained_cases (test_replay_hardening.ReplayHardeningTest.test_replay_validator_matches_front_end_admission_on_retained_cases) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 2.816s
+
+OK

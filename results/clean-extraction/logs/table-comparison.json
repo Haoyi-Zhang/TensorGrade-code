@@ -1,0 +1,41 @@
+{
+  "all_equal": true,
+  "files": [
+    {
+      "file": "adapter-cases.tex",
+      "equal": true
+    },
+    {
+      "file": "consumer-catalog.tex",
+      "equal": true
+    },
+    {
+      "file": "diagnostic-catalog.tex",
+      "equal": true
+    },
+    {
+      "file": "grades.tex",
+      "equal": true
+    },
+    {
+      "file": "mutation-detail.tex",
+      "equal": true
+    },
+    {
+      "file": "mutation.tex",
+      "equal": true
+    },
+    {
+      "file": "pilot-catalog.tex",
+      "equal": true
+    },
+    {
+      "file": "public-corpus.tex",
+      "equal": true
+    },
+    {
+      "file": "validation.tex",
+      "equal": true
+    }
+  ]
+}

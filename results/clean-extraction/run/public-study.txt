@@ -1,0 +1,18 @@
+{
+  "study": "frozen public-source adapter coverage and synthetic negative controls",
+  "repository": "bobbyyyan/scorch",
+  "corpus_count": 12,
+  "development_count": 4,
+  "held_out_count": 8,
+  "admitted_count": 3,
+  "abstained_count": 9,
+  "coverage": 0.25,
+  "development_admitted": 1,
+  "held_out_admitted": 2,
+  "source_evidence": "data/public-adapter-evidence.json",
+  "cpu_seconds": 2.1353423449999998,
+  "wall_seconds": 2.133700663000127,
+  "peak_rss_kib": 102060,
+  "errors": [],
+  "interpretation": "Admitted means every production hunk was dispositioned and a source-derived invariant, independent before/after model, universal argument, and unchanged-downstream congruence were retained. P01 is an abstained candidate: its 1--4 operand range is only a finite validation boundary. P08 has 96 equivalence-domain cases and four separately executed excluded-domain controls. The study does not execute upstream Scorch or constitute independent proof review. Mutants are synthetic controls."
+}

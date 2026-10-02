@@ -1,0 +1,14 @@
+{
+  "main": {
+    "source_pages": 36,
+    "rebuilt_pages": 36,
+    "equal_pages": 36,
+    "all_equal": true
+  },
+  "supplement": {
+    "source_pages": 10,
+    "rebuilt_pages": 10,
+    "equal_pages": 10,
+    "all_equal": true
+  }
+}

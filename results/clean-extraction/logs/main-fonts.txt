@@ -1,0 +1,22 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+HHCZRO+LinLibertineT                 Type 1            Custom           yes yes yes    249  0
+LNZGAE+LinBiolinumTB                 Type 1            Custom           yes yes yes    251  0
+YFFGPM+LinBiolinumT                  Type 1            Custom           yes yes yes    252  0
+UYCANA+LinLibertineTI                Type 1            Custom           yes yes yes    253  0
+GORZOX+txsys                         Type 1            Builtin          yes yes yes    254  0
+VPSOIV+LibertineMathMI               Type 1            Builtin          yes yes yes    255  0
+HHCZRO+LinLibertineT                 Type 1            Custom           yes yes yes    256  0
+TKJDYB+LinLibertineTB                Type 1            Custom           yes yes yes    288  0
+MXLKTS+LibertineMathMI7              Type 1            Builtin          yes yes yes    310  0
+URFVDL+LibertineMathMI5              Type 1            Builtin          yes yes yes    311  0
+FIPPFJ+Inconsolatazi4-Regular        Type 1            Custom           yes yes yes    312  0
+UZJQXT+txmiaX                        Type 1            Builtin          yes yes yes    319  0
+OEKJCO+txsym                         Type 1            Builtin          yes yes yes    324  0
+TVIQKA+LibertineMathRM               Type 1            Builtin          yes yes yes    325  0
+GXAYHZ+NewTXMI                       Type 1            Builtin          yes yes yes    326  0
+CMCZOJ+txexs                         Type 1            Builtin          yes yes yes    335  0
+HHCZRO+LinLibertineT                 Type 1            Custom           yes yes yes    356  0
+CLZKUK+LinBiolinumTI                 Type 1            Custom           yes yes yes    376  0
+UYCANA+LinLibertineTI                Type 1            Custom           yes yes yes    391  0
+PCSSPC+NewTXMI7                      Type 1            Builtin          yes yes yes    403  0

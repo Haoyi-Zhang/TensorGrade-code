@@ -1,0 +1,756 @@
+{
+  "after": {
+    "shape": [
+      "n0",
+      "n1",
+      "n2",
+      "n3"
+    ],
+    "storage": "union",
+    "terms": [
+      {
+        "coefficient": "-1",
+        "guard": "i2 == i3",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-2",
+        "guard": "i1 < n1-1",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "2",
+        "guard": "i0 == 0",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "1",
+        "guard": "True",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "0",
+        "guard": "i2 == i3",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-1",
+        "guard": "i1 < n1-1",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-2",
+        "guard": "i0 == 0",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "2",
+        "guard": "True",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "1",
+        "guard": "i2 == i3",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "0",
+        "guard": "i1 < n1-1",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-1",
+        "guard": "i0 == 0",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-2",
+        "guard": "True",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "2",
+        "guard": "i2 == i3",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "1",
+        "guard": "i1 < n1-1",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "0",
+        "guard": "i0 == 0",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-1",
+        "guard": "True",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-2",
+        "guard": "i2 == i3",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "2",
+        "guard": "i1 < n1-1",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "1",
+        "guard": "i0 == 0",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "0",
+        "guard": "True",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-1",
+        "guard": "i2 == i3",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-2",
+        "guard": "i1 < n1-1",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "2",
+        "guard": "i0 == 0",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "1",
+        "guard": "True",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "0",
+        "guard": "i2 == i3",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-1",
+        "guard": "i1 < n1-1",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-2",
+        "guard": "i0 == 0",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "2",
+        "guard": "True",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "1",
+        "guard": "i2 == i3",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "0",
+        "guard": "i1 < n1-1",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-1",
+        "guard": "i0 == 0",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-2",
+        "guard": "True",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      }
+    ]
+  },
+  "before": {
+    "shape": [
+      "n0",
+      "n1",
+      "n2",
+      "n3"
+    ],
+    "storage": "union",
+    "terms": [
+      {
+        "coefficient": "-2",
+        "guard": "True",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-1",
+        "guard": "i0 == 0",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "0",
+        "guard": "i1 < n1-1",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "1",
+        "guard": "i2 == i3",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "2",
+        "guard": "True",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-2",
+        "guard": "i0 == 0",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-1",
+        "guard": "i1 < n1-1",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "0",
+        "guard": "i2 == i3",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "1",
+        "guard": "True",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "2",
+        "guard": "i0 == 0",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-2",
+        "guard": "i1 < n1-1",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-1",
+        "guard": "i2 == i3",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "0",
+        "guard": "True",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "1",
+        "guard": "i0 == 0",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "2",
+        "guard": "i1 < n1-1",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-2",
+        "guard": "i2 == i3",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-1",
+        "guard": "True",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "0",
+        "guard": "i0 == 0",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "1",
+        "guard": "i1 < n1-1",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "2",
+        "guard": "i2 == i3",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-2",
+        "guard": "True",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-1",
+        "guard": "i0 == 0",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "0",
+        "guard": "i1 < n1-1",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "1",
+        "guard": "i2 == i3",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "2",
+        "guard": "True",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-2",
+        "guard": "i0 == 0",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-1",
+        "guard": "i1 < n1-1",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "0",
+        "guard": "i2 == i3",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "1",
+        "guard": "True",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "2",
+        "guard": "i0 == 0",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-2",
+        "guard": "i1 < n1-1",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "-1",
+        "guard": "i2 == i3",
+        "index": [
+          "i0",
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "tensor": "A"
+      }
+    ]
+  },
+  "expected": {
+    "admission": "admitted",
+    "contracts": {
+      "shape": 1,
+      "stored-support": 1,
+      "term-order": 0,
+      "value": 1,
+      "zero-support": 1
+    }
+  },
+  "family": "encoding-envelope",
+  "id": "maximal-guarded-reorder",
+  "inputs": {
+    "A": [
+      "n0",
+      "n1",
+      "n2",
+      "n3"
+    ]
+  },
+  "parameters": [
+    "n0",
+    "n1",
+    "n2",
+    "n3"
+  ],
+  "precondition": "n0 >= 1 and n1 >= 1 and n2 >= 1 and n3 >= 1",
+  "provenance": "generated-original; no public-patch mapping"
+}

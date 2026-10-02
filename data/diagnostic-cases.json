@@ -1,0 +1,5041 @@
+[
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-0",
+    "id": "generated-000",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-1",
+    "id": "generated-001",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-2",
+    "id": "generated-002",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "-1",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "-1",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-3",
+    "id": "generated-003",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-4",
+    "id": "generated-004",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-5",
+    "id": "generated-005",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "n0 <= 4",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-6",
+    "id": "generated-006",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-7",
+    "id": "generated-007",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-0",
+    "id": "generated-008",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "-2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "4",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-4",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-1",
+    "id": "generated-009",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-2",
+    "id": "generated-010",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-3",
+    "id": "generated-011",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-4",
+    "id": "generated-012",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-5",
+    "id": "generated-013",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "n0 <= 4",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-6",
+    "id": "generated-014",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-7",
+    "id": "generated-015",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-0",
+    "id": "generated-016",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "-4",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "-2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-1",
+    "id": "generated-017",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-2",
+    "id": "generated-018",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-3",
+    "id": "generated-019",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-4",
+    "id": "generated-020",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "0",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "0",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-5",
+    "id": "generated-021",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "n0 <= 4",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-6",
+    "id": "generated-022",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-7",
+    "id": "generated-023",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-0",
+    "id": "generated-024",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "-2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "-1",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-1",
+    "id": "generated-025",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "-2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "-2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-2",
+    "id": "generated-026",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": []
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-3",
+    "id": "generated-027",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "-2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "-2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-4",
+    "id": "generated-028",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-5",
+    "id": "generated-029",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "-1",
+          "guard": "n0 <= 4",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "-1",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-6",
+    "id": "generated-030",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-7",
+    "id": "generated-031",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-0",
+    "id": "generated-032",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-4",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-4",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-1",
+    "id": "generated-033",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-2",
+    "id": "generated-034",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-3",
+    "id": "generated-035",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-4",
+    "id": "generated-036",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-5",
+    "id": "generated-037",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "-1",
+          "guard": "n0 <= 4",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-6",
+    "id": "generated-038",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "0",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "0",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-7",
+    "id": "generated-039",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-0",
+    "id": "generated-040",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "4",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-1",
+    "id": "generated-041",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-2",
+    "id": "generated-042",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-3",
+    "id": "generated-043",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-1/2",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-4",
+    "id": "generated-044",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-5",
+    "id": "generated-045",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "-2",
+          "guard": "n0 <= 4",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "-2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-6",
+    "id": "generated-046",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-7",
+    "id": "generated-047",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-0",
+    "id": "generated-048",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "4",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-1",
+    "id": "generated-049",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-2",
+    "id": "generated-050",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-3",
+    "id": "generated-051",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-4",
+    "id": "generated-052",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "i0<n0-1",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-5",
+    "id": "generated-053",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "n0 <= 4",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-6",
+    "id": "generated-054",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "-2",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "-2",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-7",
+    "id": "generated-055",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-0",
+    "id": "generated-056",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-4",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-1",
+    "id": "generated-057",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0<n0-1",
+          "index": [
+            "i0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-2",
+    "id": "generated-058",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "1",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-3",
+    "id": "generated-059",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "-1/2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "compact",
+      "terms": [
+        {
+          "coefficient": "1/2",
+          "guard": "i0==0",
+          "index": [
+            "i0"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "-1",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        },
+        {
+          "coefficient": "1/2",
+          "guard": "True",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-4",
+    "id": "generated-060",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "0"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "2",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "A"
+        }
+      ]
+    },
+    "family": "generated-mode-5",
+    "id": "generated-061",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "-2",
+          "guard": "n0 <= 4",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "-2",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "1",
+          "guard": "True",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-6",
+    "id": "generated-062",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  },
+  {
+    "after": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "dense",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "before": {
+      "shape": [
+        "n0"
+      ],
+      "storage": "union",
+      "terms": [
+        {
+          "coefficient": "0",
+          "guard": "i0==0",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        },
+        {
+          "coefficient": "0",
+          "guard": "i0<n0-1",
+          "index": [
+            "n0-1"
+          ],
+          "tensor": "B"
+        }
+      ]
+    },
+    "family": "generated-mode-7",
+    "id": "generated-063",
+    "inputs": {
+      "A": [
+        "n0"
+      ],
+      "B": [
+        "n0"
+      ]
+    },
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "provenance": "generated-original; no public-patch mapping"
+  }
+]

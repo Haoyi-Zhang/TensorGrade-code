@@ -1,0 +1,20 @@
+Title:           Supplemental Material for Semantic Contract Grading for Tensor-Compiler Patches
+Subject:         
+Creator:         LaTeX with acmart 2026/08/16 v2.20 Typesetting articles for the Association for Computing Machinery and hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
+Producer:        pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) kpathsea version 6.4.0/dev
+CreationDate:    Tue Sep 29 18:28:18 2026 UTC
+ModDate:         Tue Sep 29 18:28:18 2026 UTC
+Custom Metadata: yes
+Metadata Stream: yes
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           10
+Encrypted:       no
+Page size:       486 x 720 pts
+Page rot:        0
+File size:       353016 bytes
+Optimized:       no
+PDF version:     1.7

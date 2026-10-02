@@ -1,0 +1,72 @@
+{
+  "bibliography": {
+    "citation_context_audit_rows": 83,
+    "cited_keys": 83,
+    "doi_records": 77,
+    "entries": 83,
+    "latest_check": "2026-09-29",
+    "primary_record_audit_rows": 83,
+    "stable_official_or_dblp_records": 6
+  },
+  "interpretation": "Successful commands and finite checks are not independent review, upstream Scorch execution, proof-assistant certification, or a guarantee of submission outcome.",
+  "paper_clean_extraction": {
+    "duplicate_labels": 0,
+    "fonts_embedded": "passed",
+    "ghostscript_preflight": "passed",
+    "main_pages": 36,
+    "main_render_pages_equal": 36,
+    "render_dpi": 96,
+    "stale_admission_count_phrases": 0,
+    "supplement_pages": 10,
+    "supplement_render_pages_equal": 10
+  },
+  "posthoc_seed_sensitivity": {
+    "cases": 256,
+    "certificate_replays": 500,
+    "errors": 0,
+    "included_in_frozen_main_counts": false,
+    "oracle_checks": 512,
+    "queries": 2048,
+    "seeds": 8
+  },
+  "public_source_study": {
+    "abstentions": 9,
+    "admitted_bounded_states": 526,
+    "admitted_complete_adapters": 3,
+    "admitted_mismatches": 0,
+    "denominator_commits": 12,
+    "development_admitted": "1/4",
+    "later_retrospective_admitted": "2/8",
+    "p01_boundary_differences": 3,
+    "p01_candidate_successful_domain_states": 29222,
+    "p01_source_reachable_boundary_controls": 4,
+    "p08_equivalence_domain_states": 96,
+    "p08_excluded_controls": 4
+  },
+  "scientific_clean_extraction": {
+    "child_peak_rss_kib_upper_bound": 128624,
+    "cli_examples": {
+      "consumer": "passed",
+      "grade": "passed",
+      "replay": "passed"
+    },
+    "generated_tex_tables": 9,
+    "generated_tex_tables_byte_equal": true,
+    "ignored_environment_fields": [
+      "current_peak_rss_kib",
+      "current_whole_process_cpu_seconds"
+    ],
+    "process_elapsed_seconds": 14.16,
+    "semantic_summary_equal_after_ignoring_environment_fields": true,
+    "six_phases_succeeded": true,
+    "unit_tests": {
+      "passed": 38,
+      "subtests_passed": 103
+    }
+  },
+  "semantic_counts": {
+    "compact_certificates": 162,
+    "frozen_solver_queries": 801,
+    "successful_refutation_replays": 167
+  }
+}

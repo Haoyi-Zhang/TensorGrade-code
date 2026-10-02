@@ -1,0 +1,430 @@
+[
+  {
+    "compatible": "True",
+    "expected": "proved",
+    "id": "global-uniform",
+    "input_extent": "n0",
+    "output_extent": "1",
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "scales": [
+      {
+        "coefficient": "2",
+        "guard": "True"
+      }
+    ],
+    "weights": [
+      {
+        "coefficient": "1",
+        "guard": "True"
+      }
+    ]
+  },
+  {
+    "compatible": "True",
+    "expected": "refuted",
+    "id": "global-nonuniform",
+    "input_extent": "n0",
+    "output_extent": "1",
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "scales": [
+      {
+        "coefficient": "1",
+        "guard": "u0==0"
+      },
+      {
+        "coefficient": "2",
+        "guard": "u0!=0"
+      }
+    ],
+    "weights": [
+      {
+        "coefficient": "1",
+        "guard": "True"
+      }
+    ]
+  },
+  {
+    "compatible": "u0 == v0",
+    "expected": "proved",
+    "id": "one-hot-masks",
+    "input_extent": "n0",
+    "output_extent": "1",
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "scales": [
+      {
+        "coefficient": "1",
+        "guard": "u0==0"
+      },
+      {
+        "coefficient": "2",
+        "guard": "u0!=0"
+      }
+    ],
+    "weights": [
+      {
+        "coefficient": "1",
+        "guard": "True"
+      }
+    ]
+  },
+  {
+    "compatible": "True",
+    "expected": "proved",
+    "id": "identity-consumer",
+    "input_extent": "n0",
+    "output_extent": "n0",
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "scales": [
+      {
+        "coefficient": "1",
+        "guard": "u0==0"
+      },
+      {
+        "coefficient": "2",
+        "guard": "u0!=0"
+      }
+    ],
+    "weights": [
+      {
+        "coefficient": "1",
+        "guard": "u0==i0"
+      },
+      {
+        "coefficient": "0",
+        "guard": "u0!=i0"
+      }
+    ]
+  },
+  {
+    "compatible": "True",
+    "expected": "refuted",
+    "id": "adjacent-stencil",
+    "input_extent": "n0",
+    "output_extent": "n0",
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "scales": [
+      {
+        "coefficient": "1",
+        "guard": "u0==0"
+      },
+      {
+        "coefficient": "2",
+        "guard": "u0!=0"
+      }
+    ],
+    "weights": [
+      {
+        "coefficient": "1",
+        "guard": "u0==i0 or u0==i0+1"
+      },
+      {
+        "coefficient": "0",
+        "guard": "u0!=i0 and u0!=i0+1"
+      }
+    ]
+  },
+  {
+    "compatible": "True",
+    "expected": "proved",
+    "id": "two-block-reductions",
+    "input_extent": "n0",
+    "output_extent": "2",
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "scales": [
+      {
+        "coefficient": "2",
+        "guard": "u0 < 2"
+      },
+      {
+        "coefficient": "3",
+        "guard": "u0 >= 2"
+      }
+    ],
+    "weights": [
+      {
+        "coefficient": "1",
+        "guard": "(i0==0 and u0<2) or (i0==1 and u0>=2)"
+      },
+      {
+        "coefficient": "0",
+        "guard": "(i0==0 and u0>=2) or (i0==1 and u0<2)"
+      }
+    ]
+  },
+  {
+    "compatible": "True",
+    "expected": "refuted",
+    "id": "block-crossing",
+    "input_extent": "n0",
+    "output_extent": "2",
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "scales": [
+      {
+        "coefficient": "1",
+        "guard": "u0==0"
+      },
+      {
+        "coefficient": "2",
+        "guard": "u0!=0"
+      }
+    ],
+    "weights": [
+      {
+        "coefficient": "1",
+        "guard": "(i0==0 and u0<2) or (i0==1 and u0>=2)"
+      },
+      {
+        "coefficient": "0",
+        "guard": "(i0==0 and u0>=2) or (i0==1 and u0<2)"
+      }
+    ]
+  },
+  {
+    "compatible": "True",
+    "expected": "refuted",
+    "id": "late-consumer-threshold",
+    "input_extent": "n0",
+    "output_extent": "1",
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "scales": [
+      {
+        "coefficient": "1",
+        "guard": "n0<=32 or u0==0"
+      },
+      {
+        "coefficient": "2",
+        "guard": "n0>32 and u0!=0"
+      }
+    ],
+    "weights": [
+      {
+        "coefficient": "1",
+        "guard": "True"
+      }
+    ]
+  },
+  {
+    "compatible": "True",
+    "expected": "proved",
+    "id": "zero-consumer",
+    "input_extent": "n0",
+    "output_extent": "1",
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "scales": [
+      {
+        "coefficient": "1",
+        "guard": "u0==0"
+      },
+      {
+        "coefficient": "2",
+        "guard": "u0!=0"
+      }
+    ],
+    "weights": [
+      {
+        "coefficient": "0",
+        "guard": "True"
+      }
+    ]
+  },
+  {
+    "compatible": "True",
+    "expected": "refuted",
+    "id": "weighted-cancellation",
+    "input_extent": "n0",
+    "output_extent": "1",
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "scales": [
+      {
+        "coefficient": "1",
+        "guard": "u0==0"
+      },
+      {
+        "coefficient": "2",
+        "guard": "u0!=0"
+      }
+    ],
+    "weights": [
+      {
+        "coefficient": "2/3",
+        "guard": "u0==0"
+      },
+      {
+        "coefficient": "-5/7",
+        "guard": "u0!=0"
+      }
+    ]
+  },
+  {
+    "compatible": "True",
+    "expected": "proved",
+    "id": "empty-consumer-domain",
+    "input_extent": "n0",
+    "output_extent": "1",
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 == 0",
+    "scales": [
+      {
+        "coefficient": "2",
+        "guard": "True"
+      }
+    ],
+    "weights": [
+      {
+        "coefficient": "1",
+        "guard": "True"
+      }
+    ]
+  },
+  {
+    "compatible": "u0 != v0",
+    "expected": "invalid",
+    "id": "non-reflexive-mask",
+    "input_extent": "n0",
+    "output_extent": "1",
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "scales": [
+      {
+        "coefficient": "2",
+        "guard": "True"
+      }
+    ],
+    "weights": [
+      {
+        "coefficient": "1",
+        "guard": "True"
+      }
+    ]
+  },
+  {
+    "compatible": "u0 <= v0",
+    "expected": "invalid",
+    "id": "asymmetric-mask",
+    "input_extent": "n0",
+    "output_extent": "1",
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "scales": [
+      {
+        "coefficient": "2",
+        "guard": "True"
+      }
+    ],
+    "weights": [
+      {
+        "coefficient": "1",
+        "guard": "True"
+      }
+    ]
+  },
+  {
+    "compatible": "True",
+    "expected": "invalid",
+    "id": "overlapping-partition",
+    "input_extent": "n0",
+    "output_extent": "1",
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "scales": [
+      {
+        "coefficient": "1",
+        "guard": "True"
+      },
+      {
+        "coefficient": "2",
+        "guard": "True"
+      }
+    ],
+    "weights": [
+      {
+        "coefficient": "1",
+        "guard": "True"
+      }
+    ]
+  },
+  {
+    "compatible": "True",
+    "expected": "unsupported",
+    "id": "zero-scale-outside-fragment",
+    "input_extent": "n0",
+    "output_extent": "1",
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "scales": [
+      {
+        "coefficient": "0",
+        "guard": "True"
+      }
+    ],
+    "weights": [
+      {
+        "coefficient": "1",
+        "guard": "True"
+      }
+    ]
+  },
+  {
+    "compatible": "True",
+    "expected": "invalid",
+    "id": "missing-partition-cell",
+    "input_extent": "n0",
+    "output_extent": "1",
+    "parameters": [
+      "n0"
+    ],
+    "precondition": "n0 >= 1",
+    "scales": [
+      {
+        "coefficient": "2",
+        "guard": "u0 == 0"
+      }
+    ],
+    "weights": [
+      {
+        "coefficient": "1",
+        "guard": "True"
+      }
+    ]
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "after": {
+    "shape": [],
+    "storage": "union",
+    "terms": [
+      {
+        "coefficient": "1",
+        "guard": "True",
+        "index": [],
+        "tensor": "A"
+      }
+    ]
+  },
+  "before": {
+    "shape": [],
+    "storage": "union",
+    "terms": [
+      {
+        "coefficient": "1",
+        "guard": "True",
+        "index": [],
+        "tensor": "A"
+      }
+    ]
+  },
+  "expected": {
+    "admission": "admitted",
+    "contracts": {
+      "shape": 1,
+      "stored-support": 1,
+      "term-order": 1,
+      "value": 1,
+      "zero-support": 1
+    }
+  },
+  "family": "semantic-control",
+  "id": "scalar-rank",
+  "inputs": {
+    "A": []
+  },
+  "parameters": [
+    "n0"
+  ],
+  "precondition": "n0 >= 1",
+  "provenance": "generated-original; no public-patch mapping"
+}

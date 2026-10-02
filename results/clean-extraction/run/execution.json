@@ -1,0 +1,101 @@
+{
+  "all_commands_succeeded": true,
+  "interpretation": "Command success and finite checks are not machine-checked general proofs, upstream execution, or independent review of the public adapters.",
+  "limits": {
+    "address_space_bytes": 2147483648,
+    "cpu_hard_seconds": 110,
+    "cpu_soft_seconds": 105,
+    "sequential_workers": 1,
+    "wall_seconds_per_child": 115
+  },
+  "runs": [
+    {
+      "child_peak_rss_kib_upper_bound": 128624,
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "name": "unit-tests",
+      "process_cpu_seconds": 3.3452409999999997,
+      "wall_seconds": 3.3508257070000127,
+      "wall_timeout": false
+    },
+    {
+      "child_peak_rss_kib_upper_bound": 128624,
+      "command": [
+        "audit_references.py",
+        "--output",
+        "reference-audit.json"
+      ],
+      "exit_code": 0,
+      "name": "reference-audit",
+      "process_cpu_seconds": 0.6249240000000003,
+      "wall_seconds": 0.6271966460001295,
+      "wall_timeout": false
+    },
+    {
+      "child_peak_rss_kib_upper_bound": 128624,
+      "command": [
+        "run_pilot.py",
+        "--output",
+        "pilot.json"
+      ],
+      "exit_code": 0,
+      "name": "pilot",
+      "process_cpu_seconds": 1.3244140000000006,
+      "wall_seconds": 1.3293479070000558,
+      "wall_timeout": false
+    },
+    {
+      "child_peak_rss_kib_upper_bound": 128624,
+      "command": [
+        "run_diagnostics.py",
+        "--output",
+        "diagnostics.json"
+      ],
+      "exit_code": 0,
+      "name": "diagnostics",
+      "process_cpu_seconds": 1.5058880000000001,
+      "wall_seconds": 1.5100933819999227,
+      "wall_timeout": false
+    },
+    {
+      "child_peak_rss_kib_upper_bound": 128624,
+      "command": [
+        "run_robustness_audit.py",
+        "--output",
+        "robustness-audit.json"
+      ],
+      "exit_code": 0,
+      "name": "robustness-audit",
+      "process_cpu_seconds": 3.92364,
+      "wall_seconds": 3.9286463399998865,
+      "wall_timeout": false
+    },
+    {
+      "child_peak_rss_kib_upper_bound": 128624,
+      "command": [
+        "run_public_study.py",
+        "--corpus",
+        "data/public-corpus.csv",
+        "--output",
+        "public-study.json",
+        "--seed",
+        "20260915",
+        "--budget",
+        "64"
+      ],
+      "exit_code": 0,
+      "name": "public-study",
+      "process_cpu_seconds": 2.767641,
+      "wall_seconds": 2.7700614889999997,
+      "wall_timeout": false
+    }
+  ],
+  "total_process_cpu_seconds": 13.491748000000001
+}

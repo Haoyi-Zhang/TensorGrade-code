@@ -1,0 +1,64 @@
+{
+  "after": {
+    "shape": [
+      "n0"
+    ],
+    "storage": "union",
+    "terms": [
+      {
+        "coefficient": "2",
+        "guard": "True",
+        "index": [
+          "0"
+        ],
+        "tensor": "A"
+      }
+    ]
+  },
+  "before": {
+    "shape": [
+      "n0"
+    ],
+    "storage": "union",
+    "terms": [
+      {
+        "coefficient": "1",
+        "guard": "True",
+        "index": [
+          "0"
+        ],
+        "tensor": "A"
+      },
+      {
+        "coefficient": "1",
+        "guard": "True",
+        "index": [
+          "n0-1"
+        ],
+        "tensor": "A"
+      }
+    ]
+  },
+  "expected": {
+    "admission": "admitted",
+    "contracts": {
+      "shape": 1,
+      "stored-support": 1,
+      "term-order": 0,
+      "value": 1,
+      "zero-support": 1
+    }
+  },
+  "family": "semantic-control",
+  "id": "shape-collision",
+  "inputs": {
+    "A": [
+      "n0"
+    ]
+  },
+  "parameters": [
+    "n0"
+  ],
+  "precondition": "n0 == 1",
+  "provenance": "generated-original; no public-patch mapping"
+}

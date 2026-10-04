@@ -15,7 +15,7 @@ occupancy masks. `certificates.py` reconstructs compact rational witnesses from
 concrete rows rather than copying solver rational assignments. Public adapters implement independent before and after paths; 18 mutants are distributed across the three admitted adapters.
 
 These paths can expose inconsistencies, but they were developed and audited in
-one AI-assisted research process. They are not independent human replication or
+one development process. They are not independent human replication or
 proof-assistant verification.
 
 ## Retained units

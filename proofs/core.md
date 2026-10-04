@@ -248,8 +248,8 @@ and trusted-solver queries. They do not prove a verified parser, correct Z3,
 correct native ABI behavior on every platform, correctness of a repository-to-IR
 mapping, IEEE floating-point equivalence, alias safety, physical sparse-format
 properties, full reduction equivalence, novelty, or public-patch effectiveness.
-A separate implementation path and same-assistant artifact self-audit are not
-independent external review.
+The separate implementation paths check finite instances; they do not replace
+the written arguments or verify the implementations formally.
 
 ## 9. Public source-adapter equivalence
 
@@ -347,4 +347,3 @@ downstream files, and omitted source edits. Three of twelve commits pass all
 seven gates; nine, including P01, remain abstentions. Development admits one of
 four and the later retrospective segment two of eight. These are descriptive
 coverage counts, not a blind estimate of a population parameter.
-

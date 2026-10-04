@@ -207,11 +207,6 @@ not the universal proof. Universal adapter proofs do not establish omitted sourc
 behavior. Successful commands do not imply external submission readiness or
 permission to submit.
 
-Substantive AI use covered formulation, literature synthesis, proof development,
-implementation, input generation, experiments, analysis, validation, writing,
-and self-audit. Before external use, human authors must independently review and
-own the content, confirm actual contributions and author order, and make the
-truthful disclosure required by current venue and publisher policy.
 
 ## Licensing
 

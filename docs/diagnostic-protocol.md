@@ -4,7 +4,7 @@
 
 The 64-case diagnostic input set was frozen on 2026-09-14 with seed 1729.
 Every case is admitted, refuted, or abstained without retry tuning. The retained
-main counts remain 801 observation queries, 167 independently replayed finite
+main counts remain 801 symbolic queries including admission checks, 167 independently replayed finite
 refutations, and 162 compact certificates. The fixed-shape oracle is not an
 all-shapes decision.
 

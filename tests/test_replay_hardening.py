@@ -104,6 +104,24 @@ class ReplayHardeningTest(unittest.TestCase):
                 result = replay(case, "value", {"n0": 2, "i0": 0})
                 self.assertFalse(result["valid"])
 
+    def test_program_coefficients_require_the_declared_string_encoding(self):
+        base = self.cases["identity"]
+        for coefficient in ("1", "2"):
+            case = deepcopy(base)
+            case["before"]["terms"][0]["coefficient"] = coefficient
+            load_case(case)
+            validate_replay_case(case)
+        for coefficient in (1, True, "1" * 33):
+            case = deepcopy(base)
+            case["before"]["terms"][0]["coefficient"] = coefficient
+            with self.subTest(coefficient=coefficient):
+                with self.assertRaises(Unsupported):
+                    load_case(case)
+                with self.assertRaises(ReplayError):
+                    validate_replay_case(case)
+        # Source coefficients are strings; integral witness coordinates are not.
+        self.assertEqual(integer_expression("i0", {"i0": 0}, False), 0)
+
     def test_replay_rejects_inexact_or_wrongly_typed_witness_values(self):
         case = self.cases["late-shape-threshold"]
         result = grade(case, self.solver)

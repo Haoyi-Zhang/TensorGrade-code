@@ -249,6 +249,8 @@ def _validate_program(program: Any, parameters: set[str], inputs: dict[str, Any]
         for coordinate in index:
             _parse_expression(coordinate, local_names, expected_bool=False)
         _parse_expression(term["guard"], local_names, expected_bool=True)
+        if not isinstance(term["coefficient"], str) or len(term["coefficient"]) > 32:
+            raise ReplayError("coefficient must be a short rational string")
         coefficient = _fraction(term["coefficient"], "coefficient", max_chars=32)
         if max(abs(coefficient.numerator), coefficient.denominator) >= 2**16:
             raise ReplayError("coefficient bit budget")

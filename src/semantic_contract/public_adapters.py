@@ -193,7 +193,7 @@ def build_cin_after_source(spec: EinsumBuildSpec) -> Stmt:
     rhs_expr: Expr | None = None
     for i, tensor_var in enumerate(tensor_vars):
         indices = [index_var_dict[s] for s in spec.operands[i]]
-        # Exactly as in the child hunk: an empty operand raises IndexError.
+        # An empty operand takes the tuple branch, yielding an empty-index access.
         access = tensor_var[indices[0]] if len(indices) == 1 else tensor_var[tuple(indices)]
         rhs_expr = access if rhs_expr is None else rhs_expr * access
     lhs_indices = [index_var_dict[s] for s in spec.result]

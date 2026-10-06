@@ -68,7 +68,7 @@ def main():
     pc.append(r'\end{longtable}');(args.output/'public-corpus.tex').write_text('\n'.join(pc)+'\n')
 
     summaries=u['mutation_study']['summary']
-    mt=[r'\begin{table}[t]',r'\caption{Synthetic negative-control detection under a common cap of 64 candidate input slots per mutant. Execution stops at first detection, so actual executions differ. Mutants are not historical Scorch defects.}\label{tab:mutation}',r'\centering',r'\begin{tabular}{lrrrr}',r'\toprule',r'Selection policy & Detected & Total & Actual exec. & Max slots\\\midrule']
+    mt=[r'\begin{table}[t]',r'\caption{Synthetic negative-control detection under a common cap of 64 candidate input slots per mutant. The total slot cap is $18\cdot64=1{,}152$ per policy. Execution stops at first detection, so actual executions differ. Mutants are not historical Scorch defects.}\label{tab:mutation}',r'\centering',r'\begin{tabular}{lrrrr}',r'\toprule',r'Selection policy & Detected & Total & Actual exec. & Total slot cap\\\midrule']
     names=[('Repeated developer indices','repeated-developer-indices'),('Seeded random with replacement','seeded-random-with-replacement'),('Evenly spaced enumeration indices','evenly-spaced-enumeration-indices')]
     for display,key in names:
         x=summaries[key];mt.append(f"{display} & {x['detected']} & {x['total']} & {x['actual_executions']} & {x['candidate_slots_if_no_early_stop']}"+r'\\')

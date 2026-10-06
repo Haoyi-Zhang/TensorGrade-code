@@ -26,6 +26,7 @@ def main():
    g=grade(c,solver);rec={'case':c,'grade':g,'oracles':[],'replays':{},'small_certificates':{}}
    if g['admission']!='admitted':errors.append(c['id']+': generated case not admitted')
    else:
+    if not g.get('complete_grade'):errors.append(c['id']+': incomplete semantic grade')
     for atom,r in g['contracts'].items():
      if r['status']=='refuted':
       rr=replay(c,atom,r['witness']);rec['replays'][atom]=rr;replays+=1

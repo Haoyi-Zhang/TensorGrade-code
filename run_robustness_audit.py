@@ -48,6 +48,9 @@ def main()->bool:
                 if result['admission']!='admitted':
                     errors.append(f"seed {seed} {case['id']}: {result['admission']}")
                     continue
+                if not result.get('complete_grade'):
+                    errors.append(f"seed {seed} {case['id']}: incomplete semantic grade")
+                    continue
                 grades[grade_name(result)]+=1
                 for n in (1,2):
                     oracle=concrete_shape_oracle(case,{'n0':n})

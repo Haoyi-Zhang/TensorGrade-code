@@ -9,6 +9,12 @@ def summarize(root):
  p=json.loads((root/'pilot.json').read_text());d=json.loads((root/'diagnostics.json').read_text());e=json.loads((root/'execution.json').read_text());u=json.loads((root/'public-study.json').read_text());r=json.loads((root/'reference-audit.json').read_text());v=json.loads((root/'robustness-audit.json').read_text())
  if p['errors'] or d['errors'] or u['errors'] or v['errors'] or not r['passed'] or not e['all_commands_succeeded']:raise ValueError('failed evidence cannot produce success tables')
  ir=p['records']+d['records'];cs=p['consumer_records'];grade_counts=collections.Counter(grade_name(r['grade']) for r in p['records'] if r['grade'].get('complete_grade'))
+ for record in ir:
+  g=record['grade']
+  if g['admission']=='admitted' and (not g.get('complete_grade') or g.get('mode')!='production' or set(g['contracts'])!=set(LETTER) or any(a.get('status') not in ('proved','refuted') for a in g['contracts'].values())):
+   raise ValueError('incomplete semantic grade cannot produce success tables: '+str(g.get('id')))
+ if any(record['grade']['admission']!='admitted' for record in d['records']):raise ValueError('nonadmitted generated case cannot produce success tables')
+ if any(record['grade']['admission']=='admitted' and record['grade'].get('status') not in ('proved','refuted') for record in cs):raise ValueError('inconclusive consumer cannot produce success tables')
  certs=[q['certificate'] for r in ir for q in r.get('small_certificates',{}).values()]
  queries=[q for r in ir+cs for q in r['grade'].get('queries',[])]
  mutation=u['mutation_study']['summary'];p01=u['p01_candidate'];p08=next(x for x in u['adapter_results'] if x['adapter']=='P08')

@@ -27,6 +27,7 @@ def main():
             g=grade(c,solver);entry={'case':c,'grade':g,'replays':{},'oracles':[]}
             if g['admission']!=c['expected']['admission']:errors.append(f"{c['id']}: admission")
             if g['admission']=='admitted':
+                if not g.get('complete_grade'):errors.append(f"{c['id']}: incomplete semantic grade")
                 wanted=c['expected'].get('contracts',{})
                 for atom,value in g['contracts'].items():
                     if atom in wanted and value['status'] != ('proved' if wanted[atom] else 'refuted'):

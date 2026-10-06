@@ -27,7 +27,9 @@ proof-assistant verification.
 - 801 main-run SMT queries, excluding unit-test queries.
 - 252 finite-shape oracle checks containing 3,259 finer obligations.
 - 167 successful direct refutation replays.
-- 162 compact finite-read certificates: 72 zero-cell, 83 one-cell, 7 two-cell.
+- 162 compact finite-read certificates: 72 zero-cell, 85 one-cell, 5 two-cell
+  in the current retained run; compatible solvers can choose different valid
+  witnesses without changing the two-cell bound.
 - 12 public commits: 3 admitted complete adapters and 9 abstentions.
 - 526 admitted bounded adapter states with zero mismatches.
 - P06: 400 single-call effect replays, plus eight additional sequences containing
@@ -68,11 +70,18 @@ coordinate-resolution blocks/bounds, and initialization precedence.
 
 ## Resource closure
 
-Scientific intake recorded four cgroup-quota CPU cores, 4 GiB memory, no swap,
-and adequate writable space. Reproduction runs children sequentially with one
+The historical scientific intake recorded four cgroup-quota CPU cores, 4 GiB memory, no swap,
+and adequate writable space. On POSIX, reproduction runs children sequentially with one
 worker, 2 GiB address space, 105/110 CPU seconds, 115 wall seconds, and 1,500 ms
-per SMT query. The retained repaired six-phase run used 13.706612 whole-child
+per SMT query. The retained earlier six-phase run used 13.706612 whole-child
 process CPU seconds and a 130,424 KiB child peak-RSS upper bound.
+
+The 2026-10-06 Windows rerun passed all 64 currently discovered tests and the
+six phases in 10.741 seconds of summed child wall time. The archived test logs
+precede the seven new evidence-gate/CLI regressions. This rerun reproduced the
+semantic counts above; POSIX CPU/address-space caps and child CPU/RSS measures
+were unavailable on that host and are not asserted for it. Each child still
+had a 115-second wall timeout, and each SMT query a 1,500 ms timeout.
 
 Early exploratory local commands were not all individually metered. The resource
 ledger conservatively charges the entire early wall interval at four CPU cores

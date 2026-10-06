@@ -1,0 +1,51 @@
+name: Bounded scientific checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  finite-evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Run owned finite models and retain failed attempts
+        shell: bash
+        run: |
+          mkdir -p results/workflow-raw
+          timeout --signal=TERM --kill-after=10s 780s bash -e -o pipefail <<'CHECKS' 2>&1 | tee results/workflow-raw/whole-run.txt
+          timeout 120s sudo apt-get update
+          timeout 120s sudo apt-get install --no-install-recommends -y libz3-4
+          python -B -c 'from pathlib import Path; import sys; sys.path.insert(0,"src"); from semantic_contract.solver import Solver; s=Solver(); print("Host Z3 library:",s.lib._name); s.close()'
+          prlimit --as=2147483648 --cpu=700:710 -- python -B reproduce.py --output results/workflow-run
+          python -B summarize.py --directory results/workflow-run --output results/workflow-raw/summary.json
+          python -B emit_tables.py --directory results/workflow-run --output results/workflow-raw/tables
+          export PYTHONPATH=src
+          python -B -m semantic_contract grade data/examples/late-shape-threshold.json --output results/workflow-raw/example-grade.json
+          python -B -m semantic_contract replay data/examples/storage-without-support.json data/certificates/support-cancellation.json
+          python -B -m semantic_contract consumer data/consumer-example.json --output results/workflow-raw/example-consumer.json
+          CHECKS
+      - name: Upload raw attempts even after a failed gate
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: bounded-scientific-output
+          path: |
+            results/workflow-raw/
+            results/workflow-run/
+          if-no-files-found: warn
+          retention-days: 14

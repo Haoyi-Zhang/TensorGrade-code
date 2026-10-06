@@ -79,7 +79,9 @@ universal proof.
 ## Retrieval boundary
 
 The artifact redistributes no upstream source. It retains immutable commit,
-tree, and blob locators and clean-room adapters. The exact Scorch Apache license
-is recorded in `external_resources.csv`. Reproduction of the paper's executable
+tree, and blob locators and clean-room adapters. `external_resources.csv`
+records linked public-source consultation, not an established upstream license.
+The pinned `LICENSE` locator did not expose a license during reinspection;
+no permission to redistribute upstream source is inferred. Reproduction of the paper's executable
 models is network-free; reinspection of upstream source requires the immutable
 public locators.

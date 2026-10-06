@@ -50,7 +50,8 @@ python emit_tables.py \
 
 `reproduce.py` launches six sequential bounded phases:
 
-1. 56 unit and adversarial tests, including 18 P06 state-effect and export-binding regressions;
+1. 64 unit and boundary tests, including 18 P06 state-effect/export-binding tests
+   and seven conclusive-evidence/portable-CLI regressions;
 2. an offline integrity audit of 83 cited scholarly records plus a complete 83-record primary-record audit;
 3. 28 pilot program pairs and 16 consumer descriptions;
 4. 64 frozen generated pairs plus the 729 coefficient-row-pair enumeration;
@@ -63,12 +64,18 @@ wrapper also applies a 2 GiB address-space cap and 105/110 CPU-second limits.
 On Windows these POSIX caps and child RSS measurements are unavailable and are
 recorded as unavailable, not as zero. Solver queries use a 1,500 ms timeout. A nonzero child exit,
 wall timeout, or nonempty validation-error list is a failed reproduction.
+An admitted-but-incomplete generated grade is also a failed campaign, not a
+completed weak grade. The summary gate independently checks all five atom
+statuses and rejects inconclusive admitted consumers.
 
 `summarize.py` refuses to summarize failed phases. `emit_tables.py` generates all
 nine paper/supplement tables from the selected results directory without needing
 the paper source.
 
-The retained current summary reports:
+The retained semantic summary reports the counts below. The archived result
+directories precede the seven new boundary regressions;
+the semantic counts below were reproduced locally on 2026-10-06 with all 64
+currently discovered tests. Earlier host timings and PDF checks are historical.
 
 - all nine closed grades;
 - 167 successful direct refutation replays;

@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Frozen generated diagnostics and an exhaustive finite rational-kernel probe."""
 from __future__ import annotations
-import argparse,json,os,resource,sys,time
+import argparse,json,os,sys,time
+from process_resources import apply_limits, peak_rss_kib, enforced_limits
 from pathlib import Path
 from itertools import product
 ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT/'src'))
-resource.setrlimit(resource.RLIMIT_AS,(2*1024**3,2*1024**3))
-resource.setrlimit(resource.RLIMIT_CPU,(105,110))
+apply_limits()
 os.environ.update(OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',MKL_NUM_THREADS='1')
 if hasattr(os,'sched_getaffinity'):os.sched_setaffinity(0,{min(os.sched_getaffinity(0))})
 from semantic_contract.solver import Solver
@@ -55,7 +55,8 @@ def main():
   'case_count':len(cases),'query_count':queries,'oracle_obligations':oracle_obligations,
   'replay_count':replays,'algebra_row_pairs':len(algebra),'algebra_vector_evaluations':vectors_evaluated,
   'cpu_seconds':time.process_time()-start,'wall_seconds':time.perf_counter()-wall,
-  'solver_cpu_seconds':solver_cpu,'peak_rss_kib':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+  'solver_cpu_seconds':solver_cpu,'peak_rss_kib':peak_rss_kib(),
+  'limits':enforced_limits(),
   'records':records,'algebra_records':algebra,'errors':errors}
  args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
  print(json.dumps({k:v for k,v in report.items() if k not in ('records','algebra_records')},indent=2))

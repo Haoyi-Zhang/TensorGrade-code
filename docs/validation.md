@@ -30,6 +30,9 @@ proof-assistant verification.
 - 162 compact finite-read certificates: 72 zero-cell, 83 one-cell, 7 two-cell.
 - 12 public commits: 3 admitted complete adapters and 9 abstentions.
 - 526 admitted bounded adapter states with zero mismatches.
+- P06: 400 single-call effect replays, plus eight additional sequences containing
+  22 calls and three rejected state-only controls. These counts are separate
+  from the frozen state/mutant denominators and the 162 finite-read certificates.
 - P01 candidate diagnostics: 29,222 matching successful-domain states and four
   scalar boundary controls, three of which differ.
 - 18 synthetic mutants: repeated developer indices detect 14, seeded random with
@@ -107,6 +110,12 @@ The final clean artifact run used 9.258232 process CPU seconds and a 130,460
 KiB child peak-RSS upper bound. Excluding those environment-dependent fields,
 its reconciled semantic summary exactly matches the retained summary; all nine
 generated TeX tables are byte-identical to the paper tables.
+
+Those retained clean-extraction records precede the ordered-map transition
+semantics and do not validate its source effects or the changed manuscript's
+PDF layout. Current source-effect records are embedded in
+`results/current/public-study.json`; the earlier full-run resource and PDF
+records are historical evidence, not a fresh build of the changed sources.
 
 This check establishes packaging consistency in the same environment. It is not
 independent review, cross-platform validation, or permission to submit.

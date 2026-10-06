@@ -24,23 +24,23 @@
             "n0": "1",
             "x0": "0",
             "x1": "0",
-            "x2": "0"
+            "x2": "1"
           }
         },
         "term-order": {
           "status": "refuted",
           "witness": {
-            "b0": false,
-            "b1": false,
-            "b2": false,
+            "b0": true,
+            "b1": true,
+            "b2": true,
             "i0": "0",
             "i1": "0",
             "i2": "0",
             "i3": "0",
             "n0": "1",
-            "x0": "0",
-            "x1": "0",
-            "x2": "0"
+            "x0": "1",
+            "x1": "1",
+            "x2": "1"
           }
         },
         "value": {
@@ -54,9 +54,9 @@
             "i2": "0",
             "i3": "0",
             "n0": "1",
-            "x0": "0",
+            "x0": "1/2",
             "x1": "0",
-            "x2": "1/2"
+            "x2": "0"
           }
         },
         "zero-support": {
@@ -70,7 +70,7 @@
             "i2": "0",
             "i3": "0",
             "n0": "1",
-            "x0": "-1",
+            "x0": "1/2",
             "x1": "0",
             "x2": "0"
           }
@@ -81,7 +81,7 @@
       "mode": "defective-congruence-ablation",
       "queries": [
         {
-          "cpu_seconds": 0.0010110249999999432,
+          "cpu_seconds": 0.0,
           "detail": "",
           "encoding_bytes": 153,
           "obligation": "precondition",
@@ -89,37 +89,37 @@
           "values": {
             "n0": "1"
           },
-          "wall_seconds": 0.0007830370000192488
+          "wall_seconds": 0.001746499998262152
         },
         {
-          "cpu_seconds": 0.0010018210000000138,
+          "cpu_seconds": 0.0,
           "detail": "",
           "encoding_bytes": 194,
           "obligation": "nonnegative-dimensions",
           "status": "unsat",
           "values": {},
-          "wall_seconds": 0.000939191000043138
+          "wall_seconds": 0.0014067000010982156
         },
         {
-          "cpu_seconds": 0.0008342720000000803,
+          "cpu_seconds": 0.0,
           "detail": "",
           "encoding_bytes": 474,
           "obligation": "active-read-bounds",
           "status": "unsat",
           "values": {},
-          "wall_seconds": 0.0007883439998295216
+          "wall_seconds": 0.001104399998439476
         },
         {
-          "cpu_seconds": 0.0005483959999998955,
+          "cpu_seconds": 0.0,
           "detail": "",
           "encoding_bytes": 990,
           "obligation": "shape",
           "status": "unsat",
           "values": {},
-          "wall_seconds": 0.0004731110000193439
+          "wall_seconds": 0.0005578999989666045
         },
         {
-          "cpu_seconds": 0.0009903540000000266,
+          "cpu_seconds": 0.0,
           "detail": "",
           "encoding_bytes": 1069,
           "obligation": "value",
@@ -133,14 +133,14 @@
             "i2": "0",
             "i3": "0",
             "n0": "1",
-            "x0": "0",
+            "x0": "1/2",
             "x1": "0",
-            "x2": "1/2"
+            "x2": "0"
           },
-          "wall_seconds": 0.0010950749999665277
+          "wall_seconds": 0.0015343999984906986
         },
         {
-          "cpu_seconds": 0.0009764430000001045,
+          "cpu_seconds": 0.015625,
           "detail": "",
           "encoding_bytes": 1077,
           "obligation": "zero-support",
@@ -154,14 +154,14 @@
             "i2": "0",
             "i3": "0",
             "n0": "1",
-            "x0": "-1",
+            "x0": "1/2",
             "x1": "0",
             "x2": "0"
           },
-          "wall_seconds": 0.0009972579998702713
+          "wall_seconds": 0.0012308000004850328
         },
         {
-          "cpu_seconds": 0.0009659479999999387,
+          "cpu_seconds": 0.0,
           "detail": "",
           "encoding_bytes": 1067,
           "obligation": "stored-support",
@@ -177,30 +177,30 @@
             "n0": "1",
             "x0": "0",
             "x1": "0",
-            "x2": "0"
+            "x2": "1"
           },
-          "wall_seconds": 0.0008643080000183545
+          "wall_seconds": 0.0012452000009943731
         },
         {
-          "cpu_seconds": 0.0008164250000000095,
+          "cpu_seconds": 0.0,
           "detail": "",
           "encoding_bytes": 1159,
           "obligation": "term-order",
           "status": "sat",
           "values": {
-            "b0": false,
-            "b1": false,
-            "b2": false,
+            "b0": true,
+            "b1": true,
+            "b2": true,
             "i0": "0",
             "i1": "0",
             "i2": "0",
             "i3": "0",
             "n0": "1",
-            "x0": "0",
-            "x1": "0",
-            "x2": "0"
+            "x0": "1",
+            "x1": "1",
+            "x2": "1"
           },
-          "wall_seconds": 0.0008097469999484019
+          "wall_seconds": 0.0011127999969176017
         }
       ],
       "terms": 3
@@ -242,7 +242,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.006566303999999912,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -250,61 +250,61 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.003233808000004501
+            "wall_seconds": 0.002535899999202229
           },
           {
-            "cpu_seconds": 0.0016990390000000133,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001460584000142262
+            "wall_seconds": 0.0018555999995442107
           },
           {
-            "cpu_seconds": 0.0004825080000000481,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 289,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004121090000808181
+            "wall_seconds": 0.00035059999936493114
           },
           {
-            "cpu_seconds": 0.0003702209999999484,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 320,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003479229999356903
+            "wall_seconds": 0.0002457000009599142
           },
           {
-            "cpu_seconds": 0.0002975630000000562,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00027752699998018215
+            "wall_seconds": 0.00023409999994328246
           },
           {
-            "cpu_seconds": 0.00024199000000002524,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00022324500014292425
+            "wall_seconds": 0.0003121999980066903
           },
           {
-            "cpu_seconds": 0.0002626409999999524,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 414,
             "obligation": "support-coherence",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00022962499997447594
+            "wall_seconds": 0.00027180000324733555
           }
         ],
         "status": "proved",
@@ -387,7 +387,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.0030839999999999756,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -395,55 +395,55 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0008393309999519261
+            "wall_seconds": 0.0014106000016909093
           },
           {
-            "cpu_seconds": 0.001347105000000015,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0012410540000473702
+            "wall_seconds": 0.0020660000009229407
           },
           {
-            "cpu_seconds": 0.0003784430000000061,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 339,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00035315100012667244
+            "wall_seconds": 0.0004158000010647811
           },
           {
-            "cpu_seconds": 0.0002516049999999881,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 320,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00023268999984793481
+            "wall_seconds": 0.0002871000033337623
           },
           {
-            "cpu_seconds": 0.00022474400000005446,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000235062999990987
+            "wall_seconds": 0.00033290000283159316
           },
           {
-            "cpu_seconds": 0.0002731269999999286,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00022939400014365674
+            "wall_seconds": 0.0003020000003743917
           },
           {
-            "cpu_seconds": 0.001352632999999992,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 470,
             "obligation": "support-coherence",
@@ -454,7 +454,7 @@
               "u0": "1",
               "v0": "0"
             },
-            "wall_seconds": 0.0014217460000054416
+            "wall_seconds": 0.0017447000063839369
           }
         ],
         "status": "refuted",
@@ -575,7 +575,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.0023205539999999747,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -583,61 +583,61 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0011900169999989885
+            "wall_seconds": 0.001999499996600207
           },
           {
-            "cpu_seconds": 0.001316890000000015,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0012015040001642774
+            "wall_seconds": 0.0022478999962913804
           },
           {
-            "cpu_seconds": 0.000609958000000077,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 339,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005824550000852469
+            "wall_seconds": 0.0005392000020947307
           },
           {
-            "cpu_seconds": 0.0003307519999999897,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 320,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00030829299998913484
+            "wall_seconds": 0.0003529999958118424
           },
           {
-            "cpu_seconds": 0.00023730399999999374,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 283,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00021818799996253802
+            "wall_seconds": 0.0002897000013035722
           },
           {
-            "cpu_seconds": 0.0009660470000000254,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 328,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0009539830000449001
+            "wall_seconds": 0.001480699997046031
           },
           {
-            "cpu_seconds": 0.0009485919999999703,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 475,
             "obligation": "support-coherence",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0009052899999915098
+            "wall_seconds": 0.001709399999526795
           }
         ],
         "status": "proved",
@@ -724,7 +724,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.0018300940000000043,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -732,61 +732,61 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0009948439999334369
+            "wall_seconds": 0.001847200001066085
           },
           {
-            "cpu_seconds": 0.0012308219999999093,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 186,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0011239579998800764
+            "wall_seconds": 0.001819700002670288
           },
           {
-            "cpu_seconds": 0.00039100200000008467,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 339,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003671810000014375
+            "wall_seconds": 0.0004944000029354356
           },
           {
-            "cpu_seconds": 0.0002570330000000176,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 375,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00023778700006005238
+            "wall_seconds": 0.0002520000052754767
           },
           {
-            "cpu_seconds": 0.0002305829999998954,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00021393200017882918
+            "wall_seconds": 0.00023359999613603577
           },
           {
-            "cpu_seconds": 0.00038349100000001357,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003724900000179332
+            "wall_seconds": 0.0002375999974901788
           },
           {
-            "cpu_seconds": 0.001095681000000015,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 531,
             "obligation": "support-coherence",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010514399998555746
+            "wall_seconds": 0.0014038000008440576
           }
         ],
         "status": "proved",
@@ -873,7 +873,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.003123289000000029,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -881,55 +881,55 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0015670840000439057
+            "wall_seconds": 0.002285800001118332
           },
           {
-            "cpu_seconds": 0.001577237000000009,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 186,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001394724999954633
+            "wall_seconds": 0.001876400005130563
           },
           {
-            "cpu_seconds": 0.0004140069999999385,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 339,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00038512900005116535
+            "wall_seconds": 0.0005260000034468248
           },
           {
-            "cpu_seconds": 0.0007690140000000678,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 475,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007515689999308961
+            "wall_seconds": 0.0010657999955583364
           },
           {
-            "cpu_seconds": 0.0003513029999999695,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00032904399995459244
+            "wall_seconds": 0.00035429999843472615
           },
           {
-            "cpu_seconds": 0.0002755500000000133,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00025948999996217026
+            "wall_seconds": 0.0003952999977627769
           },
           {
-            "cpu_seconds": 0.0016439169999999947,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 631,
             "obligation": "support-coherence",
@@ -940,7 +940,7 @@
               "u0": "1",
               "v0": "0"
             },
-            "wall_seconds": 0.0016824470001211012
+            "wall_seconds": 0.0022356000044965185
           }
         ],
         "status": "refuted",
@@ -1065,7 +1065,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.004960193000000057,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -1073,61 +1073,61 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.00186844699987887
+            "wall_seconds": 0.0021340000021154992
           },
           {
-            "cpu_seconds": 0.0031463130000000117,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.002895659999921918
+            "wall_seconds": 0.0019941999998991378
           },
           {
-            "cpu_seconds": 0.0012813469999999327,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 327,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0012389609998990636
+            "wall_seconds": 0.00178569999843603
           },
           {
-            "cpu_seconds": 0.0013235710000001344,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 536,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001298460000043633
+            "wall_seconds": 0.0024388999954680912
           },
           {
-            "cpu_seconds": 0.0003753079999999631,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00034791199982464605
+            "wall_seconds": 0.00044049999996786937
           },
           {
-            "cpu_seconds": 0.0002822499999999284,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002643870000156312
+            "wall_seconds": 0.0003042999960598536
           },
           {
-            "cpu_seconds": 0.0014914699999999392,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 680,
             "obligation": "support-coherence",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0014198929998201493
+            "wall_seconds": 0.0020153000004938804
           }
         ],
         "status": "proved",
@@ -1214,7 +1214,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.004631422999999968,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -1222,55 +1222,55 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0019021479999992152
+            "wall_seconds": 0.002131000001099892
           },
           {
-            "cpu_seconds": 0.0024156760000000332,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.002231441999811068
+            "wall_seconds": 0.0021884999950998463
           },
           {
-            "cpu_seconds": 0.0004872550000001308,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 339,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00045108699987395084
+            "wall_seconds": 0.0005877000003238209
           },
           {
-            "cpu_seconds": 0.0012248129999998802,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 536,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0012045700000271609
+            "wall_seconds": 0.0021793999985675327
           },
           {
-            "cpu_seconds": 0.0004424690000000009,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00041926999983843416
+            "wall_seconds": 0.000556999999389518
           },
           {
-            "cpu_seconds": 0.00036322000000010846,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003438960000039515
+            "wall_seconds": 0.00025289999757660553
           },
           {
-            "cpu_seconds": 0.0015778589999999593,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 692,
             "obligation": "support-coherence",
@@ -1278,18 +1278,18 @@
             "values": {
               "i0": "0",
               "n0": "2",
-              "u0": "0",
-              "v0": "1"
+              "u0": "1",
+              "v0": "0"
             },
-            "wall_seconds": 0.0015965279999363702
+            "wall_seconds": 0.0020641000010073185
           }
         ],
         "status": "refuted",
         "witness": {
           "i0": "0",
           "n0": "2",
-          "u0": "0",
-          "v0": "1"
+          "u0": "1",
+          "v0": "0"
         }
       },
       "oracles": [
@@ -1335,16 +1335,16 @@
         }
       ],
       "replay": {
-        "after_value": "-1",
+        "after_value": "1",
         "before_value": "0",
         "cells": [
           {
-            "index": 0,
+            "index": 1,
             "stored": true,
             "value": "1"
           },
           {
-            "index": 1,
+            "index": 0,
             "stored": true,
             "value": "-1"
           }
@@ -1354,12 +1354,12 @@
         "parameters": {
           "i0": 0,
           "n0": 2,
-          "u0": 0,
-          "v0": 1
+          "u0": 1,
+          "v0": 0
         },
         "scales": [
-          "1",
-          "2"
+          "2",
+          "1"
         ],
         "valid": true,
         "weights": [
@@ -1402,7 +1402,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.0048982010000000464,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -1410,55 +1410,55 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0014515299999402487
+            "wall_seconds": 0.0021448999978019856
           },
           {
-            "cpu_seconds": 0.0013832990000000045,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0013009440001496841
+            "wall_seconds": 0.001965399998880457
           },
           {
-            "cpu_seconds": 0.000891586999999916,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 403,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0008054600000377832
+            "wall_seconds": 0.0011200000008102506
           },
           {
-            "cpu_seconds": 0.0004024190000000427,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 320,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00038159399991855025
+            "wall_seconds": 0.0006550000034621917
           },
           {
-            "cpu_seconds": 0.00023646199999993733,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00021684600005755783
+            "wall_seconds": 0.00027379999664844945
           },
           {
-            "cpu_seconds": 0.00026138900000005627,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00024711099990781804
+            "wall_seconds": 0.00026760000037029386
           },
           {
-            "cpu_seconds": 0.001366975000000048,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 534,
             "obligation": "support-coherence",
@@ -1466,18 +1466,18 @@
             "values": {
               "i0": "0",
               "n0": "33",
-              "u0": "0",
-              "v0": "1"
+              "u0": "1",
+              "v0": "0"
             },
-            "wall_seconds": 0.0014126119999673392
+            "wall_seconds": 0.0021730000007664785
           }
         ],
         "status": "refuted",
         "witness": {
           "i0": "0",
           "n0": "33",
-          "u0": "0",
-          "v0": "1"
+          "u0": "1",
+          "v0": "0"
         }
       },
       "oracles": [
@@ -1523,16 +1523,16 @@
         }
       ],
       "replay": {
-        "after_value": "-1",
+        "after_value": "1",
         "before_value": "0",
         "cells": [
           {
-            "index": 0,
+            "index": 1,
             "stored": true,
             "value": "1"
           },
           {
-            "index": 1,
+            "index": 0,
             "stored": true,
             "value": "-1"
           }
@@ -1542,12 +1542,12 @@
         "parameters": {
           "i0": 0,
           "n0": 33,
-          "u0": 0,
-          "v0": 1
+          "u0": 1,
+          "v0": 0
         },
         "scales": [
-          "1",
-          "2"
+          "2",
+          "1"
         ],
         "valid": true,
         "weights": [
@@ -1590,7 +1590,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.0031583710000000487,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -1598,61 +1598,61 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0016692069998498482
+            "wall_seconds": 0.0019420000026002526
           },
           {
-            "cpu_seconds": 0.0014653110000000247,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001210758999832251
+            "wall_seconds": 0.0018737999998847954
           },
           {
-            "cpu_seconds": 0.0003838009999999059,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 339,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00035685600005308515
+            "wall_seconds": 0.0005474000063259155
           },
           {
-            "cpu_seconds": 0.0002539780000001546,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 320,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00023536300000159827
+            "wall_seconds": 0.0002706000013859011
           },
           {
-            "cpu_seconds": 0.00026659699999997954,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002499559998341283
+            "wall_seconds": 0.00029240000003483146
           },
           {
-            "cpu_seconds": 0.00023382799999982495,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00021655499995176797
+            "wall_seconds": 0.00030590000096708536
           },
           {
-            "cpu_seconds": 0.0002758210000000094,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 470,
             "obligation": "support-coherence",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00023735699983262748
+            "wall_seconds": 0.000286899994534906
           }
         ],
         "status": "proved",
@@ -1739,7 +1739,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.004632014000000018,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -1747,55 +1747,55 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0009268920000522485
+            "wall_seconds": 0.0016063000002759509
           },
           {
-            "cpu_seconds": 0.0013208259999999417,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0012063229999057512
+            "wall_seconds": 0.0022038999959477223
           },
           {
-            "cpu_seconds": 0.0004197150000000427,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 339,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003944729999147967
+            "wall_seconds": 0.0006064000044716522
           },
           {
-            "cpu_seconds": 0.0003397060000001062,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 370,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00032106200001180696
+            "wall_seconds": 0.00042830000165849924
           },
           {
-            "cpu_seconds": 0.00024760800000001026,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00022772200009057997
+            "wall_seconds": 0.0002500000045984052
           },
           {
-            "cpu_seconds": 0.00023555099999983398,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002194000001054519
+            "wall_seconds": 0.0002553000012994744
           },
           {
-            "cpu_seconds": 0.0017497640000001535,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 558,
             "obligation": "support-coherence",
@@ -1803,18 +1803,18 @@
             "values": {
               "i0": "0",
               "n0": "2",
-              "u0": "0",
-              "v0": "1"
+              "u0": "1",
+              "v0": "0"
             },
-            "wall_seconds": 0.0018026580000878312
+            "wall_seconds": 0.0020962000053259544
           }
         ],
         "status": "refuted",
         "witness": {
           "i0": "0",
           "n0": "2",
-          "u0": "0",
-          "v0": "1"
+          "u0": "1",
+          "v0": "0"
         }
       },
       "oracles": [
@@ -1860,18 +1860,18 @@
         }
       ],
       "replay": {
-        "after_value": "10/21",
+        "after_value": "-10/21",
         "before_value": "0",
         "cells": [
           {
-            "index": 0,
-            "stored": true,
-            "value": "-5/7"
-          },
-          {
             "index": 1,
             "stored": true,
-            "value": "-2/3"
+            "value": "2/3"
+          },
+          {
+            "index": 0,
+            "stored": true,
+            "value": "5/7"
           }
         ],
         "input_extent": 2,
@@ -1879,17 +1879,17 @@
         "parameters": {
           "i0": 0,
           "n0": 2,
-          "u0": 0,
-          "v0": 1
+          "u0": 1,
+          "v0": 0
         },
         "scales": [
-          "1",
-          "2"
+          "2",
+          "1"
         ],
         "valid": true,
         "weights": [
-          "2/3",
-          "-5/7"
+          "-5/7",
+          "2/3"
         ]
       }
     },
@@ -1923,7 +1923,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.0027678200000000874,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 153,
             "obligation": "precondition",
@@ -1931,61 +1931,61 @@
             "values": {
               "n0": "0"
             },
-            "wall_seconds": 0.0011766170000555576
+            "wall_seconds": 0.001691700002993457
           },
           {
-            "cpu_seconds": 0.0009106960000000441,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 184,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0008103870000013558
+            "wall_seconds": 0.0011907000007340685
           },
           {
-            "cpu_seconds": 0.00039381599999988026,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 288,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00036876399985885655
+            "wall_seconds": 0.0004867000025114976
           },
           {
-            "cpu_seconds": 0.0002797359999999749,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 319,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00026076199992530746
+            "wall_seconds": 0.00026369999977760017
           },
           {
-            "cpu_seconds": 0.00023179500000014563,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 277,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00021206899987191719
+            "wall_seconds": 0.00024280000070575625
           },
           {
-            "cpu_seconds": 0.00022836999999986674,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 317,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002119490000040969
+            "wall_seconds": 0.0002521999995224178
           },
           {
-            "cpu_seconds": 0.00025548099999994633,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 413,
             "obligation": "support-coherence",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00022890400009600853
+            "wall_seconds": 0.0002505000011296943
           }
         ],
         "status": "proved",
@@ -2055,7 +2055,7 @@
         "id": "non-reflexive-mask",
         "queries": [
           {
-            "cpu_seconds": 0.0009485820000001421,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -2063,37 +2063,37 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0007530919999680918
+            "wall_seconds": 0.0017239000007975847
           },
           {
-            "cpu_seconds": 0.0014771780000000234,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0013883659999009978
+            "wall_seconds": 0.002179999995860271
           },
           {
-            "cpu_seconds": 0.0003569419999998047,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 289,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00032918400006565207
+            "wall_seconds": 0.00041620000411057845
           },
           {
-            "cpu_seconds": 0.00027586000000012767,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 320,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002593490000890597
+            "wall_seconds": 0.00026340000476920977
           },
           {
-            "cpu_seconds": 0.0013627590000000467,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 290,
             "obligation": "compatibility-reflexive",
@@ -2104,7 +2104,7 @@
               "u0": "0",
               "v0": "0"
             },
-            "wall_seconds": 0.00142238700004782
+            "wall_seconds": 0.0017808000047807582
           }
         ],
         "reason": "compatibility-reflexive"
@@ -2140,7 +2140,7 @@
         "id": "asymmetric-mask",
         "queries": [
           {
-            "cpu_seconds": 0.0011227709999999114,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -2148,46 +2148,46 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0009795519999897806
+            "wall_seconds": 0.00203200000396464
           },
           {
-            "cpu_seconds": 0.0011960699999999935,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010958259999824804
+            "wall_seconds": 0.002358099998673424
           },
           {
-            "cpu_seconds": 0.0004042420000001101,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 289,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00037582499999189167
+            "wall_seconds": 0.0003614000015659258
           },
           {
-            "cpu_seconds": 0.00028786800000002444,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 320,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00026054099998873426
+            "wall_seconds": 0.00024389999452978373
           },
           {
-            "cpu_seconds": 0.00022904099999987437,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 284,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00021162699999877077
+            "wall_seconds": 0.00023659999715164304
           },
           {
-            "cpu_seconds": 0.0011140279999999336,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 330,
             "obligation": "compatibility-symmetric",
@@ -2198,7 +2198,7 @@
               "u0": "1",
               "v0": "0"
             },
-            "wall_seconds": 0.0011721309999757068
+            "wall_seconds": 0.001604500001121778
           }
         ],
         "reason": "compatibility-symmetric"
@@ -2238,7 +2238,7 @@
         "id": "overlapping-partition",
         "queries": [
           {
-            "cpu_seconds": 0.0012312330000001648,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -2246,19 +2246,19 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0009705280001526262
+            "wall_seconds": 0.0019476000015856698
           },
           {
-            "cpu_seconds": 0.0012580829999999654,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001172240999949281
+            "wall_seconds": 0.0023750999971525744
           },
           {
-            "cpu_seconds": 0.0012142470000000571,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 309,
             "obligation": "scale-partition",
@@ -2269,7 +2269,7 @@
               "u0": "0",
               "v0": "0"
             },
-            "wall_seconds": 0.0012612840000656433
+            "wall_seconds": 0.00246500000503147
           }
         ],
         "reason": "scale-partition"
@@ -2336,7 +2336,7 @@
         "id": "missing-partition-cell",
         "queries": [
           {
-            "cpu_seconds": 0.001172654999999967,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -2344,19 +2344,19 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.000987122999958956
+            "wall_seconds": 0.0019325999965076335
           },
           {
-            "cpu_seconds": 0.0012253739999998903,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00113396400001875
+            "wall_seconds": 0.0018005000019911677
           },
           {
-            "cpu_seconds": 0.001110914000000074,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 293,
             "obligation": "scale-partition",
@@ -2367,7 +2367,7 @@
               "u0": "1",
               "v0": "0"
             },
-            "wall_seconds": 0.0011580100001538085
+            "wall_seconds": 0.002091000002110377
           }
         ],
         "reason": "scale-partition"
@@ -2375,18 +2375,19 @@
       "oracles": []
     }
   ],
-  "cpu_seconds": 0.65556923,
+  "cpu_seconds": 0.65625,
   "errors": [],
   "limits": {
-    "address_space_bytes": 2147483648,
-    "process_cpu_hard_seconds": 110,
-    "process_cpu_soft_seconds": 105,
+    "address_space_bytes": null,
+    "posix_resource_available": false,
+    "process_cpu_hard_seconds": null,
+    "process_cpu_soft_seconds": null,
     "query_timeout_ms": 1500,
     "workers": 1
   },
   "oracle_checks": 124,
   "oracle_obligations": 1917,
-  "peak_rss_kib": 121644,
+  "peak_rss_kib": null,
   "query_count": 289,
   "records": [
     {
@@ -2477,7 +2478,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0035505239999999993,
+            "cpu_seconds": 0.03125,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -2485,70 +2486,70 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0034332170000652695
+            "wall_seconds": 0.0027651999989757314
           },
           {
-            "cpu_seconds": 0.0021880869999999497,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0018312009999590373
+            "wall_seconds": 0.0021197000023676082
           },
           {
-            "cpu_seconds": 0.0011902320000000133,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 398,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001127623999991556
+            "wall_seconds": 0.0015807000017957762
           },
           {
-            "cpu_seconds": 0.0006147650000000171,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 835,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00045958999999129446
+            "wall_seconds": 0.0006190999993123114
           },
           {
-            "cpu_seconds": 0.0006002830000000348,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 914,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005774480000582116
+            "wall_seconds": 0.0010106000045198016
           },
           {
-            "cpu_seconds": 0.0007087249999999656,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 922,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0006850190000022849
+            "wall_seconds": 0.0013001999977859668
           },
           {
-            "cpu_seconds": 0.0005006050000000428,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 912,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000475595000125395
+            "wall_seconds": 0.0010309999997843988
           },
           {
-            "cpu_seconds": 0.0003260859999999477,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 969,
             "obligation": "term-order",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00029999999992469384
+            "wall_seconds": 0.0004422999991220422
           }
         ],
         "terms": 2
@@ -2682,15 +2683,15 @@
           "term-order": {
             "status": "refuted",
             "witness": {
-              "b0": true,
-              "b1": true,
+              "b0": false,
+              "b1": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1"
+              "x0": "0",
+              "x1": "0"
             }
           },
           "value": {
@@ -2703,8 +2704,8 @@
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1"
+              "x0": "2",
+              "x1": "2"
             }
           },
           "zero-support": {
@@ -2717,7 +2718,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0014428269999999799,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -2725,37 +2726,37 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0007803319999766245
+            "wall_seconds": 0.001378699998895172
           },
           {
-            "cpu_seconds": 0.0013587730000000908,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0012833680000312597
+            "wall_seconds": 0.001926700002513826
           },
           {
-            "cpu_seconds": 0.0008804099999999426,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 398,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0008361459999832732
+            "wall_seconds": 0.0014539000039803796
           },
           {
-            "cpu_seconds": 0.0004346670000000552,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 835,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003581779999421997
+            "wall_seconds": 0.0005157999985385686
           },
           {
-            "cpu_seconds": 0.0008156440000000043,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 914,
             "obligation": "value",
@@ -2768,47 +2769,47 @@
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1"
+              "x0": "2",
+              "x1": "2"
             },
-            "wall_seconds": 0.0008939429999372805
+            "wall_seconds": 0.0010293000013916753
           },
           {
-            "cpu_seconds": 0.0005655820000000089,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 922,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00044245499998396554
+            "wall_seconds": 0.0010830999963218346
           },
           {
-            "cpu_seconds": 0.0006129629999999109,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 912,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005899960001443105
+            "wall_seconds": 0.0010269999984302558
           },
           {
-            "cpu_seconds": 0.0008331300000000708,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 965,
             "obligation": "term-order",
             "status": "sat",
             "values": {
-              "b0": true,
-              "b1": true,
+              "b0": false,
+              "b1": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1"
+              "x0": "0",
+              "x1": "0"
             },
-            "wall_seconds": 0.0009006630000385485
+            "wall_seconds": 0.0015405000012833625
           }
         ],
         "terms": 2
@@ -2869,18 +2870,18 @@
       ],
       "replays": {
         "term-order": {
-          "after_stored": true,
-          "after_value": "2",
-          "before_stored": true,
-          "before_value": "1",
+          "after_stored": false,
+          "after_value": "0",
+          "before_stored": false,
+          "before_value": "0",
           "cells": [
             {
               "index": [
                 0
               ],
-              "stored": true,
+              "stored": false,
               "tensor": "A",
-              "value": "1"
+              "value": "0"
             }
           ],
           "mismatch": "term-order",
@@ -2894,9 +2895,9 @@
         },
         "value": {
           "after_stored": true,
-          "after_value": "2",
+          "after_value": "4",
           "before_stored": true,
-          "before_value": "1",
+          "before_value": "2",
           "cells": [
             {
               "index": [
@@ -2904,7 +2905,7 @@
               ],
               "stored": true,
               "tensor": "A",
-              "value": "1"
+              "value": "2"
             }
           ],
           "mismatch": "value",
@@ -3050,17 +3051,17 @@
           "term-order": {
             "status": "refuted",
             "witness": {
-              "b0": true,
-              "b1": true,
-              "b2": true,
+              "b0": false,
+              "b1": false,
+              "b2": false,
               "i0": "1",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "2",
-              "x0": "1",
-              "x1": "1",
-              "x2": "1"
+              "x0": "0",
+              "x1": "0",
+              "x2": "0"
             }
           },
           "value": {
@@ -3089,7 +3090,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.002780237999999935,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -3097,37 +3098,37 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.000877778000131002
+            "wall_seconds": 0.001332100000581704
           },
           {
-            "cpu_seconds": 0.0013032700000000785,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0012375989999782178
+            "wall_seconds": 0.001792900002328679
           },
           {
-            "cpu_seconds": 0.000866699999999998,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 482,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0008116699998481636
+            "wall_seconds": 0.0015485000039916486
           },
           {
-            "cpu_seconds": 0.0005637189999999626,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1156,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004742419998819969
+            "wall_seconds": 0.0005812000017613173
           },
           {
-            "cpu_seconds": 0.0011264370000000357,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1235,
             "obligation": "value",
@@ -3145,46 +3146,46 @@
               "x1": "1/4",
               "x2": "1/4"
             },
-            "wall_seconds": 0.0012941149998368928
+            "wall_seconds": 0.0013669000036315992
           },
           {
-            "cpu_seconds": 0.0026904540000000088,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1243,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.002478203000009671
+            "wall_seconds": 0.0012658999985433184
           },
           {
-            "cpu_seconds": 0.0008814219999999651,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1233,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0008457599999474041
+            "wall_seconds": 0.001162399996246677
           },
           {
-            "cpu_seconds": 0.0011693809999999694,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1329,
             "obligation": "term-order",
             "status": "sat",
             "values": {
-              "b0": true,
-              "b1": true,
-              "b2": true,
+              "b0": false,
+              "b1": false,
+              "b2": false,
               "i0": "1",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "2",
-              "x0": "1",
-              "x1": "1",
-              "x2": "1"
+              "x0": "0",
+              "x1": "0",
+              "x2": "0"
             },
-            "wall_seconds": 0.0010257800001909345
+            "wall_seconds": 0.0013751000005868264
           }
         ],
         "terms": 3
@@ -3245,18 +3246,18 @@
       ],
       "replays": {
         "term-order": {
-          "after_stored": true,
-          "after_value": "2",
-          "before_stored": true,
-          "before_value": "1",
+          "after_stored": false,
+          "after_value": "0",
+          "before_stored": false,
+          "before_value": "0",
           "cells": [
             {
               "index": [
                 1
               ],
-              "stored": true,
+              "stored": false,
               "tensor": "A",
-              "value": "1"
+              "value": "0"
             }
           ],
           "mismatch": "term-order",
@@ -3435,8 +3436,8 @@
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1"
+              "x0": "2",
+              "x1": "2"
             }
           },
           "value": {
@@ -3449,8 +3450,8 @@
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1"
+              "x0": "2",
+              "x1": "2"
             }
           },
           "zero-support": {
@@ -3463,7 +3464,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0038706210000000185,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -3471,37 +3472,37 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0014421259998016467
+            "wall_seconds": 0.0016389000011258759
           },
           {
-            "cpu_seconds": 0.0019911139999999605,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0019130739999582147
+            "wall_seconds": 0.0017619999998714775
           },
           {
-            "cpu_seconds": 0.0015528310000000323,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 398,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0014910899999449612
+            "wall_seconds": 0.0015888000052655116
           },
           {
-            "cpu_seconds": 0.000635014999999961,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 838,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005369969999264868
+            "wall_seconds": 0.0006127000015112571
           },
           {
-            "cpu_seconds": 0.0016649579999999942,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 917,
             "obligation": "value",
@@ -3514,22 +3515,22 @@
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1"
+              "x0": "2",
+              "x1": "2"
             },
-            "wall_seconds": 0.001757709999992585
+            "wall_seconds": 0.001047699995979201
           },
           {
-            "cpu_seconds": 0.0007709180000000648,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 925,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000617268000041804
+            "wall_seconds": 0.0011642000026768073
           },
           {
-            "cpu_seconds": 0.0006868319999999706,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 915,
             "obligation": "stored-support",
@@ -3545,10 +3546,10 @@
               "x0": "0",
               "x1": "0"
             },
-            "wall_seconds": 0.000902626999959466
+            "wall_seconds": 0.001202999999804888
           },
           {
-            "cpu_seconds": 0.0010596680000000136,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 968,
             "obligation": "term-order",
@@ -3561,10 +3562,10 @@
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1"
+              "x0": "2",
+              "x1": "2"
             },
-            "wall_seconds": 0.0009185700000671204
+            "wall_seconds": 0.0012399999977787957
           }
         ],
         "terms": 2
@@ -3650,9 +3651,9 @@
         },
         "term-order": {
           "after_stored": true,
-          "after_value": "2",
+          "after_value": "4",
           "before_stored": true,
-          "before_value": "1",
+          "before_value": "2",
           "cells": [
             {
               "index": [
@@ -3660,7 +3661,7 @@
               ],
               "stored": true,
               "tensor": "A",
-              "value": "1"
+              "value": "2"
             }
           ],
           "mismatch": "term-order",
@@ -3674,9 +3675,9 @@
         },
         "value": {
           "after_stored": true,
-          "after_value": "2",
+          "after_value": "4",
           "before_stored": true,
-          "before_value": "1",
+          "before_value": "2",
           "cells": [
             {
               "index": [
@@ -3684,7 +3685,7 @@
               ],
               "stored": true,
               "tensor": "A",
-              "value": "1"
+              "value": "2"
             }
           ],
           "mismatch": "value",
@@ -3871,18 +3872,18 @@
             "status": "refuted",
             "witness": {
               "b0": true,
-              "b1": true,
+              "b1": false,
               "b2": true,
-              "b3": true,
+              "b3": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1",
-              "x2": "1",
-              "x3": "1"
+              "x0": "2",
+              "x1": "0",
+              "x2": "2",
+              "x3": "0"
             }
           },
           "value": {
@@ -3897,10 +3898,10 @@
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1",
-              "x2": "1",
-              "x3": "1"
+              "x0": "3",
+              "x1": "2",
+              "x2": "3",
+              "x3": "2"
             }
           },
           "zero-support": {
@@ -3915,10 +3916,10 @@
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1/2",
-              "x1": "-1/2",
-              "x2": "1/2",
-              "x3": "-1/2"
+              "x0": "-1/2",
+              "x1": "1/4",
+              "x2": "-1/2",
+              "x3": "1/4"
             }
           }
         },
@@ -3927,7 +3928,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.003839875000000048,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -3935,37 +3936,37 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0010069529998872895
+            "wall_seconds": 0.0015346000000135973
           },
           {
-            "cpu_seconds": 0.0012821489999998992,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 204,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001205009999921458
+            "wall_seconds": 0.0018495000040275045
           },
           {
-            "cpu_seconds": 0.0010356910000000052,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 536,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0009823259999848233
+            "wall_seconds": 0.0015318000005208887
           },
           {
-            "cpu_seconds": 0.000596228000000032,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1297,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005028159998801129
+            "wall_seconds": 0.0005686000004061498
           },
           {
-            "cpu_seconds": 0.0010142290000000331,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1376,
             "obligation": "value",
@@ -3980,15 +3981,15 @@
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1",
-              "x2": "1",
-              "x3": "1"
+              "x0": "3",
+              "x1": "2",
+              "x2": "3",
+              "x3": "2"
             },
-            "wall_seconds": 0.0010091059998558194
+            "wall_seconds": 0.0012464000028558075
           },
           {
-            "cpu_seconds": 0.001167948999999946,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1384,
             "obligation": "zero-support",
@@ -4003,44 +4004,44 @@
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1/2",
-              "x1": "-1/2",
-              "x2": "1/2",
-              "x3": "-1/2"
+              "x0": "-1/2",
+              "x1": "1/4",
+              "x2": "-1/2",
+              "x3": "1/4"
             },
-            "wall_seconds": 0.0013500679999651766
+            "wall_seconds": 0.001433499994163867
           },
           {
-            "cpu_seconds": 0.0010019210000000722,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1374,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005527399998754845
+            "wall_seconds": 0.0010448000030010007
           },
           {
-            "cpu_seconds": 0.0008252679999999346,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1548,
             "obligation": "term-order",
             "status": "sat",
             "values": {
               "b0": true,
-              "b1": true,
+              "b1": false,
               "b2": true,
-              "b3": true,
+              "b3": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1",
-              "x2": "1",
-              "x3": "1"
+              "x0": "2",
+              "x1": "0",
+              "x2": "2",
+              "x3": "0"
             },
-            "wall_seconds": 0.0008625059999758378
+            "wall_seconds": 0.0013312000010046177
           }
         ],
         "terms": 4
@@ -4102,7 +4103,7 @@
       "replays": {
         "term-order": {
           "after_stored": true,
-          "after_value": "3",
+          "after_value": "2",
           "before_stored": true,
           "before_value": "2",
           "cells": [
@@ -4112,15 +4113,15 @@
               ],
               "stored": true,
               "tensor": "A",
-              "value": "1"
+              "value": "2"
             },
             {
               "index": [
                 0
               ],
-              "stored": true,
+              "stored": false,
               "tensor": "B",
-              "value": "1"
+              "value": "0"
             }
           ],
           "mismatch": "term-order",
@@ -4134,9 +4135,9 @@
         },
         "value": {
           "after_stored": true,
-          "after_value": "3",
+          "after_value": "7",
           "before_stored": true,
-          "before_value": "2",
+          "before_value": "5",
           "cells": [
             {
               "index": [
@@ -4144,7 +4145,7 @@
               ],
               "stored": true,
               "tensor": "A",
-              "value": "1"
+              "value": "3"
             },
             {
               "index": [
@@ -4152,7 +4153,7 @@
               ],
               "stored": true,
               "tensor": "B",
-              "value": "1"
+              "value": "2"
             }
           ],
           "mismatch": "value",
@@ -4166,9 +4167,9 @@
         },
         "zero-support": {
           "after_stored": true,
-          "after_value": "-1/2",
+          "after_value": "0",
           "before_stored": true,
-          "before_value": "0",
+          "before_value": "-1/4",
           "cells": [
             {
               "index": [
@@ -4176,7 +4177,7 @@
               ],
               "stored": true,
               "tensor": "A",
-              "value": "1/2"
+              "value": "-1/2"
             },
             {
               "index": [
@@ -4184,7 +4185,7 @@
               ],
               "stored": true,
               "tensor": "B",
-              "value": "-1/2"
+              "value": "1/4"
             }
           ],
           "mismatch": "zero-support",
@@ -4378,19 +4379,19 @@
           "term-order": {
             "status": "refuted",
             "witness": {
-              "b0": true,
+              "b0": false,
               "b1": true,
               "b2": true,
-              "b3": true,
+              "b3": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1",
-              "x2": "1",
-              "x3": "1"
+              "x0": "0",
+              "x1": "2",
+              "x2": "2",
+              "x3": "0"
             }
           },
           "value": {
@@ -4407,7 +4408,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.005656939999999944,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -4415,84 +4416,84 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.002795450000121491
+            "wall_seconds": 0.0014814999958616681
           },
           {
-            "cpu_seconds": 0.001245994000000028,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 204,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001167644000133805
+            "wall_seconds": 0.0018878999981097877
           },
           {
-            "cpu_seconds": 0.0033454490000000003,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 536,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0009289360000366287
+            "wall_seconds": 0.00148530000296887
           },
           {
-            "cpu_seconds": 0.000596188000000053,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1297,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005032159999700525
+            "wall_seconds": 0.0006397999968612567
           },
           {
-            "cpu_seconds": 0.0006223060000000169,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1376,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005950239999492624
+            "wall_seconds": 0.0010212999986833893
           },
           {
-            "cpu_seconds": 0.0006532019999999639,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1384,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000625008000042726
+            "wall_seconds": 0.000923699997656513
           },
           {
-            "cpu_seconds": 0.0005201340000000609,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1374,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004892349998044665
+            "wall_seconds": 0.0012382999993860722
           },
           {
-            "cpu_seconds": 0.0010316959999999709,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1552,
             "obligation": "term-order",
             "status": "sat",
             "values": {
-              "b0": true,
+              "b0": false,
               "b1": true,
               "b2": true,
-              "b3": true,
+              "b3": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1",
-              "x2": "1",
-              "x3": "1"
+              "x0": "0",
+              "x1": "2",
+              "x2": "2",
+              "x3": "0"
             },
-            "wall_seconds": 0.001129957000102877
+            "wall_seconds": 0.0013639999961014837
           }
         ],
         "terms": 4
@@ -4562,9 +4563,9 @@
               "index": [
                 0
               ],
-              "stored": true,
+              "stored": false,
               "tensor": "A",
-              "value": "1"
+              "value": "0"
             },
             {
               "index": [
@@ -4572,7 +4573,7 @@
               ],
               "stored": true,
               "tensor": "B",
-              "value": "1"
+              "value": "2"
             }
           ],
           "mismatch": "term-order",
@@ -4689,17 +4690,17 @@
           "term-order": {
             "status": "refuted",
             "witness": {
-              "b0": true,
-              "b1": true,
-              "b2": true,
+              "b0": false,
+              "b1": false,
+              "b2": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1",
-              "x2": "1"
+              "x0": "0",
+              "x1": "0",
+              "x2": "0"
             }
           },
           "value": {
@@ -4716,7 +4717,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0015072839999999976,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -4724,82 +4725,82 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.000860232000150063
+            "wall_seconds": 0.0016751000002841465
           },
           {
-            "cpu_seconds": 0.0011753089999999577,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0011058210000101099
+            "wall_seconds": 0.0017517999949632213
           },
           {
-            "cpu_seconds": 0.0011336780000000823,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 467,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010868929998650856
+            "wall_seconds": 0.0013875999939045869
           },
           {
-            "cpu_seconds": 0.0005452409999999741,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1141,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004581289999805449
+            "wall_seconds": 0.0005414999977801926
           },
           {
-            "cpu_seconds": 0.0005044810000000011,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1220,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00045943999998598883
+            "wall_seconds": 0.0011885999992955476
           },
           {
-            "cpu_seconds": 0.0005182510000000251,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1228,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004932409999582887
+            "wall_seconds": 0.001222599996253848
           },
           {
-            "cpu_seconds": 0.0004739059999999684,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1218,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004482429999370652
+            "wall_seconds": 0.0011899000019184314
           },
           {
-            "cpu_seconds": 0.0007327609999999707,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1310,
             "obligation": "term-order",
             "status": "sat",
             "values": {
-              "b0": true,
-              "b1": true,
-              "b2": true,
+              "b0": false,
+              "b1": false,
+              "b2": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1",
-              "x2": "1"
+              "x0": "0",
+              "x1": "0",
+              "x2": "0"
             },
-            "wall_seconds": 0.0008151549998274277
+            "wall_seconds": 0.0013082000004942529
           }
         ],
         "terms": 3
@@ -4860,18 +4861,18 @@
       ],
       "replays": {
         "term-order": {
-          "after_stored": true,
-          "after_value": "2",
-          "before_stored": true,
-          "before_value": "2",
+          "after_stored": false,
+          "after_value": "0",
+          "before_stored": false,
+          "before_value": "0",
           "cells": [
             {
               "index": [
                 0
               ],
-              "stored": true,
+              "stored": false,
               "tensor": "A",
-              "value": "1"
+              "value": "0"
             }
           ],
           "mismatch": "term-order",
@@ -4988,17 +4989,17 @@
           "term-order": {
             "status": "refuted",
             "witness": {
-              "b0": true,
-              "b1": true,
-              "b2": true,
+              "b0": false,
+              "b1": false,
+              "b2": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1",
-              "x2": "1"
+              "x0": "0",
+              "x1": "0",
+              "x2": "0"
             }
           },
           "value": {
@@ -5015,7 +5016,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0008353629999999779,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 153,
             "obligation": "precondition",
@@ -5023,82 +5024,82 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0007988100001057319
+            "wall_seconds": 0.0013805999988107942
           },
           {
-            "cpu_seconds": 0.0008151739999999741,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 194,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000748273999988669
+            "wall_seconds": 0.0012920000008307397
           },
           {
-            "cpu_seconds": 0.001139576000000031,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 474,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010917600000084349
+            "wall_seconds": 0.0013387999933911487
           },
           {
-            "cpu_seconds": 0.0007963250000000421,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1148,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000790997999956744
+            "wall_seconds": 0.0005553000009967946
           },
           {
-            "cpu_seconds": 0.0006501979999999907,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1227,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005385090000800119
+            "wall_seconds": 0.0009501000022282824
           },
           {
-            "cpu_seconds": 0.0007458900000000268,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1235,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007212529999378603
+            "wall_seconds": 0.0011076999944634736
           },
           {
-            "cpu_seconds": 0.0005584809999999996,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 1225,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000529895999989094
+            "wall_seconds": 0.0011506000009831041
           },
           {
-            "cpu_seconds": 0.0008891439999999529,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1317,
             "obligation": "term-order",
             "status": "sat",
             "values": {
-              "b0": true,
-              "b1": true,
-              "b2": true,
+              "b0": false,
+              "b1": false,
+              "b2": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1",
-              "x2": "1"
+              "x0": "0",
+              "x1": "0",
+              "x2": "0"
             },
-            "wall_seconds": 0.001103417999956946
+            "wall_seconds": 0.0014506000006804243
           }
         ],
         "terms": 3
@@ -5143,18 +5144,18 @@
       ],
       "replays": {
         "term-order": {
-          "after_stored": true,
-          "after_value": "2",
-          "before_stored": true,
-          "before_value": "2",
+          "after_stored": false,
+          "after_value": "0",
+          "before_stored": false,
+          "before_value": "0",
           "cells": [
             {
               "index": [
                 0
               ],
-              "stored": true,
+              "stored": false,
               "tensor": "A",
-              "value": "1"
+              "value": "0"
             }
           ],
           "mismatch": "term-order",
@@ -5324,7 +5325,7 @@
               "i3": "0",
               "n0": "2",
               "x0": "0",
-              "x1": "-1",
+              "x1": "1/2",
               "x2": "0"
             }
           }
@@ -5334,7 +5335,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0014481160000000548,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -5342,37 +5343,37 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0012931429998843669
+            "wall_seconds": 0.001472800002375152
           },
           {
-            "cpu_seconds": 0.001293414999999909,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0012166379999598576
+            "wall_seconds": 0.0018135999998776242
           },
           {
-            "cpu_seconds": 0.0012241720000000234,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 475,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0011685050001233321
+            "wall_seconds": 0.0019289999981992878
           },
           {
-            "cpu_seconds": 0.0005678949999999849,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1149,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00047271999983422575
+            "wall_seconds": 0.0006852000005892478
           },
           {
-            "cpu_seconds": 0.001090963999999972,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1228,
             "obligation": "value",
@@ -5390,10 +5391,10 @@
               "x1": "-1",
               "x2": "0"
             },
-            "wall_seconds": 0.0011962470000526082
+            "wall_seconds": 0.001279600000998471
           },
           {
-            "cpu_seconds": 0.0010701730000000076,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1236,
             "obligation": "zero-support",
@@ -5408,13 +5409,13 @@
               "i3": "0",
               "n0": "2",
               "x0": "0",
-              "x1": "-1",
+              "x1": "1/2",
               "x2": "0"
             },
-            "wall_seconds": 0.0010231370001747564
+            "wall_seconds": 0.0013835999998264015
           },
           {
-            "cpu_seconds": 0.0012771209999999922,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1226,
             "obligation": "stored-support",
@@ -5432,10 +5433,10 @@
               "x1": "0",
               "x2": "0"
             },
-            "wall_seconds": 0.00124875599999541
+            "wall_seconds": 0.0014344000010169111
           },
           {
-            "cpu_seconds": 0.0010897220000000152,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1318,
             "obligation": "term-order",
@@ -5453,7 +5454,7 @@
               "x1": "0",
               "x2": "0"
             },
-            "wall_seconds": 0.0010547339998083771
+            "wall_seconds": 0.0016524000020581298
           }
         ],
         "terms": 3
@@ -5613,7 +5614,7 @@
           "after_stored": false,
           "after_value": "0",
           "before_stored": true,
-          "before_value": "-1",
+          "before_value": "1/2",
           "cells": [
             {
               "index": [
@@ -5629,7 +5630,7 @@
               ],
               "stored": true,
               "tensor": "A",
-              "value": "-1"
+              "value": "1/2"
             }
           ],
           "mismatch": "zero-support",
@@ -5850,7 +5851,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0034443769999999985,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -5858,55 +5859,55 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0014954470000247966
+            "wall_seconds": 0.0015639999983250163
           },
           {
-            "cpu_seconds": 0.0018359930000000357,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001758602000109022
+            "wall_seconds": 0.001916900000651367
           },
           {
-            "cpu_seconds": 0.0011348389999999986,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 398,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010423559999708232
+            "wall_seconds": 0.001314400004048366
           },
           {
-            "cpu_seconds": 0.0005568089999999914,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 838,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00046098200004962564
+            "wall_seconds": 0.0005222000036155805
           },
           {
-            "cpu_seconds": 0.0005013360000000189,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 917,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00047316099994532124
+            "wall_seconds": 0.0009499000007053837
           },
           {
-            "cpu_seconds": 0.0006015449999999811,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 925,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005793709999579733
+            "wall_seconds": 0.0010841999974218197
           },
           {
-            "cpu_seconds": 0.0011137780000000097,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 915,
             "obligation": "stored-support",
@@ -5922,16 +5923,16 @@
               "x0": "0",
               "x1": "0"
             },
-            "wall_seconds": 0.0009337129999948957
+            "wall_seconds": 0.0011973000000580214
           },
           {
-            "cpu_seconds": 0.0005042910000000456,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 972,
             "obligation": "term-order",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003338809999604564
+            "wall_seconds": 0.00043870000081369653
           }
         ],
         "terms": 2
@@ -6137,24 +6138,24 @@
               "i3": "0",
               "n0": "1",
               "x0": "0",
-              "x1": "0",
+              "x1": "1",
               "x2": "0"
             }
           },
           "term-order": {
             "status": "refuted",
             "witness": {
-              "b0": true,
-              "b1": false,
-              "b2": true,
+              "b0": false,
+              "b1": true,
+              "b2": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "0",
-              "x2": "1"
+              "x0": "0",
+              "x1": "1",
+              "x2": "0"
             }
           },
           "value": {
@@ -6171,7 +6172,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0024603619999999937,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -6179,55 +6180,55 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.001164770000059434
+            "wall_seconds": 0.001258899996173568
           },
           {
-            "cpu_seconds": 0.001276720000000009,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 204,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0012020960000427294
+            "wall_seconds": 0.0016625999996904284
           },
           {
-            "cpu_seconds": 0.0009611209999998982,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 467,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0009126009999818052
+            "wall_seconds": 0.001145499998528976
           },
           {
-            "cpu_seconds": 0.0004701200000000183,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1041,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003838370000721625
+            "wall_seconds": 0.0006051000018487684
           },
           {
-            "cpu_seconds": 0.0004751470000000646,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1120,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004526699999587436
+            "wall_seconds": 0.0008926999944378622
           },
           {
-            "cpu_seconds": 0.0005424370000000067,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1128,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005171870000140188
+            "wall_seconds": 0.0013077999974484555
           },
           {
-            "cpu_seconds": 0.0008205219999999347,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1118,
             "obligation": "stored-support",
@@ -6242,31 +6243,31 @@
               "i3": "0",
               "n0": "1",
               "x0": "0",
-              "x1": "0",
+              "x1": "1",
               "x2": "0"
             },
-            "wall_seconds": 0.0010714200000165874
+            "wall_seconds": 0.001600800002051983
           },
           {
-            "cpu_seconds": 0.0012449829999999773,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1214,
             "obligation": "term-order",
             "status": "sat",
             "values": {
-              "b0": true,
-              "b1": false,
-              "b2": true,
+              "b0": false,
+              "b1": true,
+              "b2": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "0",
-              "x2": "1"
+              "x0": "0",
+              "x1": "1",
+              "x2": "0"
             },
-            "wall_seconds": 0.0010465519999343087
+            "wall_seconds": 0.0014276000001700595
           }
         ],
         "terms": 3
@@ -6346,7 +6347,7 @@
               ],
               "stored": true,
               "tensor": "B",
-              "value": "0"
+              "value": "1"
             }
           ],
           "mismatch": "stored-support",
@@ -6359,26 +6360,26 @@
           "valid": true
         },
         "term-order": {
-          "after_stored": true,
-          "after_value": "1",
+          "after_stored": false,
+          "after_value": "0",
           "before_stored": true,
-          "before_value": "1",
+          "before_value": "0",
           "cells": [
             {
               "index": [
                 0
               ],
-              "stored": true,
+              "stored": false,
               "tensor": "A",
-              "value": "1"
+              "value": "0"
             },
             {
               "index": [
                 0
               ],
-              "stored": false,
+              "stored": true,
               "tensor": "B",
-              "value": "0"
+              "value": "1"
             }
           ],
           "mismatch": "term-order",
@@ -6543,7 +6544,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0011221399999999937,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -6551,28 +6552,28 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0008284149998871726
+            "wall_seconds": 0.0014061000038054772
           },
           {
-            "cpu_seconds": 0.0010400579999999549,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 201,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0009704779999992752
+            "wall_seconds": 0.0015835000012884848
           },
           {
-            "cpu_seconds": 0.00038744700000004073,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 261,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00035410200007390813
+            "wall_seconds": 0.0005069000035291538
           },
           {
-            "cpu_seconds": 0.0010254060000000065,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 449,
             "obligation": "shape",
@@ -6584,10 +6585,10 @@
               "i3": "0",
               "n0": "1"
             },
-            "wall_seconds": 0.0011029869999674702
+            "wall_seconds": 0.0012086999995517544
           },
           {
-            "cpu_seconds": 0.0010883200000000315,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 534,
             "obligation": "value",
@@ -6599,10 +6600,10 @@
               "i3": "0",
               "n0": "1"
             },
-            "wall_seconds": 0.0009963770000922523
+            "wall_seconds": 0.0016512000001966953
           },
           {
-            "cpu_seconds": 0.0009193379999999918,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 542,
             "obligation": "zero-support",
@@ -6614,10 +6615,10 @@
               "i3": "0",
               "n0": "1"
             },
-            "wall_seconds": 0.0008960160000697215
+            "wall_seconds": 0.001630000006116461
           },
           {
-            "cpu_seconds": 0.001879517999999969,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 532,
             "obligation": "stored-support",
@@ -6629,10 +6630,10 @@
               "i3": "0",
               "n0": "1"
             },
-            "wall_seconds": 0.0018694380000852107
+            "wall_seconds": 0.0016452999989269301
           },
           {
-            "cpu_seconds": 0.001203040000000044,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 540,
             "obligation": "term-order",
@@ -6644,7 +6645,7 @@
               "i3": "0",
               "n0": "1"
             },
-            "wall_seconds": 0.0011726519999228913
+            "wall_seconds": 0.0014162000006763265
           }
         ],
         "terms": 0
@@ -6919,7 +6920,7 @@
         "id": "active-read-oob",
         "queries": [
           {
-            "cpu_seconds": 0.0031922819999999907,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -6927,19 +6928,19 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0011344440001721523
+            "wall_seconds": 0.0013484000010066666
           },
           {
-            "cpu_seconds": 0.0014095679999999167,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0013392319999638858
+            "wall_seconds": 0.0018901000003097579
           },
           {
-            "cpu_seconds": 0.0014667930000000773,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 410,
             "obligation": "active-read-bounds",
@@ -6951,7 +6952,7 @@
               "i3": "0",
               "n0": "1"
             },
-            "wall_seconds": 0.001438480999922831
+            "wall_seconds": 0.0019038000027649105
           }
         ],
         "reason": "active read out of bounds"
@@ -7015,7 +7016,7 @@
         "id": "negative-dimension",
         "queries": [
           {
-            "cpu_seconds": 0.001475196000000012,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 158,
             "obligation": "precondition",
@@ -7023,10 +7024,10 @@
             "values": {
               "n0": "-1"
             },
-            "wall_seconds": 0.0013085450000289711
+            "wall_seconds": 0.0013689000043086708
           },
           {
-            "cpu_seconds": 0.0010587459999999993,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 199,
             "obligation": "nonnegative-dimensions",
@@ -7034,7 +7035,7 @@
             "values": {
               "n0": "-1"
             },
-            "wall_seconds": 0.0010479740001301252
+            "wall_seconds": 0.0014486000000033528
           }
         ],
         "reason": "negative dimension"
@@ -7098,13 +7099,13 @@
         "id": "empty-precondition",
         "queries": [
           {
-            "cpu_seconds": 0.0012512519999999805,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 169,
             "obligation": "precondition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0009696060001260776
+            "wall_seconds": 0.0012645999959204346
           }
         ],
         "reason": "precondition feasibility"
@@ -7286,7 +7287,7 @@
         "id": "unstored-nonzero",
         "queries": [
           {
-            "cpu_seconds": 0.0018646259999999248,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -7294,28 +7295,28 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0016970490000858263
+            "wall_seconds": 0.0014028999939910136
           },
           {
-            "cpu_seconds": 0.004262184000000002,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.004131165999979203
+            "wall_seconds": 0.0017114000002038665
           },
           {
-            "cpu_seconds": 0.0010237339999999984,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 398,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000957107999965956
+            "wall_seconds": 0.001226100001076702
           },
           {
-            "cpu_seconds": 0.0014618860000000788,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 860,
             "obligation": "output-storage-consistency",
@@ -7331,7 +7332,7 @@
               "x0": "1",
               "x1": "1"
             },
-            "wall_seconds": 0.0015312299999550305
+            "wall_seconds": 0.0011729000034392811
           }
         ],
         "reason": "unstored nonzero output"
@@ -7414,22 +7415,22 @@
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "0",
-              "x1": "0"
+              "x0": "2",
+              "x1": "2"
             }
           },
           "term-order": {
             "status": "refuted",
             "witness": {
-              "b0": true,
-              "b1": true,
+              "b0": false,
+              "b1": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1"
+              "x0": "0",
+              "x1": "0"
             }
           },
           "value": {
@@ -7446,7 +7447,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0018451459999999642,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -7454,64 +7455,64 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0011705780000283994
+            "wall_seconds": 0.001484099993831478
           },
           {
-            "cpu_seconds": 0.0012497900000000284,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0011749650000183465
+            "wall_seconds": 0.0017755000008037314
           },
           {
-            "cpu_seconds": 0.0009658780000000311,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 398,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0009195709999403334
+            "wall_seconds": 0.0013091000000713393
           },
           {
-            "cpu_seconds": 0.0008084029999999576,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 906,
             "obligation": "output-storage-consistency",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007355459999871528
+            "wall_seconds": 0.0005139000058989041
           },
           {
-            "cpu_seconds": 0.004264948999999962,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 875,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0042661190000217175
+            "wall_seconds": 0.00028229999588802457
           },
           {
-            "cpu_seconds": 0.0007265710000000647,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 954,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005400009999902977
+            "wall_seconds": 0.0008267000011983328
           },
           {
-            "cpu_seconds": 0.0005526229999999188,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 962,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005235270000412129
+            "wall_seconds": 0.0009687999991001561
           },
           {
-            "cpu_seconds": 0.0008442560000000432,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 952,
             "obligation": "stored-support",
@@ -7524,29 +7525,29 @@
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "0",
-              "x1": "0"
+              "x0": "2",
+              "x1": "2"
             },
-            "wall_seconds": 0.000946731999874828
+            "wall_seconds": 0.001261600002180785
           },
           {
-            "cpu_seconds": 0.0008303760000000215,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 960,
             "obligation": "term-order",
             "status": "sat",
             "values": {
-              "b0": true,
-              "b1": true,
+              "b0": false,
+              "b1": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "1",
-              "x1": "1"
+              "x0": "0",
+              "x1": "0"
             },
-            "wall_seconds": 0.0008994009999696573
+            "wall_seconds": 0.0013008000023546629
           }
         ],
         "terms": 2
@@ -7618,7 +7619,7 @@
               ],
               "stored": true,
               "tensor": "A",
-              "value": "0"
+              "value": "2"
             }
           ],
           "mismatch": "stored-support",
@@ -7633,16 +7634,16 @@
         "term-order": {
           "after_stored": false,
           "after_value": "0",
-          "before_stored": true,
+          "before_stored": false,
           "before_value": "0",
           "cells": [
             {
               "index": [
                 0
               ],
-              "stored": true,
+              "stored": false,
               "tensor": "A",
-              "value": "1"
+              "value": "0"
             }
           ],
           "mismatch": "term-order",
@@ -7788,17 +7789,17 @@
           "term-order": {
             "status": "refuted",
             "witness": {
-              "b0": true,
-              "b1": true,
-              "b2": true,
+              "b0": false,
+              "b1": false,
+              "b2": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "33",
-              "x0": "1",
-              "x1": "1",
-              "x2": "1"
+              "x0": "0",
+              "x1": "0",
+              "x2": "0"
             }
           },
           "value": {
@@ -7827,7 +7828,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.00419966099999991,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -7835,37 +7836,37 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0015595419999954174
+            "wall_seconds": 0.0014465000058407895
           },
           {
-            "cpu_seconds": 0.0016329500000000774,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0015040589998989162
+            "wall_seconds": 0.0018239000055473298
           },
           {
-            "cpu_seconds": 0.0010131379999999135,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 478,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0009491259997957968
+            "wall_seconds": 0.0013733999949181452
           },
           {
-            "cpu_seconds": 0.0008586080000000385,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1152,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007586900001115282
+            "wall_seconds": 0.00042830000165849924
           },
           {
-            "cpu_seconds": 0.0012097509999999811,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1231,
             "obligation": "value",
@@ -7883,46 +7884,46 @@
               "x1": "1/4",
               "x2": "1/4"
             },
-            "wall_seconds": 0.0013473140002133732
+            "wall_seconds": 0.0014654999977210537
           },
           {
-            "cpu_seconds": 0.0016795200000000454,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1239,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0014876649997859204
+            "wall_seconds": 0.001239799996255897
           },
           {
-            "cpu_seconds": 0.0008166950000000339,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1229,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007810030001564883
+            "wall_seconds": 0.0010321999943698756
           },
           {
-            "cpu_seconds": 0.000958746999999982,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1325,
             "obligation": "term-order",
             "status": "sat",
             "values": {
-              "b0": true,
-              "b1": true,
-              "b2": true,
+              "b0": false,
+              "b1": false,
+              "b2": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "33",
-              "x0": "1",
-              "x1": "1",
-              "x2": "1"
+              "x0": "0",
+              "x1": "0",
+              "x2": "0"
             },
-            "wall_seconds": 0.0010421960000712716
+            "wall_seconds": 0.0015034000025480054
           }
         ],
         "terms": 3
@@ -7983,18 +7984,18 @@
       ],
       "replays": {
         "term-order": {
-          "after_stored": true,
-          "after_value": "2",
-          "before_stored": true,
-          "before_value": "1",
+          "after_stored": false,
+          "after_value": "0",
+          "before_stored": false,
+          "before_value": "0",
           "cells": [
             {
               "index": [
                 0
               ],
-              "stored": true,
+              "stored": false,
               "tensor": "A",
-              "value": "1"
+              "value": "0"
             }
           ],
           "mismatch": "term-order",
@@ -8177,7 +8178,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0037191559999999457,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 193,
             "obligation": "precondition",
@@ -8186,70 +8187,70 @@
               "n0": "0",
               "n1": "0"
             },
-            "wall_seconds": 0.0010414949999812961
+            "wall_seconds": 0.0013480999987223186
           },
           {
-            "cpu_seconds": 0.0010808490000000504,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 261,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0009960659999705967
+            "wall_seconds": 0.00156789999891771
           },
           {
-            "cpu_seconds": 0.0008314179999999727,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 565,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007837470000140456
+            "wall_seconds": 0.0014298999958555214
           },
           {
-            "cpu_seconds": 0.0004928130000000364,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 906,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00040355600003749714
+            "wall_seconds": 0.0005600000004051253
           },
           {
-            "cpu_seconds": 0.0011017899999999914,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1049,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010840689999440656
+            "wall_seconds": 0.0008699999962118454
           },
           {
-            "cpu_seconds": 0.0006867520000000127,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1057,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0006237070001589018
+            "wall_seconds": 0.0009770999968168326
           },
           {
-            "cpu_seconds": 0.0005425379999999258,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1047,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00047280000012506207
+            "wall_seconds": 0.0009427999975741841
           },
           {
-            "cpu_seconds": 0.0003374720000000053,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1120,
             "obligation": "term-order",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000310596999952395
+            "wall_seconds": 0.0004621999978553504
           }
         ],
         "terms": 2
@@ -8602,7 +8603,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.001439191999999978,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 153,
             "obligation": "precondition",
@@ -8610,70 +8611,70 @@
             "values": {
               "n0": "0"
             },
-            "wall_seconds": 0.0008575679999012209
+            "wall_seconds": 0.001297599999816157
           },
           {
-            "cpu_seconds": 0.0008451480000000178,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 194,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007882149998295063
+            "wall_seconds": 0.0012856000030296855
           },
           {
-            "cpu_seconds": 0.0008130499999999818,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 397,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000746060999972542
+            "wall_seconds": 0.0013407000005827285
           },
           {
-            "cpu_seconds": 0.000470751000000047,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 834,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00039725700003145903
+            "wall_seconds": 0.0005116000029374845
           },
           {
-            "cpu_seconds": 0.0005306689999999836,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 913,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005155650001142931
+            "wall_seconds": 0.0004476999965845607
           },
           {
-            "cpu_seconds": 0.0005180310000000299,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 921,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004928299999846786
+            "wall_seconds": 0.0004569999946397729
           },
           {
-            "cpu_seconds": 0.0007459409999999167,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 911,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007246180000493041
+            "wall_seconds": 0.0004352999967522919
           },
           {
-            "cpu_seconds": 0.00041103100000006165,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 964,
             "obligation": "term-order",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00038474799998766684
+            "wall_seconds": 0.0008012999969650991
           }
         ],
         "terms": 2
@@ -8796,7 +8797,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0010263679999999997,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -8804,70 +8805,70 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.000840581999909773
+            "wall_seconds": 0.0013927000036346726
           },
           {
-            "cpu_seconds": 0.00040179799999995325,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 169,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003275120000125753
+            "wall_seconds": 0.000473000000056345
           },
           {
-            "cpu_seconds": 0.0002786150000000376,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 314,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00024864300007720885
+            "wall_seconds": 0.0002582000015536323
           },
           {
-            "cpu_seconds": 0.00038837800000002254,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 825,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003257289999964996
+            "wall_seconds": 0.0002879999956348911
           },
           {
-            "cpu_seconds": 0.0004771599999999765,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 862,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004568159999962518
+            "wall_seconds": 0.0007079999995767139
           },
           {
-            "cpu_seconds": 0.0005330940000000117,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 870,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005677830001786788
+            "wall_seconds": 0.0007467999967047945
           },
           {
-            "cpu_seconds": 0.0009052269999999529,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 860,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000820002000182285
+            "wall_seconds": 0.0008229000013670884
           },
           {
-            "cpu_seconds": 0.00031549000000008487,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 912,
             "obligation": "term-order",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002873519999866403
+            "wall_seconds": 0.00031229999876813963
           }
         ],
         "terms": 2
@@ -9024,7 +9025,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.001440903999999965,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -9032,70 +9033,70 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0010525909999614669
+            "wall_seconds": 0.0014107000024523586
           },
           {
-            "cpu_seconds": 0.0015236579999999833,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0013771889998679399
+            "wall_seconds": 0.0017800999994506128
           },
           {
-            "cpu_seconds": 0.0009117269999999733,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 468,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0008596820000548178
+            "wall_seconds": 0.001189800001156982
           },
           {
-            "cpu_seconds": 0.0005363890000000815,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1142,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00044144299999970826
+            "wall_seconds": 0.0005204000044614077
           },
           {
-            "cpu_seconds": 0.0004962479999999214,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1221,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00046840400000291993
+            "wall_seconds": 0.0008793000015430152
           },
           {
-            "cpu_seconds": 0.0006082659999999684,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 1229,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0006349829998271161
+            "wall_seconds": 0.0010218999959761277
           },
           {
-            "cpu_seconds": 0.0005914200000000092,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1219,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005133810000188532
+            "wall_seconds": 0.0008670000024721958
           },
           {
-            "cpu_seconds": 0.0004842710000000361,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 1319,
             "obligation": "term-order",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00045573499983220245
+            "wall_seconds": 0.0005027000006521121
           }
         ],
         "terms": 3
@@ -9228,29 +9229,29 @@
           "stored-support": {
             "status": "refuted",
             "witness": {
-              "b0": true,
-              "b1": false,
+              "b0": false,
+              "b1": true,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
               "x0": "0",
-              "x1": "0"
+              "x1": "1"
             }
           },
           "term-order": {
             "status": "refuted",
             "witness": {
-              "b0": false,
-              "b1": false,
+              "b0": true,
+              "b1": true,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "0",
-              "x1": "0"
+              "x0": "1",
+              "x1": "1"
             }
           },
           "value": {
@@ -9287,7 +9288,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0015534120000000318,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -9295,37 +9296,37 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0008731809998607787
+            "wall_seconds": 0.0013547999988077208
           },
           {
-            "cpu_seconds": 0.0012981420000000021,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 204,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0011917199999516015
+            "wall_seconds": 0.0016891999985091388
           },
           {
-            "cpu_seconds": 0.0010540190000000171,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 398,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000995184999965204
+            "wall_seconds": 0.0012495000046328641
           },
           {
-            "cpu_seconds": 0.0004600149999999248,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 785,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000383386000066821
+            "wall_seconds": 0.0004922000007354654
           },
           {
-            "cpu_seconds": 0.0011449740000000208,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 864,
             "obligation": "value",
@@ -9341,10 +9342,10 @@
               "x0": "2",
               "x1": "3"
             },
-            "wall_seconds": 0.0012773290000041015
+            "wall_seconds": 0.001205200002004858
           },
           {
-            "cpu_seconds": 0.0008937500000000265,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 872,
             "obligation": "zero-support",
@@ -9360,45 +9361,45 @@
               "x0": "0",
               "x1": "1"
             },
-            "wall_seconds": 0.0008149239999966085
+            "wall_seconds": 0.0010040999986813404
           },
           {
-            "cpu_seconds": 0.001031535999999944,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 862,
             "obligation": "stored-support",
             "status": "sat",
             "values": {
-              "b0": true,
-              "b1": false,
+              "b0": false,
+              "b1": true,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
               "x0": "0",
-              "x1": "0"
+              "x1": "1"
             },
-            "wall_seconds": 0.001007162999940192
+            "wall_seconds": 0.0009036999981617555
           },
           {
-            "cpu_seconds": 0.0008003210000000482,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 915,
             "obligation": "term-order",
             "status": "sat",
             "values": {
-              "b0": false,
-              "b1": false,
+              "b0": true,
+              "b1": true,
               "i0": "0",
               "i1": "0",
               "i2": "0",
               "i3": "0",
               "n0": "1",
-              "x0": "0",
-              "x1": "0"
+              "x0": "1",
+              "x1": "1"
             },
-            "wall_seconds": 0.0007661209999696439
+            "wall_seconds": 0.0008629999938420951
           }
         ],
         "terms": 2
@@ -9459,40 +9460,8 @@
       ],
       "replays": {
         "stored-support": {
-          "after_stored": false,
-          "after_value": "0",
-          "before_stored": true,
-          "before_value": "0",
-          "cells": [
-            {
-              "index": [
-                0
-              ],
-              "stored": true,
-              "tensor": "A",
-              "value": "0"
-            },
-            {
-              "index": [
-                0
-              ],
-              "stored": false,
-              "tensor": "B",
-              "value": "0"
-            }
-          ],
-          "mismatch": "stored-support",
-          "output_index": [
-            0
-          ],
-          "parameters": {
-            "n0": 1
-          },
-          "valid": true
-        },
-        "term-order": {
-          "after_stored": false,
-          "after_value": "0",
+          "after_stored": true,
+          "after_value": "1",
           "before_stored": false,
           "before_value": "0",
           "cells": [
@@ -9508,9 +9477,41 @@
               "index": [
                 0
               ],
-              "stored": false,
+              "stored": true,
               "tensor": "B",
-              "value": "0"
+              "value": "1"
+            }
+          ],
+          "mismatch": "stored-support",
+          "output_index": [
+            0
+          ],
+          "parameters": {
+            "n0": 1
+          },
+          "valid": true
+        },
+        "term-order": {
+          "after_stored": true,
+          "after_value": "1",
+          "before_stored": true,
+          "before_value": "1",
+          "cells": [
+            {
+              "index": [
+                0
+              ],
+              "stored": true,
+              "tensor": "A",
+              "value": "1"
+            },
+            {
+              "index": [
+                0
+              ],
+              "stored": true,
+              "tensor": "B",
+              "value": "1"
             }
           ],
           "mismatch": "term-order",
@@ -9773,7 +9774,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0015890359999999326,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -9781,55 +9782,55 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0011770989999604353
+            "wall_seconds": 0.0014518000025418587
           },
           {
-            "cpu_seconds": 0.001472911999999993,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0013980809999338817
+            "wall_seconds": 0.0016160999948624521
           },
           {
-            "cpu_seconds": 0.00046161700000002526,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 261,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0006207220001215319
+            "wall_seconds": 0.00048349999997299165
           },
           {
-            "cpu_seconds": 0.0005558780000000096,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 444,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00029799799995089415
+            "wall_seconds": 0.0002998999989358708
           },
           {
-            "cpu_seconds": 0.00031713200000005326,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 523,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002974070000618667
+            "wall_seconds": 0.0003635000030044466
           },
           {
-            "cpu_seconds": 0.0002595759999999281,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 531,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00023972000008143368
+            "wall_seconds": 0.00027260000206297264
           },
           {
-            "cpu_seconds": 0.001112977000000015,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 521,
             "obligation": "stored-support",
@@ -9841,16 +9842,16 @@
               "i3": "0",
               "n0": "1"
             },
-            "wall_seconds": 0.0011711790000390465
+            "wall_seconds": 0.0017657999997027218
           },
           {
-            "cpu_seconds": 0.00046196700000000757,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 529,
             "obligation": "term-order",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00039708600002086314
+            "wall_seconds": 0.0005505000008270144
           }
         ],
         "terms": 0
@@ -10037,7 +10038,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.001465881999999974,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -10045,70 +10046,70 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0008655999999973574
+            "wall_seconds": 0.001201200000650715
           },
           {
-            "cpu_seconds": 0.0012012679999999776,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0011315700000977813
+            "wall_seconds": 0.001467000001866836
           },
           {
-            "cpu_seconds": 0.0008031059999999979,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 398,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007593299999371084
+            "wall_seconds": 0.0011587999979383312
           },
           {
-            "cpu_seconds": 0.00044365000000001764,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 851,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000364627999942968
+            "wall_seconds": 0.00039340000512311235
           },
           {
-            "cpu_seconds": 0.0004892779999999819,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 930,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004647289999866189
+            "wall_seconds": 0.000672499998472631
           },
           {
-            "cpu_seconds": 0.0004535350000000049,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 938,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004295150001780712
+            "wall_seconds": 0.001134400001319591
           },
           {
-            "cpu_seconds": 0.0007568570000000552,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 928,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007364670000242768
+            "wall_seconds": 0.0010143999970750883
           },
           {
-            "cpu_seconds": 0.00036992000000002356,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 985,
             "obligation": "term-order",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003449180001098284
+            "wall_seconds": 0.0004648000031011179
           }
         ],
         "terms": 2
@@ -10942,70 +10943,70 @@
           "term-order": {
             "status": "refuted",
             "witness": {
-              "b0": true,
-              "b1": true,
-              "b10": true,
-              "b11": true,
-              "b12": true,
-              "b13": true,
-              "b14": true,
-              "b15": true,
-              "b16": true,
-              "b17": true,
-              "b18": true,
-              "b19": true,
-              "b2": true,
-              "b20": true,
-              "b21": true,
-              "b22": true,
-              "b23": true,
-              "b24": true,
-              "b25": true,
-              "b26": true,
-              "b27": true,
-              "b28": true,
-              "b29": true,
-              "b3": true,
-              "b30": true,
-              "b31": true,
-              "b32": true,
-              "b33": true,
-              "b34": true,
-              "b35": true,
-              "b36": true,
-              "b37": true,
-              "b38": true,
-              "b39": true,
-              "b4": true,
-              "b40": true,
-              "b41": true,
-              "b42": true,
-              "b43": true,
-              "b44": true,
-              "b45": true,
-              "b46": true,
-              "b47": true,
-              "b48": true,
-              "b49": true,
-              "b5": true,
-              "b50": true,
-              "b51": true,
-              "b52": true,
-              "b53": true,
-              "b54": true,
-              "b55": true,
-              "b56": true,
-              "b57": true,
-              "b58": true,
-              "b59": true,
-              "b6": true,
-              "b60": true,
-              "b61": true,
-              "b62": true,
-              "b63": true,
-              "b7": true,
-              "b8": true,
-              "b9": true,
+              "b0": false,
+              "b1": false,
+              "b10": false,
+              "b11": false,
+              "b12": false,
+              "b13": false,
+              "b14": false,
+              "b15": false,
+              "b16": false,
+              "b17": false,
+              "b18": false,
+              "b19": false,
+              "b2": false,
+              "b20": false,
+              "b21": false,
+              "b22": false,
+              "b23": false,
+              "b24": false,
+              "b25": false,
+              "b26": false,
+              "b27": false,
+              "b28": false,
+              "b29": false,
+              "b3": false,
+              "b30": false,
+              "b31": false,
+              "b32": false,
+              "b33": false,
+              "b34": false,
+              "b35": false,
+              "b36": false,
+              "b37": false,
+              "b38": false,
+              "b39": false,
+              "b4": false,
+              "b40": false,
+              "b41": false,
+              "b42": false,
+              "b43": false,
+              "b44": false,
+              "b45": false,
+              "b46": false,
+              "b47": false,
+              "b48": false,
+              "b49": false,
+              "b5": false,
+              "b50": false,
+              "b51": false,
+              "b52": false,
+              "b53": false,
+              "b54": false,
+              "b55": false,
+              "b56": false,
+              "b57": false,
+              "b58": false,
+              "b59": false,
+              "b6": false,
+              "b60": false,
+              "b61": false,
+              "b62": false,
+              "b63": false,
+              "b7": false,
+              "b8": false,
+              "b9": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
@@ -11014,70 +11015,70 @@
               "n1": "1",
               "n2": "1",
               "n3": "1",
-              "x0": "1",
-              "x1": "1",
-              "x10": "1",
-              "x11": "1",
-              "x12": "1",
-              "x13": "1",
-              "x14": "1",
-              "x15": "1",
-              "x16": "1",
-              "x17": "1",
-              "x18": "1",
-              "x19": "1",
-              "x2": "1",
-              "x20": "1",
-              "x21": "1",
-              "x22": "1",
-              "x23": "1",
-              "x24": "1",
-              "x25": "1",
-              "x26": "1",
-              "x27": "1",
-              "x28": "1",
-              "x29": "1",
-              "x3": "1",
-              "x30": "1",
-              "x31": "1",
-              "x32": "1",
-              "x33": "1",
-              "x34": "1",
-              "x35": "1",
-              "x36": "1",
-              "x37": "1",
-              "x38": "1",
-              "x39": "1",
-              "x4": "1",
-              "x40": "1",
-              "x41": "1",
-              "x42": "1",
-              "x43": "1",
-              "x44": "1",
-              "x45": "1",
-              "x46": "1",
-              "x47": "1",
-              "x48": "1",
-              "x49": "1",
-              "x5": "1",
-              "x50": "1",
-              "x51": "1",
-              "x52": "1",
-              "x53": "1",
-              "x54": "1",
-              "x55": "1",
-              "x56": "1",
-              "x57": "1",
-              "x58": "1",
-              "x59": "1",
-              "x6": "1",
-              "x60": "1",
-              "x61": "1",
-              "x62": "1",
-              "x63": "1",
-              "x7": "1",
-              "x8": "1",
-              "x9": "1"
+              "x0": "0",
+              "x1": "0",
+              "x10": "0",
+              "x11": "0",
+              "x12": "0",
+              "x13": "0",
+              "x14": "0",
+              "x15": "0",
+              "x16": "0",
+              "x17": "0",
+              "x18": "0",
+              "x19": "0",
+              "x2": "0",
+              "x20": "0",
+              "x21": "0",
+              "x22": "0",
+              "x23": "0",
+              "x24": "0",
+              "x25": "0",
+              "x26": "0",
+              "x27": "0",
+              "x28": "0",
+              "x29": "0",
+              "x3": "0",
+              "x30": "0",
+              "x31": "0",
+              "x32": "0",
+              "x33": "0",
+              "x34": "0",
+              "x35": "0",
+              "x36": "0",
+              "x37": "0",
+              "x38": "0",
+              "x39": "0",
+              "x4": "0",
+              "x40": "0",
+              "x41": "0",
+              "x42": "0",
+              "x43": "0",
+              "x44": "0",
+              "x45": "0",
+              "x46": "0",
+              "x47": "0",
+              "x48": "0",
+              "x49": "0",
+              "x5": "0",
+              "x50": "0",
+              "x51": "0",
+              "x52": "0",
+              "x53": "0",
+              "x54": "0",
+              "x55": "0",
+              "x56": "0",
+              "x57": "0",
+              "x58": "0",
+              "x59": "0",
+              "x6": "0",
+              "x60": "0",
+              "x61": "0",
+              "x62": "0",
+              "x63": "0",
+              "x7": "0",
+              "x8": "0",
+              "x9": "0"
             }
           },
           "value": {
@@ -11094,7 +11095,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0036304440000000104,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 259,
             "obligation": "precondition",
@@ -11105,133 +11106,133 @@
               "n2": "1",
               "n3": "1"
             },
-            "wall_seconds": 0.0008780989999195299
+            "wall_seconds": 0.0012736999997287057
           },
           {
-            "cpu_seconds": 0.0011216290000000129,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 381,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010387899999386718
+            "wall_seconds": 0.0016006000005290844
           },
           {
-            "cpu_seconds": 0.0018996279999999865,
+            "cpu_seconds": 0.0,
             "detail": "",
             "encoding_bytes": 15853,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0013506389998383383
+            "wall_seconds": 0.001859700001659803
           },
           {
-            "cpu_seconds": 0.013461567000000008,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 207173,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.011946225999963644
+            "wall_seconds": 0.0099733999959426
           },
           {
-            "cpu_seconds": 0.017555761000000003,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 207420,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.01724750999983371
+            "wall_seconds": 0.019010300005902536
           },
           {
-            "cpu_seconds": 0.018236433999999968,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 207428,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.01799034600003324
+            "wall_seconds": 0.01908799999364419
           },
           {
-            "cpu_seconds": 0.017354582000000063,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 207418,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.017061941000065417
+            "wall_seconds": 0.0210910999958287
           },
           {
-            "cpu_seconds": 0.02344845200000001,
+            "cpu_seconds": 0.015625,
             "detail": "",
             "encoding_bytes": 258746,
             "obligation": "term-order",
             "status": "sat",
             "values": {
-              "b0": true,
-              "b1": true,
-              "b10": true,
-              "b11": true,
-              "b12": true,
-              "b13": true,
-              "b14": true,
-              "b15": true,
-              "b16": true,
-              "b17": true,
-              "b18": true,
-              "b19": true,
-              "b2": true,
-              "b20": true,
-              "b21": true,
-              "b22": true,
-              "b23": true,
-              "b24": true,
-              "b25": true,
-              "b26": true,
-              "b27": true,
-              "b28": true,
-              "b29": true,
-              "b3": true,
-              "b30": true,
-              "b31": true,
-              "b32": true,
-              "b33": true,
-              "b34": true,
-              "b35": true,
-              "b36": true,
-              "b37": true,
-              "b38": true,
-              "b39": true,
-              "b4": true,
-              "b40": true,
-              "b41": true,
-              "b42": true,
-              "b43": true,
-              "b44": true,
-              "b45": true,
-              "b46": true,
-              "b47": true,
-              "b48": true,
-              "b49": true,
-              "b5": true,
-              "b50": true,
-              "b51": true,
-              "b52": true,
-              "b53": true,
-              "b54": true,
-              "b55": true,
-              "b56": true,
-              "b57": true,
-              "b58": true,
-              "b59": true,
-              "b6": true,
-              "b60": true,
-              "b61": true,
-              "b62": true,
-              "b63": true,
-              "b7": true,
-              "b8": true,
-              "b9": true,
+              "b0": false,
+              "b1": false,
+              "b10": false,
+              "b11": false,
+              "b12": false,
+              "b13": false,
+              "b14": false,
+              "b15": false,
+              "b16": false,
+              "b17": false,
+              "b18": false,
+              "b19": false,
+              "b2": false,
+              "b20": false,
+              "b21": false,
+              "b22": false,
+              "b23": false,
+              "b24": false,
+              "b25": false,
+              "b26": false,
+              "b27": false,
+              "b28": false,
+              "b29": false,
+              "b3": false,
+              "b30": false,
+              "b31": false,
+              "b32": false,
+              "b33": false,
+              "b34": false,
+              "b35": false,
+              "b36": false,
+              "b37": false,
+              "b38": false,
+              "b39": false,
+              "b4": false,
+              "b40": false,
+              "b41": false,
+              "b42": false,
+              "b43": false,
+              "b44": false,
+              "b45": false,
+              "b46": false,
+              "b47": false,
+              "b48": false,
+              "b49": false,
+              "b5": false,
+              "b50": false,
+              "b51": false,
+              "b52": false,
+              "b53": false,
+              "b54": false,
+              "b55": false,
+              "b56": false,
+              "b57": false,
+              "b58": false,
+              "b59": false,
+              "b6": false,
+              "b60": false,
+              "b61": false,
+              "b62": false,
+              "b63": false,
+              "b7": false,
+              "b8": false,
+              "b9": false,
               "i0": "0",
               "i1": "0",
               "i2": "0",
@@ -11240,72 +11241,72 @@
               "n1": "1",
               "n2": "1",
               "n3": "1",
-              "x0": "1",
-              "x1": "1",
-              "x10": "1",
-              "x11": "1",
-              "x12": "1",
-              "x13": "1",
-              "x14": "1",
-              "x15": "1",
-              "x16": "1",
-              "x17": "1",
-              "x18": "1",
-              "x19": "1",
-              "x2": "1",
-              "x20": "1",
-              "x21": "1",
-              "x22": "1",
-              "x23": "1",
-              "x24": "1",
-              "x25": "1",
-              "x26": "1",
-              "x27": "1",
-              "x28": "1",
-              "x29": "1",
-              "x3": "1",
-              "x30": "1",
-              "x31": "1",
-              "x32": "1",
-              "x33": "1",
-              "x34": "1",
-              "x35": "1",
-              "x36": "1",
-              "x37": "1",
-              "x38": "1",
-              "x39": "1",
-              "x4": "1",
-              "x40": "1",
-              "x41": "1",
-              "x42": "1",
-              "x43": "1",
-              "x44": "1",
-              "x45": "1",
-              "x46": "1",
-              "x47": "1",
-              "x48": "1",
-              "x49": "1",
-              "x5": "1",
-              "x50": "1",
-              "x51": "1",
-              "x52": "1",
-              "x53": "1",
-              "x54": "1",
-              "x55": "1",
-              "x56": "1",
-              "x57": "1",
-              "x58": "1",
-              "x59": "1",
-              "x6": "1",
-              "x60": "1",
-              "x61": "1",
-              "x62": "1",
-              "x63": "1",
-              "x7": "1",
-              "x8": "1",
-              "x9": "1"
+              "x0": "0",
+              "x1": "0",
+              "x10": "0",
+              "x11": "0",
+              "x12": "0",
+              "x13": "0",
+              "x14": "0",
+              "x15": "0",
+              "x16": "0",
+              "x17": "0",
+              "x18": "0",
+              "x19": "0",
+              "x2": "0",
+              "x20": "0",
+              "x21": "0",
+              "x22": "0",
+              "x23": "0",
+              "x24": "0",
+              "x25": "0",
+              "x26": "0",
+              "x27": "0",
+              "x28": "0",
+              "x29": "0",
+              "x3": "0",
+              "x30": "0",
+              "x31": "0",
+              "x32": "0",
+              "x33": "0",
+              "x34": "0",
+              "x35": "0",
+              "x36": "0",
+              "x37": "0",
+              "x38": "0",
+              "x39": "0",
+              "x4": "0",
+              "x40": "0",
+              "x41": "0",
+              "x42": "0",
+              "x43": "0",
+              "x44": "0",
+              "x45": "0",
+              "x46": "0",
+              "x47": "0",
+              "x48": "0",
+              "x49": "0",
+              "x5": "0",
+              "x50": "0",
+              "x51": "0",
+              "x52": "0",
+              "x53": "0",
+              "x54": "0",
+              "x55": "0",
+              "x56": "0",
+              "x57": "0",
+              "x58": "0",
+              "x59": "0",
+              "x6": "0",
+              "x60": "0",
+              "x61": "0",
+              "x62": "0",
+              "x63": "0",
+              "x7": "0",
+              "x8": "0",
+              "x9": "0"
             },
-            "wall_seconds": 0.023861123999949996
+            "wall_seconds": 0.02601130000402918
           }
         ],
         "terms": 64
@@ -11332,9 +11333,9 @@
       ],
       "replays": {
         "term-order": {
-          "after_stored": true,
+          "after_stored": false,
           "after_value": "0",
-          "before_stored": true,
+          "before_stored": false,
           "before_value": "0",
           "cells": [
             {
@@ -11344,9 +11345,9 @@
                 0,
                 0
               ],
-              "stored": true,
+              "stored": false,
               "tensor": "A",
-              "value": "1"
+              "value": "0"
             }
           ],
           "mismatch": "term-order",
@@ -11396,7 +11397,7 @@
     }
   ],
   "replay_count": 40,
-  "solver_cpu_seconds": 0.41269426500000006,
+  "solver_cpu_seconds": 0.421875,
   "study": "pre-lock generated pilot; not a public patch evaluation",
-  "wall_seconds": 0.656419360999962
+  "wall_seconds": 0.6681987000047229
 }

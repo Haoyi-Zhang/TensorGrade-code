@@ -78,6 +78,8 @@ class PublicAdapterStudyTest(unittest.TestCase):
         self.assertEqual(records["P01"]["failed_gates"], ["G3", "G4", "G5"])
         self.assertEqual(records["P04"]["bounded_validation"]["states"], 30)
         self.assertFalse(records["P06"]["bounded_validation"]["label_only_comparison_used"])
+        self.assertIn("post-call pending-coordinate map", records["P06"]["observable"])
+        self.assertEqual(records["P06"]["bounded_validation"]["additional_calls"], 22)
         p08_inventory = records["P08"]["fixed_production_callsite_invariant"]
         self.assertEqual(len(p08_inventory["callsite_groups"]), 4)
         self.assertEqual(p08_inventory["inventory_summary"]["direct_tensorvar_call_expressions"], 20)
@@ -149,7 +151,11 @@ class PublicAdapterStudyTest(unittest.TestCase):
         self.assertNotEqual(baseline, mutant)
         # The negative control preserves top-level node kinds while changing the
         # literal in the actual bound expression, so label equality cannot pass it.
-        self.assertEqual(node_kind_signature(baseline), node_kind_signature(mutant))
+        self.assertEqual(node_kind_signature(baseline.nodes), node_kind_signature(mutant.nodes))
+        self.assertEqual(baseline.pending, mutant.pending)
+        result = verify_adapter("P06")
+        self.assertEqual(result["effect_replay_count"], 400)
+        self.assertEqual(result["effect_replay_failures"], [])
 
     def test_p08_keeps_96_equivalence_cases_and_four_excluded_controls(self) -> None:
         self.assertEqual(len(p08_cases()), 96)

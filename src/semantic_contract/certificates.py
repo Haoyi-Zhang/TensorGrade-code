@@ -11,6 +11,60 @@ from .replay import (ReplayError, integer_expression, shape_of, in_bounds,
 from .oracle import coefficient_row,same_kernel
 
 
+def _source_sequence_templates(sequence):
+    for call in sequence.calls:
+        if call.pending:
+            raise ReplayError('sequence pre-map belongs to previous call, not call template')
+
+
+def source_effect_certificate(sequence, results):
+    """Bind exported state and the final dense block, not all five helpers."""
+    from .dense_effects import node_record, pending_record, transition_record
+    _source_sequence_templates(sequence)
+    if len(sequence.calls) != len(results):
+        raise ReplayError('source call count')
+    calls = []
+    dense_comment = {'kind': 'Comment', 'fields': {'text': 'Resolve dense coordinates'}}
+    for index, result in enumerate(results):
+        if result.pending != result.dense.post:
+            raise ReplayError(f'call {index}: source exported pending binding')
+        transition = transition_record(result.dense)
+        nodes = node_record(result.nodes)
+        starts = [i for i, node in enumerate(nodes) if node == dense_comment]
+        # The dense block is last and has one leading top-level comment iff
+        # nonempty. Earlier helper nodes are not certified by this format.
+        emitted = transition['emitted']
+        if emitted:
+            if len(starts) != 1 or nodes[starts[0]:] != emitted:
+                raise ReplayError(f'call {index}: source dense emission binding')
+        elif starts:
+            raise ReplayError(f'call {index}: source dense emission binding')
+        calls.append(transition)
+    return {'kind': 'p06-ordered-map', 'case_id': sequence.case_id,
+            'initial_pending': pending_record(sequence.initial_pending),
+            'calls': calls}
+
+
+def check_source_effect_certificate(sequence, cert):
+    from .dense_effects import node_record, pending_record
+    from .replay import replay_source_effects
+    try:
+        _source_sequence_templates(sequence)
+        # Bind replay to supplied inputs, not a self-selected certificate case.
+        if cert['case_id'] != sequence.case_id or cert['initial_pending'] != pending_record(sequence.initial_pending):
+            raise ReplayError('source case binding')
+        if len(cert['calls']) != len(sequence.calls):
+            raise ReplayError('source call count')
+        for call, transition in zip(sequence.calls, cert['calls']):
+            offered = [{'coordinate': node_record(it.coordinate), 'value': node_record(it.value),
+                        'dependencies': list(it.dependencies)} for it in call.dense_iterators]
+            if transition['offered'] != offered or transition['defined'] != list(call.defined_index_vars):
+                raise ReplayError('source call input binding')
+        return replay_source_effects(cert)
+    except (ReplayError, KeyError, TypeError, ValueError) as exc:
+        return {'valid': False, 'reason': str(exc)}
+
+
 def _kernel_witness(a,b):
     keys=sorted(set(a)|set(b))
     for k in keys:

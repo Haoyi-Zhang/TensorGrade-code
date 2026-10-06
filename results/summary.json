@@ -13,8 +13,8 @@
   "bibliography_verified_inventory_records": 83,
   "certificate_stored_cell_counts": {
     "0": 72,
-    "1": 83,
-    "2": 7
+    "1": 85,
+    "2": 5
   },
   "consumer_outcomes": {
     "invalid": 4,
@@ -23,8 +23,9 @@
     "unsupported": 1
   },
   "consumer_refutation_replays": 5,
-  "current_peak_rss_kib": 130424,
-  "current_whole_process_cpu_seconds": 13.706612,
+  "current_peak_rss_kib": null,
+  "current_whole_process_cpu_seconds": null,
+  "current_whole_process_wall_seconds": 11.248481199996604,
   "diagnostic_ir_cases": 64,
   "diagnostic_query_count": 512,
   "finite_shape_oracle_checks": 252,
@@ -38,6 +39,10 @@
   "p01_candidate_successful_domain_mismatches": 0,
   "p01_scalar_boundary_controls": 4,
   "p01_scalar_boundary_differences": 3,
+  "p06_additional_effect_calls": 22,
+  "p06_additional_effect_sequences": 8,
+  "p06_single_call_effect_replays": 400,
+  "p06_state_only_controls_rejected": 3,
   "p08_equivalence_domain_cases": 96,
   "p08_excluded_domain_controls": 4,
   "pilot_admissions": {

@@ -11,8 +11,13 @@ The essential changes are:
   range is finite model scope; source-reachable scalar boundaries differ.
 - P04 uses independent parent and child conditional renderers and covers all
   promised branches, including `make_last_case_else` and absent loop init.
-- P06 compares full LLIR trees. The same-kind `+1`/`+2` control demonstrates why
-  label equality is insufficient.
+- P06 compares full LLIR trees jointly with the persistent ordered post-map.
+  Insertions deduplicate by destination name before readiness scanning; ready
+  entries are emitted/deleted and unready entries retain payload and order.
+  The same-kind `+1`/`+2` control rejects label equality, while three unchanged-
+  output state controls reject output-only equality. An independent ordered-list
+  replayer checks 400 single-call transitions and eight additional 22-call
+  sequences. Theorem I proves insertion, scan, and call-sequence invariants.
 - P08's invariant is tied to the fixed production call-site inventory. The four
   excluded combinations are executed and reported rather than filtered as
   successes.

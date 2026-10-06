@@ -20,6 +20,12 @@ class ReplayError(ValueError):
     """A case, witness, or certificate is outside the replay contract."""
 
 
+def replay_source_effects(certificate):
+    """Independent ordered-list reference; no solver or adapter calls."""
+    from .dense_effects import check_effect_certificate
+    return check_effect_certificate(certificate)
+
+
 _CASE_FIELDS = {
     "id", "parameters", "inputs", "precondition", "before", "after",
     "family", "expected", "provenance",

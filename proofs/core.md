@@ -293,20 +293,57 @@ are equal. Target-only negative controls that change a condition, drop an else,
 or remove a closing brace distinguish the paths, showing that the bounded check
 does not pass merely because of a shared renderer. QED.
 
-**Theorem I (P06 ordered full-node partition).** Under P06's fixed
-coordinate-resolver invariant, the original routine and the extracted
-five-helper routine emit the same complete ordered LLIR node sequence.
+**Theorem I (P06 full state transition).** Under P06's fixed coordinate-resolver
+invariant, the original routine and the extracted five-helper routine return
+equal complete ordered LLIR node sequences and leave equal ordered pending maps.
+For every finite sequence of calls with equal initial maps and equal intervening
+inputs, both the returned sequence and post-map agree after every call.
 
-**Proof.** Partition the parent routine into the five maximal consecutive blocks
-for iterator loads, coordinate choice, compressed-result assembly,
-coordinate-end computation, and dense-coordinate computation. For each block,
-inspection of the fixed parent and child files shows that the child helper keeps
-the predicate, loop order, and every LLIR constructor field. The executable
-model compares typed node trees, including variable names and types, function
-names and arguments, array addresses and indices, operators, literals, loop
-bounds, updates, and bodies. The child caller concatenates the five helper
-results in parent order. Equal subsequences therefore yield the same complete
-sequence. A negative control changes the actual coordinate-end expression from
+**Proof.** The first four blocks (iterator loads, coordinate choice, compressed
+assembly, coordinate ends) preserve every predicate, iterator order, constructor
+field and the unchanged map. The dense block is a transition on the lowerer's
+`dense_coord_resolve_stmt_to_dep_index_vars`, not a pure output template.
+
+Let E be the ordered pre-map of declaration/dependency-list pairs, T the offered
+dense iterators, and F the snapshot set of defined IndexVars. IndexVar equality
+and hashing in fixed `cin.py` are by name, so name tokens faithfully implement F
+and dependency membership. Well-formed LLIR keys and dependency lists remain
+stable during the call. The map starts empty in `CINLowerer.__init__` and the
+resolver is its insertion/removal site; insertion by name preserves uniqueness
+of destination names from that initial state. There is no helper-local reset.
+
+Induct over T. If the LLIR value is absent, both paths skip the iterator (a
+Literal node holding zero is present). Otherwise they construct the same VarInit
+and read the names of all currently pending declarations. If the destination
+name occurs, both leave its old statement, payload and map position unchanged.
+Otherwise both append the new declaration and its dependency list. This test
+occurs before any readiness scan: a ready old entry still suppresses a new one.
+The resulting ordered snapshot E+ is therefore equal.
+
+Induct over E+. Both use set(dependencies) subset F as readiness, ignoring repeated
+names but preserving the original dependency list as state payload. A ready entry
+is emitted and removed by its exact key; an unready entry remains unchanged.
+Emission does not add a new defined IndexVar, and the fixed F cannot cascade.
+Consequently the emitted list is the same stable ready subsequence and the
+post-map is the same stable unready subsequence. Both emit the dense comment
+exactly when the ready subsequence is nonempty. The caller concatenates all five
+blocks in parent order, proving full returned-node and map equality.
+
+For call-sequence induction, the initial maps agree. The single-call result gives
+equal post-maps, which become the next pre-maps. The unchanged caller supplies
+equal next iterator/defined-variable inputs, so the induction repeats. The same
+argument accommodates additional defined IndexVars between calls without inventing
+definitions during a scan. This proves the finite-sequence statement universally,
+not just for the retained grid.
+
+The adapter's `CoordResult` compares full node fields and ordered map entries;
+`DenseTransition` additionally records pre/scan/post state, insertion/skip and
+retain flags. The independent `dense_effects.py` reference interprets these
+operations on ordered lists and never calls either changed adapter path. All
+400 frozen single-call cases pass effect replay. Eight additional sequences
+cover 22 calls, and three output-preserving state-only mutations are rejected.
+These finite source-effect certificates are separate from the two-cell theorem
+and the 18-mutant denominator. A negative control changes the coordinate end from
 `pX1_end = pX0 + 1` to `+2` while preserving the top-level node-kind signature;
 full-node comparison rejects it, so label equality is not used as evidence.
 QED.
@@ -339,6 +376,12 @@ paper observation S, V, Z, M, and O at the phase output.
 **Proof.** Equal phase inputs to the same deterministic relation yield equal
 phase outputs. Each declared observation is a function of those outputs, so all
 five agree. QED.
+
+For P06, that complete phase input is the pair (returned LLIR, ordered post-map),
+with other caller/lowerer fields unchanged. It includes the state consumed by
+later resolver calls; equality of returned nodes alone does not satisfy G4 or
+this corollary. This transition layer does not add mutation to the finite-read
+tensor IR or extend Theorems A--F to arbitrary mutable programs.
 
 The corollary is deliberately conditional. It excludes reflection on source
 text, timing, direct external calls outside the documented invariant, exception

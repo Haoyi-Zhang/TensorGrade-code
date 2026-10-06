@@ -40,6 +40,10 @@ def main():
       ('Public commits in fixed denominator',s['public_corpus_commits']),
       ('Complete public source adapters admitted',s['public_adapter_admissions']),
       ('Admitted adapter bounded states',s['public_adapter_bounded_cases']),
+      ('P06 single-call state-effect replays',s['p06_single_call_effect_replays']),
+      ('Additional P06 multi-call sequences',s['p06_additional_effect_sequences']),
+      ('Calls in those P06 sequences',s['p06_additional_effect_calls']),
+      ('P06 state-only controls rejected',s['p06_state_only_controls_rejected']),
       ('P01 candidate successful-domain states',s['p01_candidate_successful_domain_cases']),
       ('P08 excluded-domain controls',s['p08_excluded_domain_controls'])]
     v=[r'\begin{table}[t]',r'\caption{Retained validation units. Rows deliberately count different objects and must not be summed.}\label{tab:validation}',r'\centering',r'\begin{tabular}{lr}',r'\toprule',r'Unit & Count\\\midrule']

@@ -247,6 +247,7 @@ class Literal:
 class Var:
     name: str
     typ: str = "int"
+    is_ptr: bool = False
 
 
 @dataclass(frozen=True)
@@ -302,6 +303,7 @@ class VarInit:
     var: Var
     value: "Node"
     op: str = "="
+    cast: bool = False
 
 
 @dataclass(frozen=True)
@@ -763,13 +765,48 @@ class IteratorState:
 
 
 @dataclass(frozen=True)
+class PendingCoordinate:
+    statement: VarInit
+    dependencies: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class DenseIteratorState:
+    coordinate: Var
+    value: Node | None
+    dependencies: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True)
+class DenseTransition:
+    pre: tuple[PendingCoordinate, ...]
+    offered: tuple[DenseIteratorState, ...]
+    defined: tuple[str, ...]
+    # None = no value (source truthiness guard); False = name already pending.
+    inserted: tuple[bool | None, ...]
+    snapshot: tuple[PendingCoordinate, ...]
+    retained: tuple[bool, ...]
+    post: tuple[PendingCoordinate, ...]
+    emitted: tuple[Node, ...]
+
+
+@dataclass(frozen=True)
+class CoordResult:
+    nodes: tuple[Node, ...]
+    pending: tuple[PendingCoordinate, ...]
+    dense: DenseTransition
+
+
+@dataclass(frozen=True)
 class CoordState:
     iterators: tuple[IteratorState, ...]
     dense_universe: bool
     result_has_index: bool
     current_dense: bool
     child_compressed: bool
-    dense_ready: tuple[bool, ...]
+    dense_iterators: tuple[DenseIteratorState, ...] = ()
+    defined_index_vars: tuple[str, ...] = ()
+    pending: tuple[PendingCoordinate, ...] = ()
 
     @property
     def index_var(self) -> Var:
@@ -780,7 +817,7 @@ def _dense_stmt(i: int) -> VarInit:
     return VarInit(Var(f"pD{i}", "int"), BinOp(Var(f"base{i}", "int"), "+", Literal(str(i + 1))))
 
 
-def coord_before(s: CoordState) -> tuple[Node, ...]:
+def coord_before(s: CoordState) -> CoordResult:
     """Independent full-field transcription of the parent monolithic block."""
     out: list[Node] = []
     iterators = s.iterators
@@ -835,14 +872,41 @@ def coord_before(s: CoordState) -> tuple[Node, ...]:
         out.append(Comment("Find iterator end for coordinate level"))
         out.extend(end_nodes)
 
-    dense_nodes = [_dense_stmt(i) for i, ready in enumerate(s.dense_ready) if ready]
+    # Parent lines 697--732: the lowerer-owned dictionary survives this call.
+    d = {p.statement: p.dependencies for p in s.pending}
+    inserted: list[bool | None] = []
+    for it in s.dense_iterators:
+        if it.value is not None:
+            stmt = VarInit(it.coordinate, it.value)
+            names = [key.var.name for key in list(d.keys())]
+            if stmt.var.name not in names:
+                d[stmt] = it.dependencies
+                inserted.append(True)
+            else:
+                inserted.append(False)
+        else:
+            inserted.append(None)
+    defined = set(s.defined_index_vars)
+    snapshot = tuple(PendingCoordinate(stmt, deps) for stmt, deps in d.items())
+    retained: list[bool] = []
+    dense_nodes: list[Node] = []
+    for stmt, deps in d.copy().items():
+        keep = not set(deps).issubset(defined)
+        retained.append(keep)
+        if not keep:
+            dense_nodes.append(stmt)
+            del d[stmt]
     if dense_nodes:
         out.append(Comment("Resolve dense coordinates"))
         out.extend(dense_nodes)
-    return tuple(out)
+    post = tuple(PendingCoordinate(stmt, deps) for stmt, deps in d.items())
+    effect = DenseTransition(s.pending, s.dense_iterators, s.defined_index_vars,
+                             tuple(inserted), snapshot, tuple(retained), post,
+                             tuple(([Comment("Resolve dense coordinates")] + dense_nodes) if dense_nodes else []))
+    return CoordResult(tuple(out), post, effect)
 
 
-def coord_after(s: CoordState) -> tuple[Node, ...]:
+def coord_after(s: CoordState) -> CoordResult:
     """Independent helper decomposition with complete LLIR node fields."""
     def load_coordinates() -> list[Node]:
         if not (len(s.iterators) > 1 or s.dense_universe) or not s.iterators:
@@ -897,11 +961,40 @@ def coord_after(s: CoordState) -> tuple[Node, ...]:
             ))
         return [] if not nodes else [Comment("Find iterator end for coordinate level"), *nodes]
 
-    def dense_coordinates() -> list[Node]:
-        nodes = [_dense_stmt(i) for i, ready in enumerate(s.dense_ready) if ready]
-        return [] if not nodes else [Comment("Resolve dense coordinates"), *nodes]
+    def dense_coordinates() -> DenseTransition:
+        # Child lines 271--315. Deliberately independent of the parent path.
+        pending = {entry.statement: entry.dependencies for entry in s.pending}
+        insert_flags: list[bool | None] = []
+        for iterator in s.dense_iterators:
+            if iterator.value is None:
+                insert_flags.append(None)
+                continue
+            declaration = VarInit(iterator.coordinate, iterator.value)
+            to_resolve_names = [declaration.var.name for declaration in pending.keys()]
+            if declaration.var.name in to_resolve_names:
+                insert_flags.append(False)
+                continue
+            pending[declaration] = iterator.dependencies
+            insert_flags.append(True)
+        known = set(s.defined_index_vars)
+        copied = pending.copy()
+        scan = tuple(PendingCoordinate(stmt, deps) for stmt, deps in copied.items())
+        nodes: list[Node] = []
+        keep_flags: list[bool] = []
+        for declaration, dependencies in copied.items():
+            ready = set(dependencies).issubset(known)
+            keep_flags.append(not ready)
+            if ready:
+                nodes.append(declaration)
+                del pending[declaration]
+        remaining = tuple(PendingCoordinate(stmt, deps) for stmt, deps in pending.items())
+        emitted = () if not nodes else (Comment("Resolve dense coordinates"), *nodes)
+        return DenseTransition(s.pending, s.dense_iterators, s.defined_index_vars,
+                               tuple(insert_flags), scan, tuple(keep_flags), remaining, emitted)
 
-    return tuple(load_coordinates() + resolve_coordinates() + assemble_compressed() + coordinate_ends() + dense_coordinates())
+    prefix = tuple(load_coordinates() + resolve_coordinates() + assemble_compressed() + coordinate_ends())
+    effect = dense_coordinates()
+    return CoordResult(prefix + effect.emitted, effect.post, effect)
 
 
 P06_MUTANTS = (
@@ -933,8 +1026,9 @@ def _map_node(node: Node, fn: Callable[[Node], Node]) -> Node:
     return fn(node)
 
 
-def coord_mutant(s: CoordState, mutant: str) -> tuple[Node, ...]:
-    out = list(coord_after(s))
+def coord_mutant(s: CoordState, mutant: str) -> CoordResult:
+    result = coord_after(s)
+    out = list(result.nodes)
     if mutant == "drop-load":
         if out and isinstance(out[0], Comment) and out[0].text == "Load coordinates":
             out.pop(0)
@@ -968,7 +1062,7 @@ def coord_mutant(s: CoordState, mutant: str) -> tuple[Node, ...]:
             if isinstance(node, Comment) and node.text == "Resolve dense coordinates":
                 out = out[:i]
                 break
-    return tuple(out)
+    return replace(result, nodes=tuple(out))
 
 
 def p06_cases() -> list[CoordState]:
@@ -984,8 +1078,102 @@ def p06_cases() -> list[CoordState]:
     for its, dense, result_has, current_dense, child_comp, ready in product(
         iterator_options, (False, True), (False, True), (False, True), (False, True), ready_options
     ):
-        out.append(CoordState(tuple(its), dense, result_has, current_dense, child_comp, tuple(ready)))
+        # Preserve the frozen 400 schedules and emitted fixtures, but readiness
+        # now follows actual dependency-set inclusion, never an input oracle bit.
+        offered = tuple(DenseIteratorState(_dense_stmt(i).var, _dense_stmt(i).value,
+                                           ("i",) if bit else ("j",))
+                        for i, bit in enumerate(ready))
+        out.append(CoordState(tuple(its), dense, result_has, current_dense, child_comp,
+                              offered, ("i",)))
     return out
+
+
+@dataclass(frozen=True)
+class CoordSequence:
+    case_id: str
+    initial_pending: tuple[PendingCoordinate, ...]
+    calls: tuple[CoordState, ...]
+
+
+def coord_sequence(sequence: CoordSequence, step=coord_after) -> tuple[CoordResult, ...]:
+    """Thread the same lowerer-owned map across calls; never reset it."""
+    pending = sequence.initial_pending
+    results = []
+    for call in sequence.calls:
+        if call.pending:
+            raise ValueError("sequence pre-map belongs to previous call, not call template")
+        result = step(replace(call, pending=pending))
+        results.append(result)
+        pending = result.pending
+    return tuple(results)
+
+
+def p06_effect_cases() -> list[CoordSequence]:
+    """Additional deterministic multi-call controls, outside the frozen 400."""
+    def offer(name, value, deps=()):
+        return DenseIteratorState(Var(name), value, tuple(deps))
+    def entry(name, value, deps=()):
+        return PendingCoordinate(VarInit(Var(name), value), tuple(deps))
+    def call(offers=(), defined=()):
+        return CoordState((), False, False, False, False, tuple(offers), tuple(defined))
+    zero, one, two = Literal("0"), Literal("1"), Literal("2")
+    affine = BinOp(BinOp(Var("pA0"), "*", Var("A1_size")), "+", Var("j"))
+    return [
+        CoordSequence("initial-mixed-order", (entry("a", one, ("i",)), entry("b", affine, ("j",)), entry("c", zero)),
+                      (call(defined=("i",)), call(defined=("i", "j")), call())),
+        CoordSequence("first-name-wins", (),
+                      (call((offer("a", one, ("j",)), offer("a", two))),
+                       call(defined=("j",)), call((offer("a", two),)))),
+        CoordSequence("ready-old-suppresses-new", (entry("a", one),),
+                      (call((offer("a", two, ("j",)),)), call((offer("a", two),)))),
+        CoordSequence("unready-old-suppresses-ready", (entry("a", affine, ("j", "j")),),
+                      (call((offer("a", two),)), call(), call(defined=("j", "j")))),
+        CoordSequence("absent-and-zero-values", (),
+                      (call((offer("skip", None), offer("zero", zero))), call())),
+        CoordSequence("no-definition-cascade", (),
+                      (call((offer("j", one, ("i",)), offer("b", affine, ("j",))), ("i",)),
+                       call(defined=("i",)), call(defined=("i", "j")))),
+        CoordSequence("retained-order-and-appends", (entry("b", two, ("j",)), entry("a", one, ("i",))),
+                      (call((offer("c", zero), offer("d", affine, ("k",))), ("i",)),
+                       call(defined=("j",)), call(defined=("k",)))),
+        CoordSequence("retained-only-no-output", (entry("b", two, ("j",)), entry("a", one, ("i",))),
+                      (call(), call((offer("c", affine, ("k",)),)), call())),
+    ]
+
+
+def verify_p06_effects() -> dict[str, Any]:
+    from copy import deepcopy
+    from .certificates import source_effect_certificate, check_source_effect_certificate
+    sequences = p06_effect_cases()
+    rows, errors = [], []
+    for sequence in sequences:
+        before = coord_sequence(sequence, coord_before)
+        after = coord_sequence(sequence, coord_after)
+        cert = source_effect_certificate(sequence, before)
+        replay = check_source_effect_certificate(sequence, cert)
+        if before != after or not replay["valid"]:
+            errors.append(sequence.case_id)
+        rows.append({"case_id": sequence.case_id, "calls": len(before),
+                     "same": before == after, "replay": replay, "certificate": cert})
+    controls = []
+    for label, sequence, replacement in (
+        ("drop-unready", sequences[7], "empty"),
+        ("reverse-unready", sequences[7], "reverse"),
+        ("retain-ready", sequences[0], "snapshot"),
+    ):
+        cert = source_effect_certificate(sequence, coord_sequence(sequence, coord_after))
+        bad = deepcopy(cert)
+        first = bad["calls"][0]
+        first["post"] = ([] if replacement == "empty" else
+                         list(reversed(first["post"])) if replacement == "reverse" else first["snapshot"])
+        checked = check_source_effect_certificate(sequence, bad)
+        same_output = first["emitted"] == cert["calls"][0]["emitted"]
+        if checked["valid"] or not same_output:
+            errors.append(label)
+        controls.append({"control": label, "output_unchanged": same_output, "replay": checked})
+    return {"sequence_count": len(sequences), "call_count": sum(len(s.calls) for s in sequences),
+            "rows": rows, "state_only_controls": controls, "errors": errors,
+            "interpretation": "Additional P06 multi-call state-effect diagnostics; not added to the frozen 526-state or 18-mutant denominators."}
 
 
 def node_kind_signature(nodes: tuple[Node, ...]) -> tuple[str, ...]:
@@ -1139,6 +1327,18 @@ def verify_adapter(adapter_id: str) -> dict[str, Any]:
     }
     if adapter_id == "P04":
         result["coverage_map"] = p04_coverage_map()
+    if adapter_id == "P06":
+        from .certificates import source_effect_certificate, check_source_effect_certificate
+        failures = []
+        for i, case in enumerate(cases):
+            sequence = CoordSequence(f"p06-single-{i}", case.pending, (replace(case, pending=()),))
+            cert = source_effect_certificate(sequence, (coord_before(case),))
+            checked = check_source_effect_certificate(sequence, cert)
+            if not checked["valid"]:
+                failures.append({"index": i, "reason": checked.get("reason")})
+        result["observable"] = "complete ordered LLIR nodes and ordered post pending-coordinate map"
+        result["effect_replay_count"] = len(cases)
+        result["effect_replay_failures"] = failures
     if adapter_id == "P08":
         excluded = []
         for case in p08_excluded_cases():

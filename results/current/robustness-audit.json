@@ -2,12 +2,18 @@
   "case_count": 256,
   "cases_per_seed": 32,
   "compact_certificates": 500,
-  "cpu_seconds": 3.337218526,
+  "cpu_seconds": 3.859375,
   "errors": [],
   "interpretation": "Sensitivity check against one fixed generator seed. Same code paths and finite n=1,2 oracle are reused; this is not independent validation or population-level evidence.",
+  "limits": {
+    "address_space_bytes": null,
+    "posix_resource_available": false,
+    "process_cpu_hard_seconds": null,
+    "process_cpu_soft_seconds": null
+  },
   "oracle_checks": 512,
   "oracle_obligations": 5376,
-  "peak_rss_kib": 118188,
+  "peak_rss_kib": null,
   "per_seed": [
     {
       "case_count": 32,
@@ -96,5 +102,5 @@
     16381
   ],
   "study": "post-hoc multi-seed robustness audit; excluded from frozen paper counts",
-  "wall_seconds": 3.3371681620001254
+  "wall_seconds": 3.8294764000020223
 }

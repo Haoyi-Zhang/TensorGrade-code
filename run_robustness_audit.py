@@ -7,13 +7,13 @@ relationships survive several additional generator seeds; it is not a statistica
 generalization claim or an independent implementation.
 """
 from __future__ import annotations
-import argparse,json,os,resource,sys,time
+import argparse,json,os,sys,time
+from process_resources import apply_limits, peak_rss_kib, enforced_limits
 from collections import Counter
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT/'src'))
-resource.setrlimit(resource.RLIMIT_AS,(2*1024**3,2*1024**3))
-resource.setrlimit(resource.RLIMIT_CPU,(105,110))
+apply_limits()
 os.environ.update(OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',MKL_NUM_THREADS='1')
 if hasattr(os,'sched_getaffinity'): os.sched_setaffinity(0,{min(os.sched_getaffinity(0))})
 from semantic_contract.cases import generated_cases
@@ -78,7 +78,8 @@ def main()->bool:
         'refutation_replays':total_replays,'compact_certificates':total_certs,
         'realized_grades':dict(sorted(grades.items())),'per_seed':per_seed,
         'cpu_seconds':time.process_time()-start,'wall_seconds':time.perf_counter()-wall,
-        'peak_rss_kib':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+        'peak_rss_kib':peak_rss_kib(),
+        'limits':enforced_limits(),
         'errors':errors,
         'interpretation':'Sensitivity check against one fixed generator seed. Same code paths and finite n=1,2 oracle are reused; this is not independent validation or population-level evidence.'}
     args.output.parent.mkdir(parents=True,exist_ok=True)

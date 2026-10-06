@@ -35,6 +35,34 @@ absent zero. An explicit stored zero differs from an omitted cell. Coordinates
 include every shape parameter and required output coordinate. Replay verifies a
 finite witness; it does not establish all-shape admission or a source translation.
 
+P06 source-effect certificates are a separate format, with `kind=p06-ordered-map`,
+`case_id`, `initial_pending`, and `calls`. Each call contains `pre`, `offered`,
+`defined`, `inserted`, `snapshot`, `retained`, `post`, and `emitted`. Pending maps
+are ordered lists of complete typed declaration trees and dependency-name lists;
+node records retain every represented field. Insertion flags are true for append,
+false for destination-name dedup, and null for an absent value. Retain flags mark
+the unready entries in the scan snapshot. Supplied sequence call templates must
+have empty `pending`, as in `coord_sequence`: the initial map and previous
+exported post-map own that input. Both certificate construction and checking
+reject nonempty template-owned maps.
+
+`source_effect_certificate(sequence, results)` requires each actual exported
+`CoordResult.pending` to equal its recorded `dense.post`, including the final
+call. It also requires the complete final dense block in `result.nodes`, starting
+at the unique top-level `Resolve dense coordinates` comment, to equal
+`dense.emitted` in fields and order. An empty emission requires that comment to
+be absent; unrelated preceding helper nodes are allowed. Construction raises
+`ReplayError` on an export or dense-emission binding mismatch.
+`check_source_effect_certificate` binds inputs to the supplied sequence and
+`replay_source_effects` checks every transition with an independent ordered-list
+interpreter. A certificate alone checks its recorded transition, not a separately
+supplied result: result binding is enforced when constructing it. This remains a
+dense-block certificate; equality of the other four helper blocks requires the
+separate complete-node comparison. Replay limits are 64 calls, 128 map
+entries/iterators, and 512 nodes with depth 32 per expression.
+These are executable replay budgets, not restrictions in Theorem I or a
+two-stored-cell theorem for stateful source code. No LLIR payload is executed.
+
 ## Public corpus and adapter results
 
 `data/public-corpus.csv` has one row per selected commit: neutral ID, split,
@@ -45,6 +73,8 @@ or blinding.
 
 `public-study.json` embeds the corpus, P01 candidate diagnostics, per-admitted-
 adapter bounded case/mismatch counts, four P08 excluded-domain controls,
+P06 single-call effect replay outcomes, additional multi-call certificates and
+unchanged-output state controls in `p06_effects`,
 per-mutant first-detection slots and actual executions for three literal selection
 schedules, aggregate coverage, and explicit interpretation text. A zero adapter mismatch is not an upstream test
 or universal proof.

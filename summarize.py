@@ -12,6 +12,8 @@ def summarize(root):
  certs=[q['certificate'] for r in ir for q in r.get('small_certificates',{}).values()]
  queries=[q for r in ir+cs for q in r['grade'].get('queries',[])]
  mutation=u['mutation_study']['summary'];p01=u['p01_candidate'];p08=next(x for x in u['adapter_results'] if x['adapter']=='P08')
+ effects=u['p06_effects'];p06=next(x for x in u['adapter_results'] if x['adapter']=='P06')
+ if effects['errors'] or p06['effect_replay_failures']:raise ValueError('failed P06 effects cannot produce success tables')
  return {'pilot_ir_cases':p['case_count'],'pilot_consumer_cases':p['consumer_count'],
   'pilot_admissions':dict(collections.Counter(r['grade']['admission'] for r in p['records'])),
   'consumer_outcomes':dict(collections.Counter(r['grade'].get('status',r['grade']['admission']) for r in cs)),
@@ -27,7 +29,8 @@ def summarize(root):
   'max_read_occurrences_per_pair':max(r['grade'].get('terms',0) for r in ir),
   'max_congruence_pairs':max(r['grade'].get('congruence_pairs',0) for r in ir),
   'current_whole_process_cpu_seconds':e['total_process_cpu_seconds'],
-  'current_peak_rss_kib':max(r['child_peak_rss_kib_upper_bound'] for r in e['runs']),
+  'current_peak_rss_kib':max((r['child_peak_rss_kib_upper_bound'] for r in e['runs'] if r['child_peak_rss_kib_upper_bound'] is not None),default=None),
+  'current_whole_process_wall_seconds':sum(r['wall_seconds'] for r in e['runs']),
   'invalid_ablation_rejected':p['congruence_ablation']['replay']['valid'] is False,
   'public_corpus_commits':u['corpus_count'],'public_development_commits':u['development_count'],
   'public_held_out_commits':u['held_out_count'],'public_adapter_admissions':u['admitted_count'],
@@ -35,6 +38,10 @@ def summarize(root):
   'public_development_admitted':u['development_admitted'],'public_held_out_admitted':u['held_out_admitted'],
   'public_adapter_bounded_cases':sum(x['bounded_case_count'] for x in u['adapter_results']),
   'public_adapter_bounded_mismatches':sum(x['mismatch_count'] for x in u['adapter_results']),
+  'p06_single_call_effect_replays':p06['effect_replay_count'],
+  'p06_additional_effect_sequences':effects['sequence_count'],
+  'p06_additional_effect_calls':effects['call_count'],
+  'p06_state_only_controls_rejected':sum(not x['replay']['valid'] for x in effects['state_only_controls']),
   'p01_candidate_successful_domain_cases':p01['successful_domain_case_count'],
   'p01_candidate_successful_domain_mismatches':p01['successful_domain_mismatch_count'],
   'p01_scalar_boundary_controls':p01['scalar_boundary_case_count'],

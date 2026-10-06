@@ -16,12 +16,15 @@ verification.
 
 ## Requirements
 
-- Linux or another environment exposing a compatible Z3 shared library;
+- Linux, Windows, or another environment exposing a compatible Z3 shared library;
 - Python 3.10 or newer; and
 - no Python package dependencies beyond the standard library.
 
-The symbolic layer discovers Z3 with `ctypes.util.find_library('z3')` and uses its
-standard C API. No external model API, GPU, network access, repository checkout,
+The symbolic layer uses the standard Z3 C API. It accepts an explicitly selected
+library through `Z3_LIBRARY_PATH`, discovers a system library with
+`ctypes.util.find_library('z3')`, or locates the library in an installed official
+`z3-solver` Python package. The optional package supplies the native library;
+it is not imported by certificate replay. No external model API, GPU, network access, repository checkout,
 private cache, or solver download is used by the retained workflow. Certificate
 replay does not load Z3.
 
@@ -47,7 +50,7 @@ python emit_tables.py \
 
 `reproduce.py` launches six sequential bounded phases:
 
-1. 38 unit and adversarial tests;
+1. 56 unit and adversarial tests, including 18 P06 state-effect and export-binding regressions;
 2. an offline integrity audit of 83 cited scholarly records plus a complete 83-record primary-record audit;
 3. 28 pilot program pairs and 16 consumer descriptions;
 4. 64 frozen generated pairs plus the 729 coefficient-row-pair enumeration;
@@ -55,8 +58,10 @@ python emit_tables.py \
    pairs, excluded from the frozen 801-query campaign; and
 6. the frozen twelve-commit public source-adapter study.
 
-Each child is limited to one worker, 2 GiB address space, 105/110 CPU seconds,
-and 115 wall seconds. Solver queries use a 1,500 ms timeout. A nonzero child exit,
+Each child uses one worker and a 115-second wall timeout. On POSIX systems the
+wrapper also applies a 2 GiB address-space cap and 105/110 CPU-second limits.
+On Windows these POSIX caps and child RSS measurements are unavailable and are
+recorded as unavailable, not as zero. Solver queries use a 1,500 ms timeout. A nonzero child exit,
 wall timeout, or nonempty validation-error list is a failed reproduction.
 
 `summarize.py` refuses to summarize failed phases. `emit_tables.py` generates all
@@ -67,11 +72,16 @@ The retained current summary reports:
 
 - all nine closed grades;
 - 167 successful direct refutation replays;
-- 162 compact finite-read certificates: 72 with zero stored cells, 83 with one,
-  and seven with two;
+- 162 compact finite-read certificates: 72 with zero stored cells, 85 with one,
+  and five with two in the current run; the chosen solver witnesses may differ
+  between compatible installations while preserving replay validity and the
+  two-cell bound;
 - five additional two-cell consumer refutations;
 - 3 admitted public source adapters and 9 abstentions in 12 commits;
 - 526 admitted bounded source-adapter states with zero mismatches;
+- P06: 400 independent single-call state-effect replays, eight additional
+  sequences containing 22 calls, and three rejected unchanged-output state
+  controls, reported separately from frozen state/mutant and IR-certificate counts;
 - P01 retained separately with 29,222 matching successful-domain states and
   three differing source-reachable scalar boundary controls;
 - 18 synthetic adapter mutants: repeated developer indices detect 14/18,
@@ -159,7 +169,11 @@ and an unchanged-downstream lifting premise.
   C++ text, with independently implemented conditional paths.
 - **P06 (admitted)**: monolithic versus extracted coordinate resolution; complete
   ordered typed LLIR node trees, including operands, addresses, literals, bounds,
-  updates, and bodies.
+  updates, and bodies, jointly with the persistent ordered pending-coordinate
+  map. Explicit dependency lists drive readiness; pre-map reads, append/name
+  dedup, snapshot scanning, ready removal, and unready retention are preserved
+  across calls. `dense_effects.py` independently replays transition certificates
+  without importing changed adapter logic or a solver.
 - **P08 (admitted)**: two mode-order initialization cascades under the immutable
   fixed-production call-site invariant; initialized sequence or exception class.
 

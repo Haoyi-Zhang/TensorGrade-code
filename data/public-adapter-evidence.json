@@ -207,7 +207,12 @@
           "parent_block": "resolve dense coordinates",
           "child_helper": "_resolve_dense_coordinates",
           "compared_fields": [
-            "dependency-ready selection",
+            "ordered pre-map and dependencies",
+            "value-present guard and destination-name deduplication",
+            "append before readiness scan",
+            "snapshot dependency-set inclusion against fixed defined IndexVars",
+            "ready-entry deletion and unready-entry retention in original order",
+            "ordered post-map across calls",
             "target variable/type",
             "complete value expression"
           ]
@@ -220,11 +225,32 @@
           ]
         }
       ],
-      "source_invariant": "The lattice point, iterators, result access, and lowerer state satisfy the assertions already required by the fixed parent method.",
-      "observable": "complete ordered tuple of typed LLIR node trees",
+      "source_invariant": "The lattice point, iterators, result access, and lowerer state satisfy the fixed parent assertions; declaration keys and dependency names remain stable during the source scan. The map starts empty in CINLowerer.__init__ and is maintained by destination-name insertion and exact-key deletion in the resolver.",
+      "observable": "pair of complete ordered typed LLIR node trees and ordered post-call pending-coordinate map (full declarations and dependency lists)",
+      "state_effect_source": {
+        "parent_dense_block_lines": "697-734",
+        "child_dense_helper_lines": "271-315",
+        "child_resolver_order_lines": "44-54",
+        "child_lattice_point_delegate_lines": "801-804",
+        "lowerer_initialization": "cin_lowerer.py:448-454",
+        "caller_defined_update": "cin_lowerer.py:1607-1618; iter_lattice.py:1184-1191",
+        "caller_resolver_sites": "iter_lattice.py:1262,1283,1298,1324,1341,1358",
+        "indexvar_name_equality": "cin.py:418-430",
+        "dense_iterator_payload": "iterator.py:376-410",
+        "support_files_unchanged_between_pins": ["cin_lowerer.py", "iterator.py", "cin.py", "llir.py"],
+        "translation": "CoordState.pending/dense_iterators/defined_index_vars to CoordResult.nodes/pending and DenseTransition; never an output-only or boolean-readiness projection",
+        "independent_replay": "dense_effects.reference_transition uses ordered lists, not either dictionary adapter path",
+        "certificate": "pre/offered/defined/inserted/snapshot/retained/post/emitted; separate from two-cell IR certificates",
+        "lifting": "unchanged downstream consumes returned nodes and lowerer-owned post-map, including subsequent resolver calls"
+      },
       "bounded_validation": {
         "states": 400,
-        "comparison": "dataclass structural equality over all node fields",
+        "comparison": "dataclass structural equality over all node fields and ordered map entries; readiness computed from dependency-set inclusion",
+        "single_call_effect_replays": 400,
+        "additional_sequences": 8,
+        "additional_calls": 22,
+        "state_only_controls_rejected": 3,
+        "additional_counts_not_added_to_frozen_denominators": true,
         "label_only_comparison_used": false,
         "same_label_different_semantics_control": "coord-end-off-by-one changes the literal in pX1_end = pX0 + 1 to +2 while preserving the top-level node-kind signature"
       },

@@ -40,9 +40,18 @@ An admitted record requires:
   condition lists, explicit else, and `make_last_case_else=True`. Condition,
   else, and closing-brace mutants alter only the changed conditional path.
 - **P06 is admitted.** Four hundred states compare complete ordered typed LLIR
-  trees, not labels. Fields include operands, array names/indices, call
-  arguments, literals, loop bounds, updates, and bodies. A `+1` to `+2` control
-  has the same top-level node-kind signature and is rejected by full equality.
+  trees and persistent ordered post-maps. Fields include operands, addresses,
+  calls, literals, loop bounds, updates, and bodies. Dense declarations are
+  supplied as complete expressions/dependency lists, not generated from input
+  readiness bits. The pre-map is read and extended by destination-name dedup;
+  readiness is tested only after insertion, then ready entries are removed and
+  unready entries retained in order. The post-map is threaded through calls.
+  A separate ordered-list reference replays all 400 transitions and eight
+  additional 22-call sequences. Three state-only controls leave returned nodes
+  unchanged but fail replay. These extra diagnostics are excluded from the
+  frozen 526-state and 18-mutant denominators. The original same-kind `+1`/`+2`
+  node control still fails. Theorem I proves the full state transition and G7
+  consumes both returned LLIR and lowerer state.
 - **P08 is admitted only for the fixed production call graph.** Immutable
   child-tree call sites pass a format directly, or use `Workspace`, whose
   overridden format property is present. Ninety-six equivalence-domain cases

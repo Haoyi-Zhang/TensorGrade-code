@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """Run the frozen dependency-free public-source adapter study."""
 from __future__ import annotations
-import argparse,csv,json,os,resource,sys,time
+import argparse,csv,json,os,sys,time
+from process_resources import apply_limits, peak_rss_kib, enforced_limits
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT/'src'))
-resource.setrlimit(resource.RLIMIT_AS,(2*1024**3,2*1024**3))
-resource.setrlimit(resource.RLIMIT_CPU,(105,110))
+apply_limits()
 os.environ.update(OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',MKL_NUM_THREADS='1')
 if hasattr(os,'sched_getaffinity'):os.sched_setaffinity(0,{min(os.sched_getaffinity(0))})
-from semantic_contract.public_adapters import ADAPTERS,SOURCE_PINS,verify_adapter,verify_p01_candidate,mutation_study
+from semantic_contract.public_adapters import ADAPTERS,SOURCE_PINS,verify_adapter,verify_p01_candidate,verify_p06_effects,mutation_study
 
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--output',type=Path,default=ROOT/'results/public-study.json');ap.add_argument('--corpus',type=Path,default=ROOT/'data/public-corpus.csv');ap.add_argument('--budget',type=int,default=64);ap.add_argument('--seed',type=int,default=20260915);args=ap.parse_args()
@@ -19,9 +19,13 @@ def main():
  evidence=json.loads((ROOT/'data/public-adapter-evidence.json').read_text())
  adapter_results=[verify_adapter(a) for a in ADAPTERS]
  p01_candidate=verify_p01_candidate()
+ p06_effects=verify_p06_effects()
  mutations=mutation_study(candidate_slot_cap=args.budget,seed=args.seed)
  errors=[]
  if any(x['mismatch_count'] for x in adapter_results):errors.append('adapter mismatch')
+ if p06_effects['errors']:errors.append('P06 multi-call effects mismatch')
+ p06=next(x for x in adapter_results if x['adapter']=='P06')
+ if p06['effect_replay_failures']:errors.append('P06 single-call effect replay mismatch')
  admitted=[x for x in corpus if x['decision']=='admitted']
  if sorted(x['adapter_id'] for x in admitted)!=sorted(ADAPTERS):errors.append('corpus/adapter mismatch')
  if next(x for x in corpus if x['id']=='P01')['decision']!='abstained':errors.append('P01 admission repair missing')
@@ -53,16 +57,18 @@ def main():
   'coverage':len(admitted)/len(corpus),
   'development_admitted':sum(x['split']=='development' and x['decision']=='admitted' for x in corpus),
   'held_out_admitted':sum(x['split']=='held-out' and x['decision']=='admitted' for x in corpus),
-  'corpus':corpus,'adapter_results':adapter_results,'p01_candidate':p01_candidate,
+  'corpus':corpus,'adapter_results':adapter_results,'p01_candidate':p01_candidate,'p06_effects':p06_effects,
   'source_evidence':'data/public-adapter-evidence.json','mutation_study':mutations,
   'cpu_seconds':time.process_time()-start,'wall_seconds':time.perf_counter()-wall,
-  'peak_rss_kib':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,'errors':errors,
+  'peak_rss_kib':peak_rss_kib(),'limits':enforced_limits(),'errors':errors,
   'interpretation':('Admitted means every production hunk was dispositioned and a source-derived invariant, '
    'independent before/after model, universal argument, and unchanged-downstream congruence were retained. '
    'P01 is an abstained candidate: its 1--4 operand range is only a finite validation boundary. '
+   'P06 compares ordered post maps as well as full LLIR nodes; 400 single-call effect replays and '
+   'eight additional 22-call sequences are checked independently. '
    'P08 has 96 equivalence-domain cases and four separately executed excluded-domain controls. '
    'The study does not execute upstream Scorch or constitute independent proof review. Mutants are synthetic controls.')}
  args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
- print(json.dumps({k:v for k,v in report.items() if k not in ('corpus','adapter_results','p01_candidate','mutation_study')},indent=2))
+ print(json.dumps({k:v for k,v in report.items() if k not in ('corpus','adapter_results','p01_candidate','p06_effects','mutation_study')},indent=2))
  return bool(errors)
 if __name__=='__main__':raise SystemExit(main())

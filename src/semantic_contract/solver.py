@@ -6,6 +6,9 @@ Every query is reset, single threaded, and given an explicit timeout.
 from __future__ import annotations
 import ctypes as C
 import ctypes.util
+import importlib.util
+import os
+from pathlib import Path
 from dataclasses import dataclass
 from fractions import Fraction
 import re
@@ -58,9 +61,16 @@ class Solver:
     def __init__(self, timeout_ms: int = 1500):
         if not 1 <= timeout_ms <= 120000:
             raise ValueError('timeout must be 1..120000 ms')
-        name = ctypes.util.find_library('z3')
+        name = os.environ.get('Z3_LIBRARY_PATH') or ctypes.util.find_library('z3')
         if name is None:
-            raise SolverError('Z3 shared library not found; install the system libz3 package')
+            package = importlib.util.find_spec('z3')
+            if package is not None and package.origin:
+                directory = Path(package.origin).parent / 'lib'
+                name = next((str(directory / filename) for filename in
+                             ('libz3.dll','libz3.so','libz3.dylib')
+                             if (directory / filename).is_file()), None)
+        if name is None:
+            raise SolverError('Z3 shared library not found; install official z3-solver or set Z3_LIBRARY_PATH')
         self.lib = C.CDLL(name)
         self.timeout_ms = timeout_ms
         self.total_cpu = 0.0

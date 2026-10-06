@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """One-worker measured pilot; no downloads, model execution, or third-party code."""
 from __future__ import annotations
-import argparse,json,os,resource,sys,time
+import argparse,json,os,sys,time
+from process_resources import apply_limits, peak_rss_kib, enforced_limits
 from itertools import product
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT/'src'))
 # Limits cover the complete process; no child workers are created.
-resource.setrlimit(resource.RLIMIT_AS,(2*1024**3,2*1024**3))
-resource.setrlimit(resource.RLIMIT_CPU,(105,110))
+apply_limits()
 os.environ.update({'OMP_NUM_THREADS':'1','OPENBLAS_NUM_THREADS':'1','MKL_NUM_THREADS':'1'})
 from semantic_contract.cases import pilot_cases,consumer_cases
 from semantic_contract.solver import Solver
@@ -70,8 +70,8 @@ def main():
     report={'study':'pre-lock generated pilot; not a public patch evaluation','case_count':len(cases),'consumer_count':len(contexts),
             'query_count':query_count,'oracle_checks':oracle_checks,'oracle_obligations':oracle_obligations,'replay_count':replays,
             'cpu_seconds':time.process_time()-start,'wall_seconds':time.perf_counter()-wall,'solver_cpu_seconds':solver_cpu,
-            'peak_rss_kib':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
-            'limits':{'workers':1,'address_space_bytes':2*1024**3,'query_timeout_ms':1500,'process_cpu_soft_seconds':105,'process_cpu_hard_seconds':110},
+            'peak_rss_kib':peak_rss_kib(),
+            'limits':{'workers':1,'query_timeout_ms':1500,**enforced_limits()},
             'records':records,'consumer_records':context_records,'congruence_ablation':ablation,'errors':errors}
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')

@@ -60,6 +60,7 @@ def main():
     pc=[r'\begin{longtable}{@{}p{0.055\linewidth}p{0.13\linewidth}p{0.13\linewidth}p{0.585\linewidth}@{}}',
         r"\caption{Frozen public-commit denominator. ``Held-out'' is a retrospective temporal split, not preregistration or blinded evaluation.}\label{tab:public-corpus}\\",
         r'\toprule ID & Split & Decision & Production-diff disposition\\\midrule\endfirsthead',
+        r'\multicolumn{4}{l}{Table \thetable{} (continued)}\\',
         r'\toprule ID & Split & Decision & Production-diff disposition\\\midrule\endhead',r'\bottomrule\endfoot']
     for row in corpus:
         pc.append(r"{} & {} & {} & {}\\".format(escape(row['id']),escape(row['split']),escape(row['decision']),escape(row['reason'])))
@@ -74,7 +75,7 @@ def main():
 
     by_adapter={r['adapter']:r for r in u['adapter_results']}
     mut_rows=u['mutation_study']['rows']
-    ad=[r'\begin{table}[t]',r'\caption{Bounded validation by source record. Admitted-state counts exclude P01 after its source-invariant admission failure; P01 is retained separately as a candidate diagnostic.}\label{tab:adapter-cases}',r'\centering',r'\begin{tabular}{llrrr}',r'\toprule',r'Record & Decision & States & Mismatch & Excluded controls\\\midrule']
+    ad=[r'\begin{table}[htbp]',r'\caption{Bounded validation by source record. Admitted-state counts exclude P01 after its source-invariant admission failure; P01 is retained separately as a candidate diagnostic.}\label{tab:adapter-cases}',r'\centering',r'\begin{tabular}{llrrr}',r'\toprule',r'Record & Decision & States & Mismatch & Excluded controls\\\midrule']
     p01=u['p01_candidate']
     ad.append(f"P01 constructor & abstained & {p01['successful_domain_case_count']:,} & {p01['successful_domain_mismatch_count']} & {p01['scalar_boundary_case_count']} ({sum(not x['same'] for x in p01['scalar_boundary_controls'])} differ)"+r"\\")
     labels={'P04':'renderer','P06':'resolver','P08':'initialization'}

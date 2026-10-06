@@ -1,0 +1,155 @@
+{
+  "admission": "admitted",
+  "complete_grade": true,
+  "congruence_pairs": 3,
+  "contracts": {
+    "shape": {
+      "status": "proved",
+      "witness": null
+    },
+    "stored-support": {
+      "status": "proved",
+      "witness": null
+    },
+    "term-order": {
+      "status": "refuted",
+      "witness": {
+        "b0": true,
+        "b1": true,
+        "b2": true,
+        "i0": "0",
+        "i1": "0",
+        "i2": "0",
+        "i3": "0",
+        "n0": "33",
+        "x0": "0",
+        "x1": "0",
+        "x2": "0"
+      }
+    },
+    "value": {
+      "status": "refuted",
+      "witness": {
+        "b0": true,
+        "b1": true,
+        "b2": true,
+        "i0": "0",
+        "i1": "0",
+        "i2": "0",
+        "i3": "0",
+        "n0": "33",
+        "x0": "1/4",
+        "x1": "1/4",
+        "x2": "1/4"
+      }
+    },
+    "zero-support": {
+      "status": "proved",
+      "witness": null
+    }
+  },
+  "family": "semantic-control",
+  "id": "late-shape-threshold",
+  "mode": "production",
+  "queries": [
+    {
+      "cpu_seconds": 0.011127620000000005,
+      "detail": "",
+      "encoding_bytes": 154,
+      "obligation": "precondition",
+      "status": "sat",
+      "values": {
+        "n0": "1"
+      },
+      "wall_seconds": 0.011269772000005673
+    },
+    {
+      "cpu_seconds": 0.005045010999999988,
+      "detail": "",
+      "encoding_bytes": 195,
+      "obligation": "nonnegative-dimensions",
+      "status": "unsat",
+      "values": {},
+      "wall_seconds": 0.004829173000004516
+    },
+    {
+      "cpu_seconds": 0.00489494,
+      "detail": "",
+      "encoding_bytes": 478,
+      "obligation": "active-read-bounds",
+      "status": "unsat",
+      "values": {},
+      "wall_seconds": 0.0048157190000068795
+    },
+    {
+      "cpu_seconds": 0.005177819,
+      "detail": "",
+      "encoding_bytes": 1152,
+      "obligation": "shape",
+      "status": "unsat",
+      "values": {},
+      "wall_seconds": 0.005020324000000187
+    },
+    {
+      "cpu_seconds": 0.005749526000000005,
+      "detail": "",
+      "encoding_bytes": 1231,
+      "obligation": "value",
+      "status": "sat",
+      "values": {
+        "b0": true,
+        "b1": true,
+        "b2": true,
+        "i0": "0",
+        "i1": "0",
+        "i2": "0",
+        "i3": "0",
+        "n0": "33",
+        "x0": "1/4",
+        "x1": "1/4",
+        "x2": "1/4"
+      },
+      "wall_seconds": 0.0059182850000070175
+    },
+    {
+      "cpu_seconds": 0.005832241000000002,
+      "detail": "",
+      "encoding_bytes": 1239,
+      "obligation": "zero-support",
+      "status": "unsat",
+      "values": {},
+      "wall_seconds": 0.005583825000002207
+    },
+    {
+      "cpu_seconds": 0.0051077680000000125,
+      "detail": "",
+      "encoding_bytes": 1229,
+      "obligation": "stored-support",
+      "status": "unsat",
+      "values": {},
+      "wall_seconds": 0.005068403999999305
+    },
+    {
+      "cpu_seconds": 0.005488790000000021,
+      "detail": "",
+      "encoding_bytes": 1325,
+      "obligation": "term-order",
+      "status": "sat",
+      "values": {
+        "b0": true,
+        "b1": true,
+        "b2": true,
+        "i0": "0",
+        "i1": "0",
+        "i2": "0",
+        "i3": "0",
+        "n0": "33",
+        "x0": "0",
+        "x1": "0",
+        "x2": "0"
+      },
+      "wall_seconds": 0.005662774000001036
+    }
+  ],
+  "terms": 3
+}

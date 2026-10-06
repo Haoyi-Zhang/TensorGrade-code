@@ -1,0 +1,139 @@
+Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [458 kB]
+Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [515 kB]
+Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1370 kB]
+Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [305 kB]
+Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1701 kB]
+Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [341 kB]
+Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1728 kB]
+Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [395 kB]
+Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [13.3 kB]
+Get:16 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1072 kB]
+Get:17 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [222 kB]
+Get:18 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1216 kB]
+Fetched 9718 kB in 1s (9669 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+libz3-4 is already the newest version (4.8.12-3.1build1).
+libz3-4 set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 9 not upgraded.
+Host Z3 library: libz3.so.4
+{"name": "unit-tests", "command": ["-m", "unittest", "discover", "-s", "tests", "-v"], "exit_code": 0, "wall_timeout": false, "wall_seconds": 11.975584384000001, "process_cpu_seconds": 8.237727, "child_peak_rss_kib_upper_bound": 71488}
+{"name": "reference-audit", "command": ["audit_references.py", "--output", "reference-audit.json"], "exit_code": 0, "wall_timeout": false, "wall_seconds": 0.06261288400000353, "process_cpu_seconds": 0.06170400000000065, "child_peak_rss_kib_upper_bound": 71488}
+{"name": "pilot", "command": ["run_pilot.py", "--output", "pilot.json"], "exit_code": 0, "wall_timeout": false, "wall_seconds": 2.2161813159999966, "process_cpu_seconds": 2.214998999999999, "child_peak_rss_kib_upper_bound": 71488}
+{"name": "diagnostics", "command": ["run_diagnostics.py", "--output", "diagnostics.json"], "exit_code": 0, "wall_timeout": false, "wall_seconds": 3.5115328099999985, "process_cpu_seconds": 3.5100880000000014, "child_peak_rss_kib_upper_bound": 71488}
+{"name": "robustness-audit", "command": ["run_robustness_audit.py", "--output", "robustness-audit.json"], "exit_code": 0, "wall_timeout": false, "wall_seconds": 13.324786351000007, "process_cpu_seconds": 13.322401, "child_peak_rss_kib_upper_bound": 71488}
+{"name": "public-study", "command": ["run_public_study.py", "--corpus", "data/public-corpus.csv", "--output", "public-study.json", "--seed", "20260915", "--budget", "64"], "exit_code": 0, "wall_timeout": false, "wall_seconds": 4.967067362000009, "process_cpu_seconds": 4.964393999999999, "child_peak_rss_kib_upper_bound": 71488}
+{
+  "pilot_ir_cases": 28,
+  "pilot_consumer_cases": 16,
+  "pilot_admissions": {
+    "admitted": 22,
+    "invalid": 3,
+    "vacuous": 1,
+    "unsupported": 2
+  },
+  "consumer_outcomes": {
+    "proved": 6,
+    "refuted": 5,
+    "invalid": 4,
+    "unsupported": 1
+  },
+  "diagnostic_ir_cases": 64,
+  "pilot_query_count": 289,
+  "diagnostic_query_count": 512,
+  "finite_shape_oracle_checks": 252,
+  "finite_shape_oracle_obligations": 3259,
+  "algebra_row_pairs": 729,
+  "algebra_vector_evaluations": 19683,
+  "successful_refutation_replays": 167,
+  "small_ir_certificates": 162,
+  "certificate_stored_cell_counts": {
+    "0": 72,
+    "1": 83,
+    "2": 7
+  },
+  "consumer_refutation_replays": 5,
+  "realized_complete_grades": {
+    "SZVOM": 6,
+    "SZM": 3,
+    "SZ": 1,
+    "SM": 1,
+    "SZVM": 4,
+    "S": 2,
+    "SZVO": 2,
+    "SZV": 2,
+    "empty": 1
+  },
+  "realized_grade_count": 9,
+  "max_query_encoding_bytes": 258746,
+  "max_read_occurrences_per_pair": 64,
+  "max_congruence_pairs": 2016,
+  "current_whole_process_cpu_seconds": 32.311313,
+  "current_peak_rss_kib": 71488,
+  "current_whole_process_wall_seconds": 36.057765107000016,
+  "invalid_ablation_rejected": true,
+  "public_corpus_commits": 12,
+  "public_development_commits": 4,
+  "public_held_out_commits": 8,
+  "public_adapter_admissions": 3,
+  "public_adapter_abstentions": 9,
+  "public_adapter_coverage": 0.25,
+  "public_development_admitted": 1,
+  "public_held_out_admitted": 2,
+  "public_adapter_bounded_cases": 526,
+  "public_adapter_bounded_mismatches": 0,
+  "p06_single_call_effect_replays": 400,
+  "p06_additional_effect_sequences": 8,
+  "p06_additional_effect_calls": 22,
+  "p06_state_only_controls_rejected": 3,
+  "p01_candidate_successful_domain_cases": 29222,
+  "p01_candidate_successful_domain_mismatches": 0,
+  "p01_scalar_boundary_controls": 4,
+  "p01_scalar_boundary_differences": 3,
+  "p08_equivalence_domain_cases": 96,
+  "p08_excluded_domain_controls": 4,
+  "public_mutants": 18,
+  "public_mutation_candidate_slot_cap_per_mutant": 64,
+  "public_mutants_detected_developer": 14,
+  "public_mutants_detected_random": 18,
+  "public_mutants_detected_even_grid": 18,
+  "public_mutation_actual_executions_developer": 325,
+  "public_mutation_actual_executions_random": 121,
+  "public_mutation_actual_executions_even_grid": 318,
+  "public_complete_source_adapters": 3,
+  "bibliography_entries": 83,
+  "bibliography_cited_keys": 83,
+  "bibliography_doi_records": 77,
+  "bibliography_stable_url_only_records": 6,
+  "bibliography_verified_inventory_records": 83,
+  "bibliography_primary_record_checks": 83,
+  "bibliography_citation_context_checks": 83,
+  "bibliography_latest_inventory_check": "2026-09-29",
+  "bibliography_latest_primary_record_check": "2026-09-29",
+  "bibliography_latest_citation_context_check": "2026-09-29",
+  "posthoc_robustness_seeds": 8,
+  "posthoc_robustness_cases": 256,
+  "posthoc_robustness_queries": 2048,
+  "posthoc_robustness_oracle_checks": 512,
+  "posthoc_robustness_replays": 500,
+  "posthoc_robustness_certificates": 500,
+  "interpretation": "Generated implementation diagnostics plus a fixed 12-commit public source-adapter study. Three commits are admitted and nine abstain. P01 successful-domain diagnostics are reported separately and are not adapter coverage. Admission is not upstream execution, workload representativeness, a comparative speed result, or a mechanized general proof."
+}
+Wrote nine data-derived TeX tables.
+{
+  "after_stored": true,
+  "after_value": "-1",
+  "before_stored": true,
+  "before_value": "0",
+  "mismatch": "zero-support",
+  "stored_cells": 2,
+  "valid": true
+}

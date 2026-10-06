@@ -1,0 +1,20 @@
+{
+  "study": "generated diagnostics and finite algebra checks; not a public patch evaluation",
+  "case_count": 64,
+  "query_count": 512,
+  "oracle_obligations": 1342,
+  "replay_count": 127,
+  "algebra_row_pairs": 729,
+  "algebra_vector_evaluations": 19683,
+  "cpu_seconds": 3.381696486,
+  "wall_seconds": 3.3826234659999983,
+  "solver_cpu_seconds": 2.9099224499999985,
+  "peak_rss_kib": 52724,
+  "limits": {
+    "address_space_bytes": 2147483648,
+    "process_cpu_soft_seconds": 105,
+    "process_cpu_hard_seconds": 110,
+    "posix_resource_available": true
+  },
+  "errors": []
+}

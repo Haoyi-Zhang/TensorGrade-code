@@ -1,0 +1,84 @@
+{
+  "admission": "admitted",
+  "id": "global-nonuniform",
+  "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
+  "queries": [
+    {
+      "cpu_seconds": 0.011677154999999995,
+      "detail": "",
+      "encoding_bytes": 154,
+      "obligation": "precondition",
+      "status": "sat",
+      "values": {
+        "n0": "1"
+      },
+      "wall_seconds": 0.011250687000000426
+    },
+    {
+      "cpu_seconds": 0.00506392600000001,
+      "detail": "",
+      "encoding_bytes": 185,
+      "obligation": "nonnegative-dimensions",
+      "status": "unsat",
+      "values": {},
+      "wall_seconds": 0.004949179000007575
+    },
+    {
+      "cpu_seconds": 0.004813147999999989,
+      "detail": "",
+      "encoding_bytes": 339,
+      "obligation": "scale-partition",
+      "status": "unsat",
+      "values": {},
+      "wall_seconds": 0.004768209000005186
+    },
+    {
+      "cpu_seconds": 0.004795735000000009,
+      "detail": "",
+      "encoding_bytes": 320,
+      "obligation": "weight-partition",
+      "status": "unsat",
+      "values": {},
+      "wall_seconds": 0.004764541999989547
+    },
+    {
+      "cpu_seconds": 0.0047881320000000005,
+      "detail": "",
+      "encoding_bytes": 278,
+      "obligation": "compatibility-reflexive",
+      "status": "unsat",
+      "values": {},
+      "wall_seconds": 0.004759112000002119
+    },
+    {
+      "cpu_seconds": 0.0048621389999999876,
+      "detail": "",
+      "encoding_bytes": 318,
+      "obligation": "compatibility-symmetric",
+      "status": "unsat",
+      "values": {},
+      "wall_seconds": 0.004832730000003949
+    },
+    {
+      "cpu_seconds": 0.0056741560000000135,
+      "detail": "",
+      "encoding_bytes": 470,
+      "obligation": "support-coherence",
+      "status": "sat",
+      "values": {
+        "i0": "0",
+        "n0": "2",
+        "u0": "0",
+        "v0": "1"
+      },
+      "wall_seconds": 0.005696426999989512
+    }
+  ],
+  "status": "refuted",
+  "witness": {
+    "i0": "0",
+    "n0": "2",
+    "u0": "0",
+    "v0": "1"
+  }
+}

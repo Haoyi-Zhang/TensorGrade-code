@@ -1,0 +1,40 @@
+{
+  "study": "post-hoc multi-seed robustness audit; excluded from frozen paper counts",
+  "seeds": [
+    7,
+    19,
+    43,
+    101,
+    2026,
+    4099,
+    8191,
+    16381
+  ],
+  "cases_per_seed": 32,
+  "case_count": 256,
+  "query_count": 2048,
+  "oracle_checks": 512,
+  "oracle_obligations": 5376,
+  "refutation_replays": 500,
+  "compact_certificates": 500,
+  "realized_grades": {
+    "S": 57,
+    "SM": 36,
+    "SZM": 33,
+    "SZV": 5,
+    "SZVM": 67,
+    "SZVO": 21,
+    "SZVOM": 37
+  },
+  "cpu_seconds": 13.223845281,
+  "wall_seconds": 13.226496791999999,
+  "peak_rss_kib": 51884,
+  "limits": {
+    "address_space_bytes": 2147483648,
+    "process_cpu_soft_seconds": 105,
+    "process_cpu_hard_seconds": 110,
+    "posix_resource_available": true
+  },
+  "errors": [],
+  "interpretation": "Sensitivity check against one fixed generator seed. Same code paths and finite n=1,2 oracle are reused; this is not independent validation or population-level evidence."
+}

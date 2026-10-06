@@ -1,0 +1,23 @@
+\begin{longtable}{@{}p{0.09\linewidth}p{0.54\linewidth}p{0.25\linewidth}@{}}
+\caption{All 16 consumer descriptions. Proved and refuted refer to the specified support-coherence condition.}\label{tab:consumer-catalog}\\
+\toprule Case & Retained case name & Outcome\\\midrule\endfirsthead
+\multicolumn{3}{l}{Table \thetable{} (continued)}\\
+\toprule Case & Retained case name & Outcome\\\midrule\endhead
+\bottomrule\endfoot
+C01 & global-uniform & proved\\
+C02 & global-nonuniform & refuted\\
+C03 & one-hot-masks & proved\\
+C04 & identity-consumer & proved\\
+C05 & adjacent-stencil & refuted\\
+C06 & two-block-reductions & proved\\
+C07 & block-crossing & refuted\\
+C08 & late-consumer-threshold & refuted\\
+C09 & zero-consumer & proved\\
+C10 & weighted-cancellation & refuted\\
+C11 & empty-consumer-domain & proved\\
+C12 & non-reflexive-mask & invalid\\
+C13 & asymmetric-mask & invalid\\
+C14 & overlapping-partition & invalid\\
+C15 & zero-scale-outside-fragment & unsupported\\
+C16 & missing-partition-cell & invalid\\
+\end{longtable}

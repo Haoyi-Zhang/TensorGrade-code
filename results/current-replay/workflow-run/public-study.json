@@ -1,0 +1,5354 @@
+{
+  "abstained_count": 9,
+  "adapter_results": [
+    {
+      "adapter": "P04",
+      "bounded_case_count": 30,
+      "coverage_map": {
+        "BlankLine": [
+          "blank",
+          "list-sequence"
+        ],
+        "Comment": [
+          "comment-visible",
+          "comment-suppressed",
+          "list-sequence"
+        ],
+        "ForLoop.init-none": [
+          "for-init-none"
+        ],
+        "ForLoop.init-present": [
+          "for-with-init"
+        ],
+        "ForLoopAuto": [
+          "for-auto"
+        ],
+        "FunctionCallStmt/VarInit/Assign": [
+          "call-statement",
+          "var-init",
+          "assign"
+        ],
+        "IfThenElse.cond-list": [
+          "if-chain-else"
+        ],
+        "IfThenElse.make-last-case-else": [
+          "if-last-case-else"
+        ],
+        "IfThenElse.simple": [
+          "if-simple",
+          "if-simple-else"
+        ],
+        "Literal/Var/Cast/Sizeof/BinOp/UnaryOp/Call/Array/ArrayAccess": [
+          "literal-zero",
+          "var",
+          "cast",
+          "sizeof",
+          "binop",
+          "unary",
+          "call-expression",
+          "array",
+          "array-access"
+        ],
+        "VarDecl/Increment/Return/Function": [
+          "var-decl",
+          "increment",
+          "increment-no-semicolon",
+          "return",
+          "function"
+        ],
+        "WhileLoop": [
+          "while"
+        ],
+        "list-dispatch": [
+          "list-sequence"
+        ]
+      },
+      "mismatch_count": 0,
+      "mismatches": [],
+      "source_pin": {
+        "child": "d7a9cdc82819750c1a1285cded8385165ea51371",
+        "child_tree": "90f89cde813156464b6fefbf016b3de4597568fc",
+        "decision": "admitted",
+        "parent": "08a92fe381cbddcbcfa2a616644f65b149d50287",
+        "parent_tree": "94f3271ae26446aa344098e1d84c03c5efb3198d"
+      }
+    },
+    {
+      "adapter": "P06",
+      "bounded_case_count": 400,
+      "effect_replay_count": 400,
+      "effect_replay_failures": [],
+      "mismatch_count": 0,
+      "mismatches": [],
+      "observable": "complete ordered LLIR nodes and ordered post pending-coordinate map",
+      "source_pin": {
+        "child": "2105686711292cd1d1eb2438035b555fa644bf2a",
+        "child_tree": "618ebda80bca1961391c7c352017db5abadd8e4d",
+        "decision": "admitted",
+        "parent": "404e10762f866303758ec60ac6a9cf996be7da0c",
+        "parent_tree": "a304c3a16ed566c20f91c83cb2fc9ea0681993e3"
+      }
+    },
+    {
+      "adapter": "P08",
+      "bounded_case_count": 96,
+      "excluded_domain_controls": [
+        {
+          "after": "('value', None)",
+          "before": "('exception', 'AttributeError')",
+          "case": "ModeInit(explicit=None, shape_rank=None, format_order=None)",
+          "same": false
+        },
+        {
+          "after": "('value', None)",
+          "before": "('exception', 'AttributeError')",
+          "case": "ModeInit(explicit=None, shape_rank=0, format_order=None)",
+          "same": false
+        },
+        {
+          "after": "('value', None)",
+          "before": "('exception', 'AttributeError')",
+          "case": "ModeInit(explicit=(), shape_rank=None, format_order=None)",
+          "same": false
+        },
+        {
+          "after": "('value', None)",
+          "before": "('exception', 'AttributeError')",
+          "case": "ModeInit(explicit=(), shape_rank=0, format_order=None)",
+          "same": false
+        }
+      ],
+      "excluded_domain_count": 4,
+      "mismatch_count": 0,
+      "mismatches": [],
+      "source_pin": {
+        "child": "33532a3092035a93d4e78936e089c69fa6f3d3e9",
+        "child_tree": "49d2a0fb1f710b4ea97bea54d9bb6bee5e5afc24",
+        "decision": "admitted",
+        "parent": "b606b3078082ba78a57ed818b848db7214026788",
+        "parent_tree": "43fa6a5fd0547dd6bd4b6f9692ff2c7207a51622"
+      }
+    }
+  ],
+  "admitted_count": 3,
+  "corpus": [
+    {
+      "adapter_id": "",
+      "commit_sha": "72c55d36de12f45a4dcdd222f760b0fb6c3b6276",
+      "commit_title": "Replace exec/eval with direct Python calls for CIN construction in einsum",
+      "decision": "abstained",
+      "id": "P01",
+      "production_files": "src/scorch/ops.py",
+      "reason": "The 1--4 operand range is only a finite validation boundary. The source asserts only that some index variable exists; mixed scalar/non-scalar operands and scalar results reach the changed region and can change parent/child behavior, so the source invariant required by the adapter cannot be established.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/72c55d36de12f45a4dcdd222f760b0fb6c3b6276",
+      "split": "development"
+    },
+    {
+      "adapter_id": "",
+      "commit_sha": "f20d4ac5a17328b24045d1f43c7c8b76106e615f",
+      "commit_title": "Refactor ModeIterator into IteratorBase class hierarchy with subclasses per level type",
+      "decision": "abstained",
+      "id": "P02",
+      "production_files": "src/scorch/compiler/iter_lattice.py;src/scorch/compiler/iterator.py",
+      "reason": "Factory dispatch class identity constructor exception behavior and mutable iterator state are outside the declared source adapters.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/f20d4ac5a17328b24045d1f43c7c8b76106e615f",
+      "split": "development"
+    },
+    {
+      "adapter_id": "",
+      "commit_sha": "08a92fe381cbddcbcfa2a616644f65b149d50287",
+      "commit_title": "Refactor CIN lowerer: extract ResultTensorAssembler and helper classes",
+      "decision": "abstained",
+      "id": "P03",
+      "production_files": "src/scorch/compiler/cin_lowerer.py",
+      "reason": "Large extraction crosses allocation ownership physical sparse assembly and foreign-memory lifetime; no complete adapter was established.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/08a92fe381cbddcbcfa2a616644f65b149d50287",
+      "split": "development"
+    },
+    {
+      "adapter_id": "P04",
+      "commit_sha": "d7a9cdc82819750c1a1285cded8385165ea51371",
+      "commit_title": "Refactor LLIRLowerer into dedicated helper methods",
+      "decision": "admitted",
+      "id": "P04",
+      "production_files": "src/scorch/compiler/codegen.py",
+      "reason": "Complete one-file dispatch extraction. Independent parent-monolith and child-helper models cover all changed renderer branches, including comments, blank lines, condition lists, make_last_case_else, and ForLoop.init=None; structural induction connects node equality to identical C++ text.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/d7a9cdc82819750c1a1285cded8385165ea51371",
+      "split": "development"
+    },
+    {
+      "adapter_id": "",
+      "commit_sha": "404e10762f866303758ec60ac6a9cf996be7da0c",
+      "commit_title": "Consolidate format string parsing into a single helper",
+      "decision": "abstained",
+      "id": "P05",
+      "production_files": "src/scorch/format.py;src/scorch/utils.py",
+      "reason": "Accepted input language changes and previously rejected aliases become valid; no invariant made the whole public API behavior preserving.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/404e10762f866303758ec60ac6a9cf996be7da0c",
+      "split": "held-out"
+    },
+    {
+      "adapter_id": "P06",
+      "commit_sha": "2105686711292cd1d1eb2438035b555fa644bf2a",
+      "commit_title": "Extract CoordinateResolver class from lattice-point lowering",
+      "decision": "admitted",
+      "id": "P06",
+      "production_files": "src/scorch/compiler/iter_lattice.py",
+      "reason": "The child partitions the parent method into five helpers invoked in the original order. The adapter compares complete LLIR trees and the persistent ordered pending-coordinate post-map; insertion by name precedes dependency readiness scanning, ready deletion and unready retention. Independent effect replay and multi-call state-only controls reject output-only equality.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/2105686711292cd1d1eb2438035b555fa644bf2a",
+      "split": "held-out"
+    },
+    {
+      "adapter_id": "",
+      "commit_sha": "b606b3078082ba78a57ed818b848db7214026788",
+      "commit_title": "Add logical mode-order reordering for sparse tensors",
+      "decision": "abstained",
+      "id": "P07",
+      "production_files": "csrc/header.cpp;src/scorch/compiler/cin.py;src/scorch/compiler/cin_lowerer.py;src/scorch/compiler/iter_lattice.py;src/scorch/ops.py;src/scorch/stensor.py",
+      "reason": "Feature patch changes physical mode order mutable parent links workspace assembly and C++ coordinate hashing outside the affine rational model.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/b606b3078082ba78a57ed818b848db7214026788",
+      "split": "held-out"
+    },
+    {
+      "adapter_id": "P08",
+      "commit_sha": "33532a3092035a93d4e78936e089c69fa6f3d3e9",
+      "commit_title": "Clean up stale TODOs and enable kij outer-product SpMM test",
+      "decision": "admitted",
+      "id": "P08",
+      "production_files": "src/scorch/compiler/cin.py;src/scorch/compiler/cin_lowerer.py;src/scorch/compiler/iter_lattice.py",
+      "reason": "The only runtime production hunk is TensorVar mode-order initialization; the other two production edits are comments. Fixed-tree production call sites always supply a format directly or through Workspace.format. Ninety-six equivalence-domain combinations match; four absent-format controls are separately recorded as old AttributeError versus new None and excluded by the documented production-call invariant.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/33532a3092035a93d4e78936e089c69fa6f3d3e9",
+      "split": "held-out"
+    },
+    {
+      "adapter_id": "",
+      "commit_sha": "0285d7be640354dd3e23d4f6bb120dce7145407f",
+      "commit_title": "Fix scheduler cost model bugs and add tuner",
+      "decision": "abstained",
+      "id": "P09",
+      "production_files": "src/scorch/compiler/scheduler.py;tools/tests",
+      "reason": "Scheduler output intentionally changes and uses heuristic floating costs; translating every resulting program is outside the frozen adapter set.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/0285d7be640354dd3e23d4f6bb120dce7145407f",
+      "split": "held-out"
+    },
+    {
+      "adapter_id": "",
+      "commit_sha": "642157c30d031a326459ae2194545efe39d66c88",
+      "commit_title": "Fix mode-order alignment and broadcast dimensions",
+      "decision": "abstained",
+      "id": "P10",
+      "production_files": "src/scorch/compiler/iter_lattice.py;src/scorch/ops.py",
+      "reason": "Correctness feature mutates physical mode orders and adds previously missing loops; before and after are not intended to be equivalent on the repaired domain.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/642157c30d031a326459ae2194545efe39d66c88",
+      "split": "held-out"
+    },
+    {
+      "adapter_id": "",
+      "commit_sha": "b8932232cad36e521723e87cf70cdea7025d212f",
+      "commit_title": "Optimize SpMM cache path and compiler performance codegen",
+      "decision": "abstained",
+      "id": "P11",
+      "production_files": "csrc;src/scorch/compiler;src/scorch/ops.py",
+      "reason": "Multi-file OpenMP floating-point raw-memory and scheduling change exceeds the exact-rational side-effect-free fragment.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/b8932232cad36e521723e87cf70cdea7025d212f",
+      "split": "held-out"
+    },
+    {
+      "adapter_id": "",
+      "commit_sha": "5b79b905eb3ebaa31dae1164cfbcaa13a2ad321d",
+      "commit_title": "Refactor prebuilt kernel dispatch into typed modular registry",
+      "decision": "abstained",
+      "id": "P12",
+      "production_files": "csrc;src/scorch/ops.py;src/scorch/prebuilt_kernels.py",
+      "reason": "Typed C++ kernels integer and floating semantics dispatch fallback and mode normalization require a whole-runtime model not present here.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/5b79b905eb3ebaa31dae1164cfbcaa13a2ad321d",
+      "split": "held-out"
+    }
+  ],
+  "corpus_count": 12,
+  "coverage": 0.25,
+  "cpu_seconds": 4.857563575,
+  "development_admitted": 1,
+  "development_count": 4,
+  "errors": [],
+  "held_out_admitted": 2,
+  "held_out_count": 8,
+  "interpretation": "Admitted means every production hunk was dispositioned and a source-derived invariant, independent before/after model, universal argument, and unchanged-downstream congruence were retained. P01 is an abstained candidate: its 1--4 operand range is only a finite validation boundary. P06 compares ordered post maps as well as full LLIR nodes; 400 single-call effect replays and eight additional 22-call sequences are checked independently. P08 has 96 equivalence-domain cases and four separately executed excluded-domain controls. The study does not execute upstream Scorch or constitute independent proof review. Mutants are synthetic controls.",
+  "limits": {
+    "address_space_bytes": 2147483648,
+    "posix_resource_available": true,
+    "process_cpu_hard_seconds": 110,
+    "process_cpu_soft_seconds": 105
+  },
+  "mutation_study": {
+    "candidate_slot_cap_per_mutant": 64,
+    "interpretation": "The third policy is an evenly spaced grid over enumeration indices, not semantic-feature stratification. Small domains are exhausted and then repeated to fill the candidate-slot cap. All policies stop at first detection; actual executions are recorded.",
+    "mutant_count": 18,
+    "policy_metadata": {
+      "P04": {
+        "candidate_slot_cap_per_mutant": 64,
+        "developer_unique_indices_in_full_schedule": 11,
+        "domain_size": 30,
+        "enumeration_order_dependency": true,
+        "even_grid_repeats_because_domain_smaller_than_cap": true,
+        "even_grid_unique_indices_before_repetition": 30,
+        "random_unique_indices_in_full_schedule": 24
+      },
+      "P06": {
+        "candidate_slot_cap_per_mutant": 64,
+        "developer_unique_indices_in_full_schedule": 5,
+        "domain_size": 400,
+        "enumeration_order_dependency": true,
+        "even_grid_repeats_because_domain_smaller_than_cap": false,
+        "even_grid_unique_indices_before_repetition": 64,
+        "random_unique_indices_in_full_schedule": 59
+      },
+      "P08": {
+        "candidate_slot_cap_per_mutant": 64,
+        "developer_unique_indices_in_full_schedule": 4,
+        "domain_size": 96,
+        "enumeration_order_dependency": true,
+        "even_grid_repeats_because_domain_smaller_than_cap": false,
+        "even_grid_unique_indices_before_repetition": 64,
+        "random_unique_indices_in_full_schedule": 47
+      }
+    },
+    "rows": [
+      {
+        "adapter": "P04",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 14,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 14,
+          "first_detection_slot": 14
+        },
+        "mutant": "omit-call-semicolon",
+        "repeated-developer-indices": {
+          "actual_executions": 3,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 3,
+          "first_detection_slot": 3
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 38,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 21,
+          "first_detection_slot": 38
+        }
+      },
+      {
+        "adapter": "P04",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 29,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 29,
+          "first_detection_slot": 29
+        },
+        "mutant": "reverse-function-args",
+        "repeated-developer-indices": {
+          "actual_executions": 10,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 10,
+          "first_detection_slot": 10
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 8,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 7,
+          "first_detection_slot": 8
+        }
+      },
+      {
+        "adapter": "P04",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 9,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 9,
+          "first_detection_slot": 9
+        },
+        "mutant": "drop-array-braces",
+        "repeated-developer-indices": {
+          "actual_executions": 64,
+          "candidate_slot_cap": 64,
+          "detected": false,
+          "distinct_indices_executed": 11,
+          "first_detection_slot": null
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 26,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 19,
+          "first_detection_slot": 26
+        }
+      },
+      {
+        "adapter": "P04",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 18,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 18,
+          "first_detection_slot": 18
+        },
+        "mutant": "increment-always-semicolon",
+        "repeated-developer-indices": {
+          "actual_executions": 4,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 4,
+          "first_detection_slot": 4
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 2,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 2,
+          "first_detection_slot": 2
+        }
+      },
+      {
+        "adapter": "P04",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 29,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 29,
+          "first_detection_slot": 29
+        },
+        "mutant": "drop-final-brace",
+        "repeated-developer-indices": {
+          "actual_executions": 10,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 10,
+          "first_detection_slot": 10
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 8,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 7,
+          "first_detection_slot": 8
+        }
+      },
+      {
+        "adapter": "P04",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 21,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 21,
+          "first_detection_slot": 21
+        },
+        "mutant": "conditional-change-condition",
+        "repeated-developer-indices": {
+          "actual_executions": 6,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 6,
+          "first_detection_slot": 6
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 1,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 1,
+          "first_detection_slot": 1
+        }
+      },
+      {
+        "adapter": "P04",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 22,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 22,
+          "first_detection_slot": 22
+        },
+        "mutant": "conditional-drop-else",
+        "repeated-developer-indices": {
+          "actual_executions": 7,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 7,
+          "first_detection_slot": 7
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 3,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 3,
+          "first_detection_slot": 3
+        }
+      },
+      {
+        "adapter": "P04",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 21,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 21,
+          "first_detection_slot": 21
+        },
+        "mutant": "conditional-drop-closing-brace",
+        "repeated-developer-indices": {
+          "actual_executions": 6,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 6,
+          "first_detection_slot": 6
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 1,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 1,
+          "first_detection_slot": 1
+        }
+      },
+      {
+        "adapter": "P06",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 20,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 20,
+          "first_detection_slot": 20
+        },
+        "mutant": "drop-load",
+        "repeated-developer-indices": {
+          "actual_executions": 3,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 3,
+          "first_detection_slot": 3
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 1,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 1,
+          "first_detection_slot": 1
+        }
+      },
+      {
+        "adapter": "P06",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 39,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 39,
+          "first_detection_slot": 39
+        },
+        "mutant": "max-not-min",
+        "repeated-developer-indices": {
+          "actual_executions": 64,
+          "candidate_slot_cap": 64,
+          "detected": false,
+          "distinct_indices_executed": 5,
+          "first_detection_slot": null
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 4,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 4,
+          "first_detection_slot": 4
+        }
+      },
+      {
+        "adapter": "P06",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 7,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 7,
+          "first_detection_slot": 7
+        },
+        "mutant": "assemble-last",
+        "repeated-developer-indices": {
+          "actual_executions": 5,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 5,
+          "first_detection_slot": 5
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 7,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 7,
+          "first_detection_slot": 7
+        }
+      },
+      {
+        "adapter": "P06",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 27,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 27,
+          "first_detection_slot": 27
+        },
+        "mutant": "coord-end-off-by-one",
+        "repeated-developer-indices": {
+          "actual_executions": 3,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 3,
+          "first_detection_slot": 3
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 1,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 1,
+          "first_detection_slot": 1
+        }
+      },
+      {
+        "adapter": "P06",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 3,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 3,
+          "first_detection_slot": 3
+        },
+        "mutant": "drop-dense",
+        "repeated-developer-indices": {
+          "actual_executions": 5,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 5,
+          "first_detection_slot": 5
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 2,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 2,
+          "first_detection_slot": 2
+        }
+      },
+      {
+        "adapter": "P08",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 32,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 32,
+          "first_detection_slot": 32
+        },
+        "mutant": "ignore-explicit",
+        "repeated-developer-indices": {
+          "actual_executions": 3,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 3,
+          "first_detection_slot": 3
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 1,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 1,
+          "first_detection_slot": 1
+        }
+      },
+      {
+        "adapter": "P08",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 6,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 6,
+          "first_detection_slot": 6
+        },
+        "mutant": "shape-off-by-one",
+        "repeated-developer-indices": {
+          "actual_executions": 2,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 2,
+          "first_detection_slot": 2
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 3,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 3,
+          "first_detection_slot": 3
+        }
+      },
+      {
+        "adapter": "P08",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 2,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 2,
+          "first_detection_slot": 2
+        },
+        "mutant": "format-off-by-one",
+        "repeated-developer-indices": {
+          "actual_executions": 64,
+          "candidate_slot_cap": 64,
+          "detected": false,
+          "distinct_indices_executed": 4,
+          "first_detection_slot": null
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 6,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 6,
+          "first_detection_slot": 6
+        }
+      },
+      {
+        "adapter": "P08",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 2,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 2,
+          "first_detection_slot": 2
+        },
+        "mutant": "reverse-default",
+        "repeated-developer-indices": {
+          "actual_executions": 64,
+          "candidate_slot_cap": 64,
+          "detected": false,
+          "distinct_indices_executed": 4,
+          "first_detection_slot": null
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 3,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 3,
+          "first_detection_slot": 3
+        }
+      },
+      {
+        "adapter": "P08",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 17,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 17,
+          "first_detection_slot": 17
+        },
+        "mutant": "empty-is-explicit",
+        "repeated-developer-indices": {
+          "actual_executions": 2,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 2,
+          "first_detection_slot": 2
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 6,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 6,
+          "first_detection_slot": 6
+        }
+      }
+    ],
+    "seed": 20260915,
+    "summary": {
+      "evenly-spaced-enumeration-indices": {
+        "actual_executions": 318,
+        "candidate_slots_if_no_early_stop": 1152,
+        "detected": 18,
+        "rate": 1.0,
+        "total": 18
+      },
+      "repeated-developer-indices": {
+        "actual_executions": 325,
+        "candidate_slots_if_no_early_stop": 1152,
+        "detected": 14,
+        "rate": 0.7777777777777778,
+        "total": 18
+      },
+      "seeded-random-with-replacement": {
+        "actual_executions": 121,
+        "candidate_slots_if_no_early_stop": 1152,
+        "detected": 18,
+        "rate": 1.0,
+        "total": 18
+      }
+    }
+  },
+  "p01_candidate": {
+    "adapter": "P01",
+    "admission_failure": "The 1--4 operand range is a finite validation boundary, not a source restriction. Per-operand and result non-scalarity is not enforced by the source; mixed scalar/indexed inputs reach the changed hunk and can change the exception class.",
+    "decision": "abstained",
+    "scalar_boundary_case_count": 4,
+    "scalar_boundary_controls": [
+      {
+        "after": "('value', Loop(index='i', stmt=Assign(lhs=Access(tensor='R', indices=('i',)), rhs=Mul(left=Access(tensor='A', indices=()), right=Access(tensor='B', indices=('i',))))))",
+        "before": "('exception', 'SyntaxError')",
+        "case": "EinsumBuildSpec(operands=((), ('i',)), result=('i',), schedule=('i',))",
+        "same": false
+      },
+      {
+        "after": "('value', Loop(index='i', stmt=Assign(lhs=Access(tensor='R', indices=('i',)), rhs=Mul(left=Access(tensor='A', indices=('i',)), right=Access(tensor='B', indices=())))))",
+        "before": "('exception', 'SyntaxError')",
+        "case": "EinsumBuildSpec(operands=(('i',), ()), result=('i',), schedule=('i',))",
+        "same": false
+      },
+      {
+        "after": "('value', Loop(index='i', stmt=Assign(lhs=Access(tensor='R', indices=()), rhs=Access(tensor='A', indices=('i',)))))",
+        "before": "('exception', 'SyntaxError')",
+        "case": "EinsumBuildSpec(operands=(('i',),), result=(), schedule=('i',))",
+        "same": false
+      },
+      {
+        "after": "('exception', 'AssertionError')",
+        "before": "('exception', 'AssertionError')",
+        "case": "EinsumBuildSpec(operands=((),), result=(), schedule=())",
+        "same": true
+      }
+    ],
+    "source_pin": {
+      "child": "72c55d36de12f45a4dcdd222f760b0fb6c3b6276",
+      "child_tree": "ddca30e628378ad419ca4fb2462beac96291226c",
+      "decision": "abstained",
+      "parent": "b061b530c08141bf01f190ccb515906e4570f8cf",
+      "parent_tree": "c14df7e097884f46e36c42fbddf761b627ef2515"
+    },
+    "successful_domain_case_count": 29222,
+    "successful_domain_mismatch_count": 0,
+    "successful_domain_mismatches": []
+  },
+  "p06_effects": {
+    "call_count": 22,
+    "errors": [],
+    "interpretation": "Additional P06 multi-call state-effect diagnostics; not added to the frozen 526-state or 18-mutant denominators.",
+    "rows": [
+      {
+        "calls": 3,
+        "case_id": "initial-mixed-order",
+        "certificate": {
+          "calls": [
+            {
+              "defined": [
+                "i"
+              ],
+              "emitted": [
+                {
+                  "fields": {
+                    "text": "Resolve dense coordinates"
+                  },
+                  "kind": "Comment"
+                },
+                {
+                  "fields": {
+                    "cast": false,
+                    "op": "=",
+                    "value": {
+                      "fields": {
+                        "value": "1"
+                      },
+                      "kind": "Literal"
+                    },
+                    "var": {
+                      "fields": {
+                        "is_ptr": false,
+                        "name": "a",
+                        "typ": "int"
+                      },
+                      "kind": "Var"
+                    }
+                  },
+                  "kind": "VarInit"
+                },
+                {
+                  "fields": {
+                    "cast": false,
+                    "op": "=",
+                    "value": {
+                      "fields": {
+                        "value": "0"
+                      },
+                      "kind": "Literal"
+                    },
+                    "var": {
+                      "fields": {
+                        "is_ptr": false,
+                        "name": "c",
+                        "typ": "int"
+                      },
+                      "kind": "Var"
+                    }
+                  },
+                  "kind": "VarInit"
+                }
+              ],
+              "inserted": [],
+              "offered": [],
+              "post": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "pre": [
+                {
+                  "dependencies": [
+                    "i"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "0"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "c",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "retained": [
+                false,
+                true,
+                false
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [
+                    "i"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "0"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "c",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            },
+            {
+              "defined": [
+                "i",
+                "j"
+              ],
+              "emitted": [
+                {
+                  "fields": {
+                    "text": "Resolve dense coordinates"
+                  },
+                  "kind": "Comment"
+                },
+                {
+                  "fields": {
+                    "cast": false,
+                    "op": "=",
+                    "value": {
+                      "fields": {
+                        "left": {
+                          "fields": {
+                            "left": {
+                              "fields": {
+                                "is_ptr": false,
+                                "name": "pA0",
+                                "typ": "int"
+                              },
+                              "kind": "Var"
+                            },
+                            "op": "*",
+                            "right": {
+                              "fields": {
+                                "is_ptr": false,
+                                "name": "A1_size",
+                                "typ": "int"
+                              },
+                              "kind": "Var"
+                            }
+                          },
+                          "kind": "BinOp"
+                        },
+                        "op": "+",
+                        "right": {
+                          "fields": {
+                            "is_ptr": false,
+                            "name": "j",
+                            "typ": "int"
+                          },
+                          "kind": "Var"
+                        }
+                      },
+                      "kind": "BinOp"
+                    },
+                    "var": {
+                      "fields": {
+                        "is_ptr": false,
+                        "name": "b",
+                        "typ": "int"
+                      },
+                      "kind": "Var"
+                    }
+                  },
+                  "kind": "VarInit"
+                }
+              ],
+              "inserted": [],
+              "offered": [],
+              "post": [],
+              "pre": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "retained": [
+                false
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            },
+            {
+              "defined": [],
+              "emitted": [],
+              "inserted": [],
+              "offered": [],
+              "post": [],
+              "pre": [],
+              "retained": [],
+              "snapshot": []
+            }
+          ],
+          "case_id": "initial-mixed-order",
+          "initial_pending": [
+            {
+              "dependencies": [
+                "i"
+              ],
+              "statement": {
+                "fields": {
+                  "cast": false,
+                  "op": "=",
+                  "value": {
+                    "fields": {
+                      "value": "1"
+                    },
+                    "kind": "Literal"
+                  },
+                  "var": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "a",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  }
+                },
+                "kind": "VarInit"
+              }
+            },
+            {
+              "dependencies": [
+                "j"
+              ],
+              "statement": {
+                "fields": {
+                  "cast": false,
+                  "op": "=",
+                  "value": {
+                    "fields": {
+                      "left": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "pA0",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          },
+                          "op": "*",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "A1_size",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "op": "+",
+                      "right": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "j",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "BinOp"
+                  },
+                  "var": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "b",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  }
+                },
+                "kind": "VarInit"
+              }
+            },
+            {
+              "dependencies": [],
+              "statement": {
+                "fields": {
+                  "cast": false,
+                  "op": "=",
+                  "value": {
+                    "fields": {
+                      "value": "0"
+                    },
+                    "kind": "Literal"
+                  },
+                  "var": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "c",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  }
+                },
+                "kind": "VarInit"
+              }
+            }
+          ],
+          "kind": "p06-ordered-map"
+        },
+        "replay": {
+          "call_count": 3,
+          "case_id": "initial-mixed-order",
+          "remaining_entries": 0,
+          "valid": true
+        },
+        "same": true
+      },
+      {
+        "calls": 3,
+        "case_id": "first-name-wins",
+        "certificate": {
+          "calls": [
+            {
+              "defined": [],
+              "emitted": [],
+              "inserted": [
+                true,
+                false
+              ],
+              "offered": [
+                {
+                  "coordinate": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "a",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  },
+                  "dependencies": [
+                    "j"
+                  ],
+                  "value": {
+                    "fields": {
+                      "value": "1"
+                    },
+                    "kind": "Literal"
+                  }
+                },
+                {
+                  "coordinate": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "a",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  },
+                  "dependencies": [],
+                  "value": {
+                    "fields": {
+                      "value": "2"
+                    },
+                    "kind": "Literal"
+                  }
+                }
+              ],
+              "post": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "pre": [],
+              "retained": [
+                true
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            },
+            {
+              "defined": [
+                "j"
+              ],
+              "emitted": [
+                {
+                  "fields": {
+                    "text": "Resolve dense coordinates"
+                  },
+                  "kind": "Comment"
+                },
+                {
+                  "fields": {
+                    "cast": false,
+                    "op": "=",
+                    "value": {
+                      "fields": {
+                        "value": "1"
+                      },
+                      "kind": "Literal"
+                    },
+                    "var": {
+                      "fields": {
+                        "is_ptr": false,
+                        "name": "a",
+                        "typ": "int"
+                      },
+                      "kind": "Var"
+                    }
+                  },
+                  "kind": "VarInit"
+                }
+              ],
+              "inserted": [],
+              "offered": [],
+              "post": [],
+              "pre": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "retained": [
+                false
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            },
+            {
+              "defined": [],
+              "emitted": [
+                {
+                  "fields": {
+                    "text": "Resolve dense coordinates"
+                  },
+                  "kind": "Comment"
+                },
+                {
+                  "fields": {
+                    "cast": false,
+                    "op": "=",
+                    "value": {
+                      "fields": {
+                        "value": "2"
+                      },
+                      "kind": "Literal"
+                    },
+                    "var": {
+                      "fields": {
+                        "is_ptr": false,
+                        "name": "a",
+                        "typ": "int"
+                      },
+                      "kind": "Var"
+                    }
+                  },
+                  "kind": "VarInit"
+                }
+              ],
+              "inserted": [
+                true
+              ],
+              "offered": [
+                {
+                  "coordinate": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "a",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  },
+                  "dependencies": [],
+                  "value": {
+                    "fields": {
+                      "value": "2"
+                    },
+                    "kind": "Literal"
+                  }
+                }
+              ],
+              "post": [],
+              "pre": [],
+              "retained": [
+                false
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "2"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            }
+          ],
+          "case_id": "first-name-wins",
+          "initial_pending": [],
+          "kind": "p06-ordered-map"
+        },
+        "replay": {
+          "call_count": 3,
+          "case_id": "first-name-wins",
+          "remaining_entries": 0,
+          "valid": true
+        },
+        "same": true
+      },
+      {
+        "calls": 2,
+        "case_id": "ready-old-suppresses-new",
+        "certificate": {
+          "calls": [
+            {
+              "defined": [],
+              "emitted": [
+                {
+                  "fields": {
+                    "text": "Resolve dense coordinates"
+                  },
+                  "kind": "Comment"
+                },
+                {
+                  "fields": {
+                    "cast": false,
+                    "op": "=",
+                    "value": {
+                      "fields": {
+                        "value": "1"
+                      },
+                      "kind": "Literal"
+                    },
+                    "var": {
+                      "fields": {
+                        "is_ptr": false,
+                        "name": "a",
+                        "typ": "int"
+                      },
+                      "kind": "Var"
+                    }
+                  },
+                  "kind": "VarInit"
+                }
+              ],
+              "inserted": [
+                false
+              ],
+              "offered": [
+                {
+                  "coordinate": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "a",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  },
+                  "dependencies": [
+                    "j"
+                  ],
+                  "value": {
+                    "fields": {
+                      "value": "2"
+                    },
+                    "kind": "Literal"
+                  }
+                }
+              ],
+              "post": [],
+              "pre": [
+                {
+                  "dependencies": [],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "retained": [
+                false
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            },
+            {
+              "defined": [],
+              "emitted": [
+                {
+                  "fields": {
+                    "text": "Resolve dense coordinates"
+                  },
+                  "kind": "Comment"
+                },
+                {
+                  "fields": {
+                    "cast": false,
+                    "op": "=",
+                    "value": {
+                      "fields": {
+                        "value": "2"
+                      },
+                      "kind": "Literal"
+                    },
+                    "var": {
+                      "fields": {
+                        "is_ptr": false,
+                        "name": "a",
+                        "typ": "int"
+                      },
+                      "kind": "Var"
+                    }
+                  },
+                  "kind": "VarInit"
+                }
+              ],
+              "inserted": [
+                true
+              ],
+              "offered": [
+                {
+                  "coordinate": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "a",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  },
+                  "dependencies": [],
+                  "value": {
+                    "fields": {
+                      "value": "2"
+                    },
+                    "kind": "Literal"
+                  }
+                }
+              ],
+              "post": [],
+              "pre": [],
+              "retained": [
+                false
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "2"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            }
+          ],
+          "case_id": "ready-old-suppresses-new",
+          "initial_pending": [
+            {
+              "dependencies": [],
+              "statement": {
+                "fields": {
+                  "cast": false,
+                  "op": "=",
+                  "value": {
+                    "fields": {
+                      "value": "1"
+                    },
+                    "kind": "Literal"
+                  },
+                  "var": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "a",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  }
+                },
+                "kind": "VarInit"
+              }
+            }
+          ],
+          "kind": "p06-ordered-map"
+        },
+        "replay": {
+          "call_count": 2,
+          "case_id": "ready-old-suppresses-new",
+          "remaining_entries": 0,
+          "valid": true
+        },
+        "same": true
+      },
+      {
+        "calls": 3,
+        "case_id": "unready-old-suppresses-ready",
+        "certificate": {
+          "calls": [
+            {
+              "defined": [],
+              "emitted": [],
+              "inserted": [
+                false
+              ],
+              "offered": [
+                {
+                  "coordinate": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "a",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  },
+                  "dependencies": [],
+                  "value": {
+                    "fields": {
+                      "value": "2"
+                    },
+                    "kind": "Literal"
+                  }
+                }
+              ],
+              "post": [
+                {
+                  "dependencies": [
+                    "j",
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "pre": [
+                {
+                  "dependencies": [
+                    "j",
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "retained": [
+                true
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [
+                    "j",
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            },
+            {
+              "defined": [],
+              "emitted": [],
+              "inserted": [],
+              "offered": [],
+              "post": [
+                {
+                  "dependencies": [
+                    "j",
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "pre": [
+                {
+                  "dependencies": [
+                    "j",
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "retained": [
+                true
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [
+                    "j",
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            },
+            {
+              "defined": [
+                "j",
+                "j"
+              ],
+              "emitted": [
+                {
+                  "fields": {
+                    "text": "Resolve dense coordinates"
+                  },
+                  "kind": "Comment"
+                },
+                {
+                  "fields": {
+                    "cast": false,
+                    "op": "=",
+                    "value": {
+                      "fields": {
+                        "left": {
+                          "fields": {
+                            "left": {
+                              "fields": {
+                                "is_ptr": false,
+                                "name": "pA0",
+                                "typ": "int"
+                              },
+                              "kind": "Var"
+                            },
+                            "op": "*",
+                            "right": {
+                              "fields": {
+                                "is_ptr": false,
+                                "name": "A1_size",
+                                "typ": "int"
+                              },
+                              "kind": "Var"
+                            }
+                          },
+                          "kind": "BinOp"
+                        },
+                        "op": "+",
+                        "right": {
+                          "fields": {
+                            "is_ptr": false,
+                            "name": "j",
+                            "typ": "int"
+                          },
+                          "kind": "Var"
+                        }
+                      },
+                      "kind": "BinOp"
+                    },
+                    "var": {
+                      "fields": {
+                        "is_ptr": false,
+                        "name": "a",
+                        "typ": "int"
+                      },
+                      "kind": "Var"
+                    }
+                  },
+                  "kind": "VarInit"
+                }
+              ],
+              "inserted": [],
+              "offered": [],
+              "post": [],
+              "pre": [
+                {
+                  "dependencies": [
+                    "j",
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "retained": [
+                false
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [
+                    "j",
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            }
+          ],
+          "case_id": "unready-old-suppresses-ready",
+          "initial_pending": [
+            {
+              "dependencies": [
+                "j",
+                "j"
+              ],
+              "statement": {
+                "fields": {
+                  "cast": false,
+                  "op": "=",
+                  "value": {
+                    "fields": {
+                      "left": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "pA0",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          },
+                          "op": "*",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "A1_size",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "op": "+",
+                      "right": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "j",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "BinOp"
+                  },
+                  "var": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "a",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  }
+                },
+                "kind": "VarInit"
+              }
+            }
+          ],
+          "kind": "p06-ordered-map"
+        },
+        "replay": {
+          "call_count": 3,
+          "case_id": "unready-old-suppresses-ready",
+          "remaining_entries": 0,
+          "valid": true
+        },
+        "same": true
+      },
+      {
+        "calls": 2,
+        "case_id": "absent-and-zero-values",
+        "certificate": {
+          "calls": [
+            {
+              "defined": [],
+              "emitted": [
+                {
+                  "fields": {
+                    "text": "Resolve dense coordinates"
+                  },
+                  "kind": "Comment"
+                },
+                {
+                  "fields": {
+                    "cast": false,
+                    "op": "=",
+                    "value": {
+                      "fields": {
+                        "value": "0"
+                      },
+                      "kind": "Literal"
+                    },
+                    "var": {
+                      "fields": {
+                        "is_ptr": false,
+                        "name": "zero",
+                        "typ": "int"
+                      },
+                      "kind": "Var"
+                    }
+                  },
+                  "kind": "VarInit"
+                }
+              ],
+              "inserted": [
+                null,
+                true
+              ],
+              "offered": [
+                {
+                  "coordinate": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "skip",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  },
+                  "dependencies": [],
+                  "value": null
+                },
+                {
+                  "coordinate": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "zero",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  },
+                  "dependencies": [],
+                  "value": {
+                    "fields": {
+                      "value": "0"
+                    },
+                    "kind": "Literal"
+                  }
+                }
+              ],
+              "post": [],
+              "pre": [],
+              "retained": [
+                false
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "0"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "zero",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            },
+            {
+              "defined": [],
+              "emitted": [],
+              "inserted": [],
+              "offered": [],
+              "post": [],
+              "pre": [],
+              "retained": [],
+              "snapshot": []
+            }
+          ],
+          "case_id": "absent-and-zero-values",
+          "initial_pending": [],
+          "kind": "p06-ordered-map"
+        },
+        "replay": {
+          "call_count": 2,
+          "case_id": "absent-and-zero-values",
+          "remaining_entries": 0,
+          "valid": true
+        },
+        "same": true
+      },
+      {
+        "calls": 3,
+        "case_id": "no-definition-cascade",
+        "certificate": {
+          "calls": [
+            {
+              "defined": [
+                "i"
+              ],
+              "emitted": [
+                {
+                  "fields": {
+                    "text": "Resolve dense coordinates"
+                  },
+                  "kind": "Comment"
+                },
+                {
+                  "fields": {
+                    "cast": false,
+                    "op": "=",
+                    "value": {
+                      "fields": {
+                        "value": "1"
+                      },
+                      "kind": "Literal"
+                    },
+                    "var": {
+                      "fields": {
+                        "is_ptr": false,
+                        "name": "j",
+                        "typ": "int"
+                      },
+                      "kind": "Var"
+                    }
+                  },
+                  "kind": "VarInit"
+                }
+              ],
+              "inserted": [
+                true,
+                true
+              ],
+              "offered": [
+                {
+                  "coordinate": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "j",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  },
+                  "dependencies": [
+                    "i"
+                  ],
+                  "value": {
+                    "fields": {
+                      "value": "1"
+                    },
+                    "kind": "Literal"
+                  }
+                },
+                {
+                  "coordinate": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "b",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  },
+                  "dependencies": [
+                    "j"
+                  ],
+                  "value": {
+                    "fields": {
+                      "left": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "pA0",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          },
+                          "op": "*",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "A1_size",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "op": "+",
+                      "right": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "j",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "BinOp"
+                  }
+                }
+              ],
+              "post": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "pre": [],
+              "retained": [
+                false,
+                true
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [
+                    "i"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "j",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            },
+            {
+              "defined": [
+                "i"
+              ],
+              "emitted": [],
+              "inserted": [],
+              "offered": [],
+              "post": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "pre": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "retained": [
+                true
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            },
+            {
+              "defined": [
+                "i",
+                "j"
+              ],
+              "emitted": [
+                {
+                  "fields": {
+                    "text": "Resolve dense coordinates"
+                  },
+                  "kind": "Comment"
+                },
+                {
+                  "fields": {
+                    "cast": false,
+                    "op": "=",
+                    "value": {
+                      "fields": {
+                        "left": {
+                          "fields": {
+                            "left": {
+                              "fields": {
+                                "is_ptr": false,
+                                "name": "pA0",
+                                "typ": "int"
+                              },
+                              "kind": "Var"
+                            },
+                            "op": "*",
+                            "right": {
+                              "fields": {
+                                "is_ptr": false,
+                                "name": "A1_size",
+                                "typ": "int"
+                              },
+                              "kind": "Var"
+                            }
+                          },
+                          "kind": "BinOp"
+                        },
+                        "op": "+",
+                        "right": {
+                          "fields": {
+                            "is_ptr": false,
+                            "name": "j",
+                            "typ": "int"
+                          },
+                          "kind": "Var"
+                        }
+                      },
+                      "kind": "BinOp"
+                    },
+                    "var": {
+                      "fields": {
+                        "is_ptr": false,
+                        "name": "b",
+                        "typ": "int"
+                      },
+                      "kind": "Var"
+                    }
+                  },
+                  "kind": "VarInit"
+                }
+              ],
+              "inserted": [],
+              "offered": [],
+              "post": [],
+              "pre": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "retained": [
+                false
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            }
+          ],
+          "case_id": "no-definition-cascade",
+          "initial_pending": [],
+          "kind": "p06-ordered-map"
+        },
+        "replay": {
+          "call_count": 3,
+          "case_id": "no-definition-cascade",
+          "remaining_entries": 0,
+          "valid": true
+        },
+        "same": true
+      },
+      {
+        "calls": 3,
+        "case_id": "retained-order-and-appends",
+        "certificate": {
+          "calls": [
+            {
+              "defined": [
+                "i"
+              ],
+              "emitted": [
+                {
+                  "fields": {
+                    "text": "Resolve dense coordinates"
+                  },
+                  "kind": "Comment"
+                },
+                {
+                  "fields": {
+                    "cast": false,
+                    "op": "=",
+                    "value": {
+                      "fields": {
+                        "value": "1"
+                      },
+                      "kind": "Literal"
+                    },
+                    "var": {
+                      "fields": {
+                        "is_ptr": false,
+                        "name": "a",
+                        "typ": "int"
+                      },
+                      "kind": "Var"
+                    }
+                  },
+                  "kind": "VarInit"
+                },
+                {
+                  "fields": {
+                    "cast": false,
+                    "op": "=",
+                    "value": {
+                      "fields": {
+                        "value": "0"
+                      },
+                      "kind": "Literal"
+                    },
+                    "var": {
+                      "fields": {
+                        "is_ptr": false,
+                        "name": "c",
+                        "typ": "int"
+                      },
+                      "kind": "Var"
+                    }
+                  },
+                  "kind": "VarInit"
+                }
+              ],
+              "inserted": [
+                true,
+                true
+              ],
+              "offered": [
+                {
+                  "coordinate": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "c",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  },
+                  "dependencies": [],
+                  "value": {
+                    "fields": {
+                      "value": "0"
+                    },
+                    "kind": "Literal"
+                  }
+                },
+                {
+                  "coordinate": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "d",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  },
+                  "dependencies": [
+                    "k"
+                  ],
+                  "value": {
+                    "fields": {
+                      "left": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "pA0",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          },
+                          "op": "*",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "A1_size",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "op": "+",
+                      "right": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "j",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "BinOp"
+                  }
+                }
+              ],
+              "post": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "2"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "k"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "d",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "pre": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "2"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "i"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "retained": [
+                true,
+                false,
+                false,
+                true
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "2"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "i"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "0"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "c",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "k"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "d",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            },
+            {
+              "defined": [
+                "j"
+              ],
+              "emitted": [
+                {
+                  "fields": {
+                    "text": "Resolve dense coordinates"
+                  },
+                  "kind": "Comment"
+                },
+                {
+                  "fields": {
+                    "cast": false,
+                    "op": "=",
+                    "value": {
+                      "fields": {
+                        "value": "2"
+                      },
+                      "kind": "Literal"
+                    },
+                    "var": {
+                      "fields": {
+                        "is_ptr": false,
+                        "name": "b",
+                        "typ": "int"
+                      },
+                      "kind": "Var"
+                    }
+                  },
+                  "kind": "VarInit"
+                }
+              ],
+              "inserted": [],
+              "offered": [],
+              "post": [
+                {
+                  "dependencies": [
+                    "k"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "d",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "pre": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "2"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "k"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "d",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "retained": [
+                false,
+                true
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "2"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "k"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "d",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            },
+            {
+              "defined": [
+                "k"
+              ],
+              "emitted": [
+                {
+                  "fields": {
+                    "text": "Resolve dense coordinates"
+                  },
+                  "kind": "Comment"
+                },
+                {
+                  "fields": {
+                    "cast": false,
+                    "op": "=",
+                    "value": {
+                      "fields": {
+                        "left": {
+                          "fields": {
+                            "left": {
+                              "fields": {
+                                "is_ptr": false,
+                                "name": "pA0",
+                                "typ": "int"
+                              },
+                              "kind": "Var"
+                            },
+                            "op": "*",
+                            "right": {
+                              "fields": {
+                                "is_ptr": false,
+                                "name": "A1_size",
+                                "typ": "int"
+                              },
+                              "kind": "Var"
+                            }
+                          },
+                          "kind": "BinOp"
+                        },
+                        "op": "+",
+                        "right": {
+                          "fields": {
+                            "is_ptr": false,
+                            "name": "j",
+                            "typ": "int"
+                          },
+                          "kind": "Var"
+                        }
+                      },
+                      "kind": "BinOp"
+                    },
+                    "var": {
+                      "fields": {
+                        "is_ptr": false,
+                        "name": "d",
+                        "typ": "int"
+                      },
+                      "kind": "Var"
+                    }
+                  },
+                  "kind": "VarInit"
+                }
+              ],
+              "inserted": [],
+              "offered": [],
+              "post": [],
+              "pre": [
+                {
+                  "dependencies": [
+                    "k"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "d",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "retained": [
+                false
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [
+                    "k"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "d",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            }
+          ],
+          "case_id": "retained-order-and-appends",
+          "initial_pending": [
+            {
+              "dependencies": [
+                "j"
+              ],
+              "statement": {
+                "fields": {
+                  "cast": false,
+                  "op": "=",
+                  "value": {
+                    "fields": {
+                      "value": "2"
+                    },
+                    "kind": "Literal"
+                  },
+                  "var": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "b",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  }
+                },
+                "kind": "VarInit"
+              }
+            },
+            {
+              "dependencies": [
+                "i"
+              ],
+              "statement": {
+                "fields": {
+                  "cast": false,
+                  "op": "=",
+                  "value": {
+                    "fields": {
+                      "value": "1"
+                    },
+                    "kind": "Literal"
+                  },
+                  "var": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "a",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  }
+                },
+                "kind": "VarInit"
+              }
+            }
+          ],
+          "kind": "p06-ordered-map"
+        },
+        "replay": {
+          "call_count": 3,
+          "case_id": "retained-order-and-appends",
+          "remaining_entries": 0,
+          "valid": true
+        },
+        "same": true
+      },
+      {
+        "calls": 3,
+        "case_id": "retained-only-no-output",
+        "certificate": {
+          "calls": [
+            {
+              "defined": [],
+              "emitted": [],
+              "inserted": [],
+              "offered": [],
+              "post": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "2"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "i"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "pre": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "2"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "i"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "retained": [
+                true,
+                true
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "2"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "i"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            },
+            {
+              "defined": [],
+              "emitted": [],
+              "inserted": [
+                true
+              ],
+              "offered": [
+                {
+                  "coordinate": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "c",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  },
+                  "dependencies": [
+                    "k"
+                  ],
+                  "value": {
+                    "fields": {
+                      "left": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "pA0",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          },
+                          "op": "*",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "A1_size",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "op": "+",
+                      "right": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "j",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "BinOp"
+                  }
+                }
+              ],
+              "post": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "2"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "i"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "k"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "c",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "pre": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "2"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "i"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "retained": [
+                true,
+                true,
+                true
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "2"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "i"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "k"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "c",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            },
+            {
+              "defined": [],
+              "emitted": [],
+              "inserted": [],
+              "offered": [],
+              "post": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "2"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "i"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "k"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "c",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "pre": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "2"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "i"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "k"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "c",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ],
+              "retained": [
+                true,
+                true,
+                true
+              ],
+              "snapshot": [
+                {
+                  "dependencies": [
+                    "j"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "2"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "b",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "i"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "value": "1"
+                        },
+                        "kind": "Literal"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "a",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                },
+                {
+                  "dependencies": [
+                    "k"
+                  ],
+                  "statement": {
+                    "fields": {
+                      "cast": false,
+                      "op": "=",
+                      "value": {
+                        "fields": {
+                          "left": {
+                            "fields": {
+                              "left": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "pA0",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              },
+                              "op": "*",
+                              "right": {
+                                "fields": {
+                                  "is_ptr": false,
+                                  "name": "A1_size",
+                                  "typ": "int"
+                                },
+                                "kind": "Var"
+                              }
+                            },
+                            "kind": "BinOp"
+                          },
+                          "op": "+",
+                          "right": {
+                            "fields": {
+                              "is_ptr": false,
+                              "name": "j",
+                              "typ": "int"
+                            },
+                            "kind": "Var"
+                          }
+                        },
+                        "kind": "BinOp"
+                      },
+                      "var": {
+                        "fields": {
+                          "is_ptr": false,
+                          "name": "c",
+                          "typ": "int"
+                        },
+                        "kind": "Var"
+                      }
+                    },
+                    "kind": "VarInit"
+                  }
+                }
+              ]
+            }
+          ],
+          "case_id": "retained-only-no-output",
+          "initial_pending": [
+            {
+              "dependencies": [
+                "j"
+              ],
+              "statement": {
+                "fields": {
+                  "cast": false,
+                  "op": "=",
+                  "value": {
+                    "fields": {
+                      "value": "2"
+                    },
+                    "kind": "Literal"
+                  },
+                  "var": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "b",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  }
+                },
+                "kind": "VarInit"
+              }
+            },
+            {
+              "dependencies": [
+                "i"
+              ],
+              "statement": {
+                "fields": {
+                  "cast": false,
+                  "op": "=",
+                  "value": {
+                    "fields": {
+                      "value": "1"
+                    },
+                    "kind": "Literal"
+                  },
+                  "var": {
+                    "fields": {
+                      "is_ptr": false,
+                      "name": "a",
+                      "typ": "int"
+                    },
+                    "kind": "Var"
+                  }
+                },
+                "kind": "VarInit"
+              }
+            }
+          ],
+          "kind": "p06-ordered-map"
+        },
+        "replay": {
+          "call_count": 3,
+          "case_id": "retained-only-no-output",
+          "remaining_entries": 3,
+          "valid": true
+        },
+        "same": true
+      }
+    ],
+    "sequence_count": 8,
+    "state_only_controls": [
+      {
+        "control": "drop-unready",
+        "output_unchanged": true,
+        "replay": {
+          "reason": "call 0: source effect mismatch",
+          "valid": false
+        }
+      },
+      {
+        "control": "reverse-unready",
+        "output_unchanged": true,
+        "replay": {
+          "reason": "call 0: source effect mismatch",
+          "valid": false
+        }
+      },
+      {
+        "control": "retain-ready",
+        "output_unchanged": true,
+        "replay": {
+          "reason": "call 0: source effect mismatch",
+          "valid": false
+        }
+      }
+    ]
+  },
+  "peak_rss_kib": 24068,
+  "repository": "bobbyyyan/scorch",
+  "source_evidence": "data/public-adapter-evidence.json",
+  "study": "frozen public-source adapter coverage and synthetic negative controls",
+  "wall_seconds": 4.857459936000012
+}

@@ -1,0 +1,12 @@
+\begin{table}[t]
+\caption{Synthetic negative-control detection under a common cap of 64 candidate input slots per mutant. The total slot cap is $18\cdot64=1{,}152$ per policy. Execution stops at first detection, so actual executions differ. Mutants are not historical Scorch defects.}\label{tab:mutation}
+\centering
+\begin{tabular}{lrrrr}
+\toprule
+Selection policy & Detected & Total & Actual exec. & Total slot cap\\\midrule
+Repeated developer indices & 14 & 18 & 325 & 1152\\
+Seeded random with replacement & 18 & 18 & 121 & 1152\\
+Evenly spaced enumeration indices & 18 & 18 & 318 & 1152\\
+\bottomrule
+\end{tabular}
+\end{table}

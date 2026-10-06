@@ -1,0 +1,22 @@
+{
+  "study": "pre-lock generated pilot; not a public patch evaluation",
+  "case_count": 28,
+  "consumer_count": 16,
+  "query_count": 289,
+  "oracle_checks": 124,
+  "oracle_obligations": 1917,
+  "replay_count": 40,
+  "cpu_seconds": 2.104724841,
+  "wall_seconds": 2.1058753009999975,
+  "solver_cpu_seconds": 1.6385657710000006,
+  "peak_rss_kib": 54240,
+  "limits": {
+    "workers": 1,
+    "query_timeout_ms": 1500,
+    "address_space_bytes": 2147483648,
+    "process_cpu_soft_seconds": 105,
+    "process_cpu_hard_seconds": 110,
+    "posix_resource_available": true
+  },
+  "errors": []
+}

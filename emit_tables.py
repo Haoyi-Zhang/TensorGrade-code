@@ -19,6 +19,7 @@ def catalog(path,caption,label,entries):
     lines=[r'\begin{longtable}{@{}p{0.09\linewidth}p{0.54\linewidth}p{0.25\linewidth}@{}}',
       r'\caption{'+caption+r'}\label{'+label+r'}\\',
       r'\toprule Case & Retained case name & Outcome\\\midrule\endfirsthead',
+      r'\multicolumn{3}{l}{Table \thetable{} (continued)}\\',
       r'\toprule Case & Retained case name & Outcome\\\midrule\endhead',r'\bottomrule\endfoot']
     lines.extend(escape(tag)+' & '+escape(name)+' & '+answer+r'\\' for tag,name,answer in entries)
     lines.append(r'\end{longtable}');path.write_text('\n'.join(lines)+'\n')
@@ -85,7 +86,7 @@ def main():
     ad.append(f"Admitted total & 3/12 & {sum(x['bounded_case_count'] for x in u['adapter_results']):,} & {sum(x['mismatch_count'] for x in u['adapter_results'])} & 4"+r"\\")
     ad.extend([r'\bottomrule',r'\end{tabular}',r'\end{table}']);(args.output/'adapter-cases.tex').write_text('\n'.join(ad)+'\n')
 
-    md=[r'\begin{longtable}{@{}p{0.08\linewidth}p{0.34\linewidth}rrr@{}}',r"\caption{First detection candidate slot for all synthetic adapter mutants; an em dash denotes no detection within 64 selected slots. The third policy is an enumeration-index grid, not semantic-feature stratification.}\label{tab:mutation-detail}\\",r'\toprule Adapter & Mutant & Repeated dev. & Random & Even index grid\\\midrule\endfirsthead',r'\toprule Adapter & Mutant & Repeated dev. & Random & Even index grid\\\midrule\endhead',r'\bottomrule\endfoot']
+    md=[r'\begin{longtable}{@{}p{0.08\linewidth}p{0.34\linewidth}rrr@{}}',r"\caption{First detection candidate slot for all synthetic adapter mutants; an em dash denotes no detection within 64 selected slots. The third policy is an enumeration-index grid, not semantic-feature stratification.}\label{tab:mutation-detail}\\",r'\toprule Adapter & Mutant & Repeated dev. & Random & Even index grid\\\midrule\endfirsthead',r'\multicolumn{5}{l}{Table \thetable{} (continued)}\\',r'\toprule Adapter & Mutant & Repeated dev. & Random & Even index grid\\\midrule\endhead',r'\bottomrule\endfoot']
     keys=('repeated-developer-indices','seeded-random-with-replacement','evenly-spaced-enumeration-indices')
     for x in mut_rows:
         def first(pol):

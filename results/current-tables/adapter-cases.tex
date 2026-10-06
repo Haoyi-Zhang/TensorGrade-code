@@ -1,0 +1,14 @@
+\begin{table}[t]
+\caption{Bounded validation by source record. Admitted-state counts exclude P01 after its source-invariant admission failure; P01 is retained separately as a candidate diagnostic.}\label{tab:adapter-cases}
+\centering
+\begin{tabular}{llrrr}
+\toprule
+Record & Decision & States & Mismatch & Excluded controls\\\midrule
+P01 constructor & abstained & 29,222 & 0 & 4 (3 differ)\\
+P04 renderer & admitted & 30 & 0 & 0\\
+P06 resolver & admitted & 400 & 0 & 0\\
+P08 initialization & admitted & 96 & 0 & 4\\
+Admitted total & 3/12 & 526 & 0 & 4\\
+\bottomrule
+\end{tabular}
+\end{table}

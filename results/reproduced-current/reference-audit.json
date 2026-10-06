@@ -1,0 +1,16 @@
+{
+  "bibliography_entries": 83,
+  "citation_context_checks": 83,
+  "cited_keys": 83,
+  "doi_records": 77,
+  "errors": [],
+  "interpretation": "Offline consistency and completeness check against the delivered frozen metadata inventory, a complete dated primary-record audit, and a citation-context ledger for every cited key. Reproduction does not resolve the network; this is not an independent literature review or source content reread.",
+  "inventory_rows": 83,
+  "latest_citation_context_check": "2026-09-29",
+  "latest_inventory_check": "2026-09-29",
+  "latest_primary_record_check": "2026-09-29",
+  "passed": true,
+  "primary_record_checks": 83,
+  "stable_url_only_records": 6,
+  "verified_inventory_records": 83
+}

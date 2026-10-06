@@ -1,0 +1,103 @@
+{
+  "all_commands_succeeded": true,
+  "interpretation": "Command success and finite checks are not machine-checked general proofs, upstream execution, or independent review of the public adapters.",
+  "limits": {
+    "address_space_bytes": null,
+    "posix_resource_available": false,
+    "process_cpu_hard_seconds": null,
+    "process_cpu_soft_seconds": null,
+    "sequential_workers": 1,
+    "wall_seconds_per_child": 115
+  },
+  "runs": [
+    {
+      "child_peak_rss_kib_upper_bound": null,
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "name": "unit-tests",
+      "process_cpu_seconds": null,
+      "wall_seconds": 3.164527100001578,
+      "wall_timeout": false
+    },
+    {
+      "child_peak_rss_kib_upper_bound": null,
+      "command": [
+        "audit_references.py",
+        "--output",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\repair_workspace\\candidate\\P094\\artifact\\results\\reproduced-current\\reference-audit.json"
+      ],
+      "exit_code": 0,
+      "name": "reference-audit",
+      "process_cpu_seconds": null,
+      "wall_seconds": 0.05345539999689208,
+      "wall_timeout": false
+    },
+    {
+      "child_peak_rss_kib_upper_bound": null,
+      "command": [
+        "run_pilot.py",
+        "--output",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\repair_workspace\\candidate\\P094\\artifact\\results\\reproduced-current\\pilot.json"
+      ],
+      "exit_code": 0,
+      "name": "pilot",
+      "process_cpu_seconds": null,
+      "wall_seconds": 0.7601044999973965,
+      "wall_timeout": false
+    },
+    {
+      "child_peak_rss_kib_upper_bound": null,
+      "command": [
+        "run_diagnostics.py",
+        "--output",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\repair_workspace\\candidate\\P094\\artifact\\results\\reproduced-current\\diagnostics.json"
+      ],
+      "exit_code": 0,
+      "name": "diagnostics",
+      "process_cpu_seconds": null,
+      "wall_seconds": 1.0481326000008266,
+      "wall_timeout": false
+    },
+    {
+      "child_peak_rss_kib_upper_bound": null,
+      "command": [
+        "run_robustness_audit.py",
+        "--output",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\repair_workspace\\candidate\\P094\\artifact\\results\\reproduced-current\\robustness-audit.json"
+      ],
+      "exit_code": 0,
+      "name": "robustness-audit",
+      "process_cpu_seconds": null,
+      "wall_seconds": 3.911791799997445,
+      "wall_timeout": false
+    },
+    {
+      "child_peak_rss_kib_upper_bound": null,
+      "command": [
+        "run_public_study.py",
+        "--corpus",
+        "data/public-corpus.csv",
+        "--output",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\repair_workspace\\candidate\\P094\\artifact\\results\\reproduced-current\\public-study.json",
+        "--seed",
+        "20260915",
+        "--budget",
+        "64"
+      ],
+      "exit_code": 0,
+      "name": "public-study",
+      "process_cpu_seconds": null,
+      "wall_seconds": 2.3104698000024655,
+      "wall_timeout": false
+    }
+  ],
+  "total_process_cpu_seconds": null,
+  "total_wall_seconds": 11.248481199996604
+}

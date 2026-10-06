@@ -1,0 +1,34 @@
+\begin{longtable}{@{}p{0.09\linewidth}p{0.54\linewidth}p{0.25\linewidth}@{}}
+\caption{All 28 pilot finite-read inputs, including nonadmitted cases. Case names resolve directly to retained JSON files.}\label{tab:pilot-catalog}\\
+\toprule Case & Retained case name & Outcome\\\midrule\endfirsthead
+\toprule Case & Retained case name & Outcome\\\midrule\endhead
+\bottomrule\endfoot
+P01 & identity & $SZVOM$\\
+P02 & uniform-scale & $SZM$\\
+P03 & nonuniform-scale & $SZM$\\
+P04 & support-without-storage & $SZ$\\
+P05 & storage-without-support & $SM$\\
+P06 & reordered-addition & $SZVM$\\
+P07 & merged-duplicate & $SZVM$\\
+P08 & shape-collision & $SZVM$\\
+P09 & collision-not-universal & $S$\\
+P10 & stored-zero-elimination & $SZVO$\\
+P11 & zero-term-storage & $SZV$\\
+P12 & shape-change & $\varnothing$\\
+P13 & active-read-oob & invalid\\
+P14 & negative-dimension & invalid\\
+P15 & empty-precondition & vacuous\\
+P16 & nonaffine-index & unsupported\\
+P17 & alias-outside-fragment & unsupported\\
+P18 & unstored-nonzero & invalid\\
+P19 & cancellation-to-empty & $SZV$\\
+P20 & late-shape-threshold & $SZM$\\
+P21 & rank-two-transpose & $SZVOM$\\
+P22 & empty-output & $SZVOM$\\
+P23 & scalar-rank & $SZVOM$\\
+P24 & inactive-oob & $SZVOM$\\
+P25 & input-identity-mismatch & $S$\\
+P26 & zero-output-storage & $SZVO$\\
+P27 & rational-normalization & $SZVOM$\\
+P28 & maximal-guarded-reorder & $SZVM$\\
+\end{longtable}

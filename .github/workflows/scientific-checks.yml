@@ -28,6 +28,7 @@ jobs:
         run: |
           mkdir -p results/workflow-raw
           timeout --signal=TERM --kill-after=10s 780s bash -e -o pipefail <<'CHECKS' 2>&1 | tee results/workflow-raw/whole-run.txt
+          timeout --signal=TERM --kill-after=5s 60s prlimit --as=2147483648 --cpu=55:60 -- python -B tests/regression_address_encoding.py -v
           timeout 120s sudo apt-get update
           timeout 120s sudo apt-get install --no-install-recommends -y libz3-4
           python -B -c 'from pathlib import Path; import sys; sys.path.insert(0,"src"); from semantic_contract.solver import Solver; s=Solver(); print("Host Z3 library:",s.lib._name); s.close()'

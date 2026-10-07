@@ -108,6 +108,17 @@ currently discovered tests. Earlier host timings and PDF checks are historical.
 These units describe different objects and must not be summed into a nominal
 workload or bug count.
 
+### Solver-free encoder regression
+
+`python -B tests/regression_address_encoding.py -v` runs the separately registered
+finite encoder checks without loading a native solver. Within each `encode` call,
+occurrence-ordered address components are rendered once and reused in conditional
+congruence and trace-position comparisons. Every formula, occurrence, ordering,
+counter and ablation control is retained. The checks include an independent
+address reference, scripted admission/unknown controls and existing certificate
+replay; scripted answers are not solver evidence. This is host-side preparation,
+not a measured speedup, a new grade or an extension of the public-adapter domain.
+
 ## Individual CLI examples
 
 ```sh

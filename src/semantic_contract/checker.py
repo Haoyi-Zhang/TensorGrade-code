@@ -17,12 +17,15 @@ def encode(c: Case, omit_congruence: bool=False):
     for k,t in enumerate(ts):
         assertions.append(f'(=> (not b{k}) (= x{k} 0))')
         defs.append(f'(define-fun g{k} () Bool {t.guard.smt()})')
+    # Occurrence-local strings only: retain every read, including inactive and
+    # zero-coefficient reads. No formula, ordering, or congruence is simplified.
+    addresses=tuple(tuple(x.smt() for x in t.index) for t in ts)
     congruences=0
     if not omit_congruence:
         for a,t in enumerate(ts):
             for b,u in enumerate(ts[:a]):
                 if t.tensor==u.tensor:
-                    same=both(f'(= {x.smt()} {y.smt()})' for x,y in zip(t.index,u.index))
+                    same=both(f'(= {x} {y})' for x,y in zip(addresses[a],addresses[b]))
                     assertions.append(f'(=> {same} (and (= x{a} x{b}) (= b{a} b{b})))')
                     congruences+=1
     def values(p,offset,label):
@@ -42,7 +45,7 @@ def encode(c: Case, omit_congruence: bool=False):
     order=[f'(= ppos{split} qpos{len(c.after.terms)})']
     for a,t in enumerate(c.before.terms):
         for b,u in enumerate(c.after.terms):
-            same='false' if t.tensor!=u.tensor or t.coefficient!=u.coefficient else both(f'(= {x.smt()} {y.smt()})' for x,y in zip(t.index,u.index))
+            same='false' if t.tensor!=u.tensor or t.coefficient!=u.coefficient else both(f'(= {x} {y})' for x,y in zip(addresses[a],addresses[split+b]))
             order.append(f'(=> (and g{a} g{split+b} (= ppos{a} qpos{b})) {same})')
     eqshape='false' if len(c.before.shape)!=len(c.after.shape) else both(f'(= {a.smt()} {b.smt()})' for a,b in zip(c.before.shape,c.after.shape))
     badshape=f'(not {eqshape})'

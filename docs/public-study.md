@@ -47,7 +47,7 @@ An admitted record requires:
   readiness is tested only after insertion, then ready entries are removed and
   unready entries retained in order. The post-map is threaded through calls.
   A separate ordered-list reference replays all 400 transitions and eight
-  additional 22-call sequences. Three state-only controls leave returned nodes
+  multi-call sequences totaling 22 calls. Three state-only controls leave returned nodes
   unchanged but fail replay. These extra diagnostics are excluded from the
   frozen 526-state and 18-mutant denominators. The original same-kind `+1`/`+2`
   node control still fails. Theorem I proves the full state transition and G7

@@ -65,7 +65,7 @@ def main():
    'independent before/after model, universal argument, and unchanged-downstream congruence were retained. '
    'P01 is an abstained candidate: its 1--4 operand range is only a finite validation boundary. '
    'P06 compares ordered post maps as well as full LLIR nodes; 400 single-call effect replays and '
-   'eight additional 22-call sequences are checked independently. '
+   'eight multi-call sequences totaling 22 calls are checked independently. '
    'P08 has 96 equivalence-domain cases and four separately executed excluded-domain controls. '
    'The study does not execute upstream Scorch or constitute independent proof review. Mutants are synthetic controls.')}
  args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')

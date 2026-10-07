@@ -21,11 +21,11 @@ Closest technical comparisons cover:
 - TensorRight's tensor-graph rewrite verification;
 - Prism's symbolic tensor-program optimization;
 - Mirage's multi-level tensor-program superoptimization;
-- EquiForge's equality-saturation tensor-program superoptimization; and
+- EqiForge's equality-saturation tensor-program superoptimization; and
 - classic translation validation, Alive/Alive2, CompCert, abstract
   interpretation, symbolic execution, and solver foundations.
 
-The comparison is claim-specific. Mirage and EquiForge search for profitable
+The comparison is claim-specific. Mirage and EqiForge search for profitable
 fully equivalent implementations, whereas this work classifies which declared
 observations remain universally equal when a supplied pair may fail full
 equivalence. The paper does not attribute mechanization, floating-point coverage,
@@ -61,7 +61,7 @@ Available full text or publisher HTML was inspected for substantive method,
 evaluation, and threat structure. Metadata-only pages were not used for
 content-specific scientific claims. The manuscript favors original papers and
 formal records over blogs or search snippets. A complete 2026-09-29 primary-record metadata audit covers all 83 cited keys,
-including Mirage and EquiForge; it is retained as
+including Mirage and EqiForge; it is retained as
 `data/reference-primary-record-audit.csv`;
 `data/reference-context-audit.csv` separately maps every key to its main-paper
 use. The offline reproduction checks both frozen files but does not present them

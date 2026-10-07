@@ -16,8 +16,8 @@ The essential changes are:
   entries are emitted/deleted and unready entries retain payload and order.
   The same-kind `+1`/`+2` control rejects label equality, while three unchanged-
   output state controls reject output-only equality. An independent ordered-list
-  replayer checks 400 single-call transitions and eight additional 22-call
-  sequences. Theorem I proves insertion, scan, and call-sequence invariants.
+  replayer checks 400 single-call transitions and eight multi-call sequences
+  totaling 22 calls. Theorem I proves insertion, scan, and call-sequence invariants.
 - P08's invariant is tied to the fixed production call-site inventory. The four
   excluded combinations are executed and reported rather than filtered as
   successes.

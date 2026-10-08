@@ -34,7 +34,7 @@ class ReferenceAuditTest(unittest.TestCase):
 
     def test_complete_primary_record_audit_is_delivered(self):
         self.assertEqual(self.report["primary_record_checks"], 83)
-        self.assertEqual(self.report["latest_primary_record_check"], "2026-09-29")
+        self.assertEqual(self.report["latest_primary_record_check"], "2026-10-09")
         self.assertEqual(self.report["citation_context_checks"], 83)
         self.assertEqual(self.report["latest_citation_context_check"], "2026-09-29")
 

@@ -277,7 +277,10 @@ adapter, so P01 abstains. QED.
 
 **Theorem H (P04 dispatcher extraction).** Under P04's fixed parent LLIR node
 invariant, the old monolithic lowerer and the extracted-helper lowerer emit
-identical strings.
+identical strings and equal persistent comment-suppression state when initialized
+with equal state. String dispatch prefixes the entire string once, rather than
+indenting each embedded line. A true suppression request sets the flag and a
+later false request does not reset it; induction over calls preserves this state.
 
 **Proof.** The parent reference is a monolithic transcription of the fixed
 parent file. The child reference separately implements expression, loop,

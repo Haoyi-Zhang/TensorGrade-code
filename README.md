@@ -50,7 +50,7 @@ python emit_tables.py \
 
 `reproduce.py` launches six sequential bounded phases:
 
-1. 64 unit and boundary tests, including 18 P06 state-effect/export-binding tests
+1. 67 unit and boundary tests, including 18 P06 state-effect/export-binding tests
    and seven conclusive-evidence/portable-CLI regressions;
 2. an offline integrity audit of 83 cited scholarly records plus a complete 83-record primary-record audit;
 3. 28 pilot program pairs and 16 consumer descriptions;
@@ -75,7 +75,7 @@ the paper source.
 The retained semantic summary reports the counts below. The archived result
 directories precede the seven new boundary regressions;
 the semantic counts below were reproduced locally on 2026-10-06 with all 64
-currently discovered tests. Earlier host timings and PDF checks are historical.
+then-discovered tests. The current suite also includes three source-correspondence regressions; all 67 passed with official Z3 4.13.4 on CPython 3.12.14 (Windows 11). Earlier host timings and PDF checks are historical.
 
 - all nine closed grades;
 - 167 successful direct refutation replays;

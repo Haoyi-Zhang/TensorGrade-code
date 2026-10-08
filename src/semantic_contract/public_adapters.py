@@ -385,8 +385,8 @@ Node = (
 
 
 def _indent(text: str, level: int) -> str:
-    prefix = "  " * level
-    return "\n".join(prefix + line if line else line for line in text.split("\n"))
+    # The pinned dispatcher prefixes the string once, including multiline text.
+    return "  " * level + text
 
 
 # ---------------------------------------------------------------------------
@@ -410,7 +410,7 @@ def _parent_render(
 ) -> str:
     """Independent monolithic reference transcribed from the fixed parent."""
     if isinstance(node, str):
-        return _indent(node, level)
+        return "  " * level + node
     if isinstance(node, tuple):
         lines = [_parent_render(x, level, False, no_comments) for x in node]
         return "\n".join(line for line in lines if line != "")
@@ -621,6 +621,28 @@ def render_parent(case: RenderCase) -> str:
 
 def render_child(case: RenderCase) -> str:
     return _child_render(case.node, case.indent_level, case.no_semicolon, case.no_comments)
+
+
+@dataclass
+class ParentRenderSession:
+    """Persistent comment flag in the pinned parent lowerer."""
+    no_comments: bool = False
+
+    def render(self, case: RenderCase) -> str:
+        if case.no_comments:
+            self.no_comments = True
+        return _parent_render(case.node, case.indent_level, case.no_semicolon, self.no_comments)
+
+
+@dataclass
+class ChildRenderSession:
+    """Persistent comment flag in the extracted child dispatcher."""
+    no_comments: bool = False
+
+    def render(self, case: RenderCase) -> str:
+        if case.no_comments:
+            self.no_comments = True
+        return _child_render(case.node, case.indent_level, case.no_semicolon, self.no_comments)
 
 
 P04_MUTANTS = (

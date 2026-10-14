@@ -36,7 +36,7 @@ class ReferenceAuditTest(unittest.TestCase):
 
     def test_complete_primary_record_audit_is_delivered(self):
         self.assertEqual(self.report["primary_record_checks"], 83)
-        self.assertEqual(self.report["latest_primary_record_check"], "2026-10-08")
+        self.assertEqual(self.report["latest_primary_record_check"], "2026-10-14")
         self.assertEqual(self.report["citation_context_checks"], 83)
         self.assertEqual(self.report["latest_citation_context_check"], "2026-10-14")
 
@@ -73,6 +73,14 @@ class ReferenceAuditTest(unittest.TestCase):
         for key in ("wu2025mirage", "wu2026prism", "zhan2026eqiforge"):
             self.assertIn(key, entries)
             self.assertIn(key, cited)
+
+    def test_graphit_authors_and_omega_article_identity(self):
+        entries = {entry["key"]: entry["fields"] for entry in parse_bibtex(BIB.read_text())}
+        self.assertEqual(entries["zhang2018graphit"]["author"],
+                         "Yunming Zhang and Mengjiao Yang and Riyadh Baghdadi and Shoaib Kamil and Julian Shun and Saman Amarasinghe")
+        self.assertEqual(entries["pugh1992omega"]["doi"], "10.1145/135226.135233")
+        self.assertEqual(entries["pugh1992omega"]["title"],
+                         "A practical algorithm for exact array dependence analysis")
 
     def test_bad_inventory_status_is_rejected(self):
         with INVENTORY.open(newline="", encoding="utf-8") as handle:

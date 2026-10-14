@@ -3,12 +3,11 @@
 
 The command verifies BibTeX, the complete frozen metadata inventory, the exact
 citation-key set, a complete dated primary-record audit inventory, and a
-sentence-level citation-context ledger. Network
-resolution is intentionally not part of reproduction: the primary-record file
-freezes the DOI, official proceedings, USENIX, or DBLP reconciliation completed
-on 2026-09-29. The audit establishes delivered-record consistency and
-bibliographic identity/completeness, not an independent literature review or a
-claim that every cited argument was independently reread.
+sentence-level citation-context ledger. Network resolution is not part of this
+offline check. Each ledger records its own check date and reading scope. The
+command establishes agreement and field completeness among delivered records;
+source identity and support for a claim require the recorded source checks.
+Verification dates use UTC to agree across local and hosted runners.
 """
 from __future__ import annotations
 
@@ -129,7 +128,7 @@ def _parse_date(value: str, label: str, errors: list[str]):
     except ValueError:
         errors.append(f"{label}: invalid ISO date {value!r}")
         return None
-    if parsed > dt.date.today():
+    if parsed > dt.datetime.now(dt.timezone.utc).date():
         errors.append(f"{label}: future verification date {value}")
     return parsed
 

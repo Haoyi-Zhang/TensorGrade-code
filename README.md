@@ -90,7 +90,9 @@ then-discovered tests. The current suite also includes three source-corresponden
   sequences containing 22 calls, and three rejected unchanged-output state
   controls, reported separately from frozen state/mutant and IR-certificate counts;
 - P01 retained separately with 29,222 matching successful-domain states and
-  three differing source-reachable scalar boundary controls;
+  three differing source-reachable scalar boundary controls with source
+  assertions enabled (four under `python -O`); these excluded-domain controls
+  do not change P01's abstention or the 526 admitted states;
 - 18 synthetic adapter mutants: repeated developer indices detect 14/18,
   seeded random with replacement detects 18/18, and an evenly spaced
   enumeration-index grid detects 18/18 under a cap of 64 candidate slots per

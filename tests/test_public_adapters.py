@@ -117,8 +117,15 @@ class PublicAdapterStudyTest(unittest.TestCase):
         self.assertEqual(result["decision"], "abstained")
         self.assertEqual(result["successful_domain_mismatch_count"], 0)
         self.assertEqual(result["scalar_boundary_case_count"], 4)
-        # Three source-reachable mixed scalar/result-scalar controls differ.
-        self.assertEqual(sum(not x["same"] for x in result["scalar_boundary_controls"]), 3)
+        # The first three mixed scalar/result-scalar controls differ in both
+        # modes.  The all-scalar control agrees only when the faithfully
+        # transcribed source assertions are enabled.  With -O, the parent
+        # exec path and child constructor path expose different outcomes.
+        # These remain excluded-domain diagnostics; P01 is still abstained.
+        self.assertEqual(
+            [x["same"] for x in result["scalar_boundary_controls"]],
+            [False, False, False, __debug__],
+        )
 
     def test_p04_independent_conditional_paths_and_branch_coverage(self) -> None:
         self.assertEqual(len(p04_cases()), 30)

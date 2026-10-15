@@ -1,251 +1,136 @@
 # Semantic Contract Grading for Tensor-Compiler Patches
 
-This standalone repository implements and validates the artifact for the paper of
-the same name. It contains an exact-rational finite-read tensor checker, compact
-counterexample construction and replay, a restricted linear-consumer support
-criterion, and three clean-room source adapters for a fixed twelve-commit public
-Scorch denominator.
+This standalone artifact provides an exact-rational finite-read tensor checker,
+counterexample construction and solver-free replay, a restricted linear-consumer
+support criterion, and clean-room source adapters for a fixed twelve-commit
+Scorch study. No upstream checkout, native extension, generated kernel, or
+Scorch test suite is built or executed.
 
-The scope is intentionally narrow. Three commits admit complete production-diff
-source adapters and nine remain explicit abstentions. P01 remains an abstained
-candidate with separately reported finite successful-domain diagnostics. No upstream Scorch
-checkout, native extension, generated kernel, or repository test suite is built
-or executed. The public result is conditional source-observable equality under
-stated invariants and unchanged downstream components—not whole-runtime patch
-verification.
+## Environment
 
-## Requirements
-
-- Linux, Windows, or another environment exposing a compatible Z3 shared library;
-- Python 3.10 or newer; and
-- no Python package dependencies beyond the standard library.
-
-The symbolic layer uses the standard Z3 C API. It accepts an explicitly selected
-library through `Z3_LIBRARY_PATH`, discovers a system library with
-`ctypes.util.find_library('z3')`, or locates the library in an installed official
-`z3-solver` Python package. The optional package supplies the native library;
-it is not imported by certificate replay. No external model API, GPU, network access, repository checkout,
-private cache, or solver download is used by the retained workflow. Certificate
-replay does not load Z3.
-
-The repository does not pin or redistribute a native solver binary. Different
-compatible installations may choose different models or timings. The semantic
-reproduction targets are statuses, validated certificates, empty error lists,
-public-adapter decisions, and aggregate counts—not byte-identical JSON model text
-or performance.
-
-## Complete reproduction
-
-Run from this extracted repository root:
+Use Python 3.10 or newer on Linux, Windows, or another host with a compatible Z3
+shared library. The Python implementation uses the standard library and the Z3
+C API. The solver loader checks `Z3_LIBRARY_PATH`, a system Z3 library, then
+the native library in an installed official `z3-solver` package. For example:
 
 ```sh
-python reproduce.py --output results/reproduced
-python summarize.py \
-  --directory results/reproduced \
-  --output results/reproduced-summary.json
-python emit_tables.py \
-  --directory results/reproduced \
-  --output results/tex-tables
+python -m pip install z3-solver==4.13.4.0
 ```
 
-`reproduce.py` launches six sequential bounded phases:
+This is an optional way to obtain the external library, not a bundled binary or
+a requirement that all compatible hosts use this version. The recorded Windows
+run used Z3 4.13.4 and CPython 3.12.14. An explicit `Z3_LIBRARY_PATH` must name
+a compatible shared-library file. Certificate replay does not load Z3.
 
-1. 67 unit and boundary tests, including 18 P06 state-effect/export-binding tests
-   and seven conclusive-evidence/portable-CLI regressions;
-2. an offline integrity audit of 83 cited scholarly records plus a complete 83-record primary-record audit;
-3. 28 pilot program pairs and 16 consumer descriptions;
-4. 64 frozen generated pairs plus the 729 coefficient-row-pair enumeration;
-5. a separate post-hoc multi-seed robustness audit over 256 additional generated
-   pairs, excluded from the frozen 801-query campaign; and
-6. the frozen twelve-commit public source-adapter study.
+The retained workflow is network-free once the runtime is installed. It needs
+no external model API, GPU, downloaded benchmark, or private cache. Keep Python
+assertions enabled; do not use `-O`.
 
-Each child uses one worker and a 115-second wall timeout. On POSIX systems the
-wrapper also applies a 2 GiB address-space cap and 105/110 CPU-second limits.
-On Windows these POSIX caps and child RSS measurements are unavailable and are
-recorded as unavailable, not as zero. Solver queries use a 1,500 ms timeout. A nonzero child exit,
-wall timeout, or nonempty validation-error list is a failed reproduction.
-An admitted-but-incomplete generated grade is also a failed campaign, not a
-completed weak grade. The summary gate independently checks all five atom
-statuses and rejects inconclusive admitted consumers.
+## Reproduce and generate tables
 
-`summarize.py` refuses to summarize failed phases. `emit_tables.py` generates all
-nine paper/supplement tables from the selected results directory without needing
-the paper source.
-
-The retained semantic summary reports the counts below. The archived result
-directories precede the seven new boundary regressions;
-the semantic counts below were reproduced locally on 2026-10-06 with all 64
-then-discovered tests. The current suite also includes three source-correspondence regressions; all 67 passed with official Z3 4.13.4 on CPython 3.12.14 (Windows 11). Earlier host timings and PDF checks are historical.
-
-- all nine closed grades;
-- 167 successful direct refutation replays;
-- 162 compact finite-read certificates: 72 with zero stored cells, 85 with one,
-  and five with two in the current run; the chosen solver witnesses may differ
-  between compatible installations while preserving replay validity and the
-  two-cell bound;
-- five additional two-cell consumer refutations;
-- 3 admitted public source adapters and 9 abstentions in 12 commits;
-- 526 admitted bounded source-adapter states with zero mismatches;
-- P06: 400 independent single-call state-effect replays, eight additional
-  sequences containing 22 calls, and three rejected unchanged-output state
-  controls, reported separately from frozen state/mutant and IR-certificate counts;
-- P01 retained separately with 29,222 matching successful-domain states and
-  three differing source-reachable scalar boundary controls with source
-  assertions enabled (four under `python -O`); these excluded-domain controls
-  do not change P01's abstention or the 526 admitted states;
-- 18 synthetic adapter mutants: repeated developer indices detect 14/18,
-  seeded random with replacement detects 18/18, and an evenly spaced
-  enumeration-index grid detects 18/18 under a cap of 64 candidate slots per
-  mutant, using 325, 121, and 318 actual executions; and
-- 83 cited bibliography records matching the frozen inventory, including 77 DOI
-  records and six stable official or DBLP locators, plus complete dated
-  primary-record metadata reconciliation and citation-context records for all
-  83 cited keys; and
-- a post-hoc robustness audit over eight additional seeds (256 cases, 2,048
-  queries, 512 oracle checks, and 500 independently replayed compact
-  certificates) with no validation errors. These counts are kept separate from
-  the frozen main campaign and do not constitute independent or statistical
-  validation.
-
-These units describe different objects and must not be summed into a nominal
-workload or bug count.
-
-### Solver-free encoder regression
-
-`python -B tests/regression_address_encoding.py -v` runs the separately registered
-finite encoder checks without loading a native solver. Within each `encode` call,
-occurrence-ordered address components are rendered once and reused in conditional
-congruence and trace-position comparisons. Every formula, occurrence, ordering,
-counter and ablation control is retained. The checks include an independent
-address reference, scripted admission/unknown controls and existing certificate
-replay; scripted answers are not solver evidence. This is host-side preparation,
-not a measured speedup, a new grade or an extension of the public-adapter domain.
-
-## Individual CLI examples
+Run from this directory. Choose an output directory that does not already exist,
+inside the artifact but separate from retained `results/current/`:
 
 ```sh
-PYTHONPATH=src python -m semantic_contract grade \
-  data/examples/late-shape-threshold.json \
-  --output results/example-grade.json
-
-PYTHONPATH=src python -m semantic_contract replay \
-  data/examples/storage-without-support.json \
-  data/certificates/support-cancellation.json
-
-PYTHONPATH=src python -m semantic_contract consumer \
-  data/consumer-example.json \
-  --output results/example-consumer.json
+python -B reproduce.py --output results/reproduced
+python -B summarize.py --directory results/reproduced --output results/reproduced-summary.json
+python -B emit_tables.py --directory results/reproduced --output results/tex-tables
 ```
 
-The grade command returns per-atom `proved`, `refuted`, or `unknown` in the
-restricted supplied semantics. `complete_grade` is true only for admitted,
-production-mode, conclusive five-atom runs. A zero exit can contain refuted atoms;
-it is not an “all contracts correct” verdict.
+The six sequential phases are the discovered unit tests, offline reference
+audit, pilot, frozen diagnostics, separate post-hoc robustness audit, and public
+source-adapter study. Each child has a 115-second wall timeout; Z3 queries use
+1,500 ms. POSIX children also receive a 2 GiB address-space cap and 105/110
+CPU-second limits. Windows records unavailable POSIX caps and child CPU/RSS as
+unavailable, not zero.
 
-The replay command independently revalidates the finite-read schema, grammar,
-sorts, bounds, and witness before exact concrete execution. It is not a source-
-mapping proof or a check of an UNSAT result. The consumer command checks the stated free-value/clique-mask
-criterion.
+A failed child, timeout, validation error, or inconclusive admitted grade fails
+reproduction. The summary gate rejects failed/incomplete evidence.
+`emit_tables.py` generates nine TeX tables without the paper directory.
+To summarize existing evidence without rerunning experiments, substitute
+`results/current` for the input directory and select new output paths.
 
-Exit codes:
+Compatible Z3 versions may choose different valid witnesses or timings.
+Reproduction targets semantic statuses, validated certificates, empty error
+lists, public-adapter decisions, and counts, not byte-identical model JSON or
+performance. The distinct workload units and retained counts are documented in
+[docs/validation.md](docs/validation.md); do not sum them into a bug count.
 
-- `0`: conclusive admitted grading (possibly with refutations), valid replay, or
-  conclusive consumer result;
-- `2`: unsupported, invalid, vacuous, or unknown complete result;
-- `3`: invalid replay; and
-- `1`: input or runtime error.
+## Individual commands
 
-## Semantic scope
+Set the source path in the current shell first:
 
-The finite-read language has affine integer shape preconditions, affine output
-shapes and read addresses, constant exact rational coefficients, value-independent
-guards, ranks at most four, and at most 32 reads per program. Logical storage is
-dense, empty, compact, or union. Potential-contribution order is syntactic active
-term order; it is not floating-point reduction order.
+```sh
+# POSIX shell
+export PYTHONPATH=src
+```
 
-The checker does not model physical sparse index arrays, duplicate-coordinate
-assembly, aliasing, mutation, exceptions, allocation or lifetime, machine integer
-overflow, floating point, NaNs, threading, atomics, undefined behavior, or general
-value-dependent/variable-length reductions. The separate consumer schema covers
-a restricted unbounded-size linear relation, not arbitrary consumer equivalence.
+```powershell
+# PowerShell
+$env:PYTHONPATH = 'src'
+```
 
-## Public source-adapter study
+Then use the same Python commands on either platform:
 
-`data/public-corpus.csv` is the fixed denominator. The first four chronological
-records are the development segment; the next eight form a later retrospective
-segment. Repository scouting preceded the split, so it is not preregistered or
-blind. Every nonadmitted commit remains in the denominator.
+```sh
+python -B -m semantic_contract grade data/examples/late-shape-threshold.json --output results/example-grade.json
+python -B -m semantic_contract replay data/examples/storage-without-support.json data/certificates/support-cancellation.json
+python -B -m semantic_contract consumer data/consumer-example.json --output results/example-consumer.json
+python -B tests/regression_address_encoding.py -v
+```
 
-An admitted adapter records a complete production-file scope, runtime disposition
-of every changed statement, source-state invariant, before/after observable,
-universal equality argument, independently coded bounded models with mutants,
-and an unchanged-downstream lifting premise.
+The last command checks the finite encoder without loading a native solver;
+scripted answers exercise control flow, not solver validity. Per-call address
+rendering reuse preserves formulas and modeled counts and is not a measured
+speedup.
 
-- **P01 (abstained candidate)**: generated-string versus direct CIN
-  construction. The 29,222 successful-domain AST comparisons are retained, but
-  source-reachable scalar boundary controls invalidate the proposed complete
-  invariant.
-- **P04 (admitted)**: monolithic versus extracted LLIR rendering; exact generated
-  C++ text, with independently implemented conditional paths.
-- **P06 (admitted)**: monolithic versus extracted coordinate resolution; complete
-  ordered typed LLIR node trees, including operands, addresses, literals, bounds,
-  updates, and bodies, jointly with the persistent ordered pending-coordinate
-  map. Explicit dependency lists drive readiness; pre-map reads, append/name
-  dedup, snapshot scanning, ready removal, and unready retention are preserved
-  across calls. `dense_effects.py` independently replays transition certificates
-  without importing changed adapter logic or a solver.
-- **P08 (admitted)**: two mode-order initialization cascades under the immutable
-  fixed-production call-site invariant; initialized sequence or exception class.
+Exit `0` means a conclusive admitted grade (possibly with refuted atoms), valid
+replay, or conclusive consumer result. Exit `2` means unsupported, invalid,
+vacuous, or unknown complete results; `3` means invalid replay; `1` means an
+input/runtime error. A zero grade exit is not an all-contracts-correct verdict.
+Replay validates a finite SAT witness, not UNSAT or a source-mapping proof.
 
-P01 and the other eight abstained commits change or expose accepted inputs,
-object/exception or ownership semantics, physical sparse representation,
-scheduler choices, floating-point/raw-memory behavior, or whole-runtime
-dispatch beyond a closed adapter domain. The artifact abstains rather than
-projecting them onto a convenient rational expression.
+## Inputs, results, and supporting material
 
-The adapters are original semantic models written from attributed public diffs.
-No upstream source file or patch is redistributed. Commit URLs and file scopes are
-retained in the CSV and source ledger.
-
-## Repository layout
-
-- `src/semantic_contract/`: schema, admission, SMT adapter, checker, concrete
-  interpreter, finite oracle, certificate constructor/replayer, consumer checker,
-  public adapters, and CLI.
-- `proofs/core.md`: definitions and prose proof ledger.
+- `data/`: complete program/consumer inputs, generated cases, certificates,
+  the frozen public-commit denominator and source pins, bibliography inventory,
+  primary-record audit, and citation contexts.
+- `src/semantic_contract/`: schema/admission, SMT checker, exact interpreter,
+  oracle, certificate replay, consumer criterion, source adapters, and CLI.
+- `results/current/` and `results/summary.json`: retained raw evidence and
+  reconciled counts. Other retained runs have their own provenance.
+- `proofs/core.md` and `claim_evidence_ledger.csv`: arguments and evidence map.
 - `tests/`: semantic, replay, oracle, consumer, and source-adapter regressions.
-- `audit_references.py`, `run_pilot.py`, `run_diagnostics.py`,
-  `run_robustness_audit.py`, `run_public_study.py`: retained integrity check and campaigns.
-- `data/`: exact program/consumer inputs, generated cases, certificates, public
-  commit denominator, frozen bibliography, primary-record audit, citation-context
-  ledger, citation keys, and metadata inventory.
-- `results/current/`: raw outputs used by the paper.
-- `results/summary.json`: reconciled retained counts.
-- `docs/`: protocols, source selection, literature scope, formats, and evidence
-  interpretation.
-- `claim_evidence_ledger.csv`: claim-to-proof/check/raw-evidence boundaries.
-- `external_resources.csv`: externally consulted primary resources and public
-  commit locators.
-- `licenses/`: notice for the unbundled Z3 dependency.
+- [docs/formats.md](docs/formats.md): schemas and certificate/result boundaries.
+- [docs/public-study.md](docs/public-study.md) and the other `docs/` protocols:
+  source selection, adapter evidence, diagnostics, and interpretation.
+- `external_resources.csv`, `LICENSE`, and `licenses/Z3-NOTICE.txt`:
+  source provenance and licensing.
 
-## Trust and interpretation
+## Conditions and interpretation
 
-The all-shapes theorems are prose proofs, not proof-assistant certificates. Z3 is
-trusted for UNSAT; the separate interpreter only validates concrete SAT
-witnesses. The symbolic checker, oracle, replay path, source adapters, proofs,
-and self-audit were produced in one research process, so they are not independent
-human validation.
+The language has affine integer shapes/addresses, exact rational coefficients,
+value-independent guards, rank at most four, and at most 32 reads per program.
+It does not model physical sparse layout, aliasing, mutation, exceptions,
+allocation, integer overflow, floating point, threading, or general
+value-dependent reductions. The consumer schema covers its stated free-value
+and clique-mask criterion, not arbitrary consumer equivalence.
 
-Synthetic mutants are not historical Scorch bugs. Bounded adapter agreement is
-not the universal proof. Universal adapter proofs do not establish omitted source
-behavior. Successful commands do not imply external submission readiness or
-permission to submit.
+The public denominator retains three admitted adapters and nine abstentions.
+P01 remains abstained; its successful-domain diagnostics do not enlarge admitted
+coverage. Admitted results are conditional source-observable equality under
+source-derived invariants and unchanged downstream components, not whole-runtime
+patch verification. The retrospective temporal split is not preregistered or
+blind. Synthetic mutants are not historical Scorch bugs. Immutable commit/file
+locators remain in the source ledger; no upstream source or patch is
+redistributed.
 
-
-## Licensing
+General theorems are prose proofs. Z3 is trusted for UNSAT; the separate
+interpreter checks concrete SAT witnesses. The code, adapters, proofs, and
+self-audit arose in one research process, not independent human validation.
+Successful commands do not confer submission permission.
 
 Original implementation, generated inputs, proof text, and result records are
-provided under the MIT license in `LICENSE`. Z3 is an unmodified external runtime
-dependency; its notice is retained in `licenses/Z3-NOTICE.txt`, and no solver
-binary is bundled. Public upstream source is linked and described but not
-redistributed. Scholarly sources are cited rather than relicensed here.
+MIT-licensed under `LICENSE`. Z3 remains an unmodified, unbundled external
+dependency with its retained notice. Linked upstream and scholarly sources are
+not relicensed by this artifact.
